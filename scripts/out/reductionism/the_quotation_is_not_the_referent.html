@@ -1,0 +1,60 @@
+<!-- .meta --><!--<div><i><h0>Part 1 of 13 in the sequence &nbsp;<a href="http://wiki.lesswrong.com/wiki/Mysterious_Answers_to_Mysterious_Questions">Mysterious Answers to Mysterious Questions</a></h0></i><br/><br/></div>--><div id="entry_t3_ok" class="content clear"><div class="md">
+        
+  <div><p><strong>Followup to</strong>:&#xA0; <a href="http://www.overcomingbias.com/2008/03/mind-projection.html">The Mind Projection Fallacy</a>, <a href="http://www.overcomingbias.com/2008/03/mind-probabilit.html">Probability is in the Mind</a><a href="http://www.overcomingbias.com/2008/02/compress-fallac.html">&#xA0;</a> </p>
+<p>In classical logic, the operational definition of identity is that
+whenever 'A=B' is a theorem, you can substitute 'A' for 'B' in any
+theorem where B appears.&#xA0; For example, if <tt>(2 + 2) = 4</tt> is a theorem, and <tt>((2 + 2) + 3) = 7</tt> is a theorem, then <tt>(4 + 3) = 7</tt> is a theorem.</p>
+<p>This leads to a problem which is usually phrased in the following
+terms:&#xA0; The morning star and the evening star happen to be the same
+object, the planet Venus.&#xA0; Suppose John knows that the morning star and
+evening star are the same object.&#xA0; Mary, however, believes that the
+morning star is the god Lucifer, but the evening star is the god
+Venus.&#xA0; John believes Mary believes that the morning star is Lucifer. 
+Must John therefore (by substitution) believe that Mary believes that
+the evening star is Lucifer?</p>
+<p>Or here's an even simpler version of the problem.&#xA0; 2 + 2 = 4 is true; it is a theorem that <tt>(((2 + 2) = 4) = TRUE)</tt>.&#xA0; Fermat's Last Theorem is also true.&#xA0; So:&#xA0; I believe 2 + 2 = 4 =&gt; I believe TRUE =&gt; I believe Fermat's Last Theorem.</p>
+<p>Yes, I know this seems <em>obviously</em> wrong.&#xA0; But imagine someone
+writing a logical reasoning program using the principle "equal terms
+can always be substituted", and this happening to them.&#xA0; Now imagine
+them writing a paper about how to prevent it from happening.&#xA0; Now
+imagine someone else disagreeing with their solution.&#xA0; The argument is
+still going on.</p>
+<p>P'rsnally, I would say that John is committing a type error, like
+trying to subtract 5 grams from 20 meters.&#xA0; "The morning star" is not
+the same <em>type</em> as the morning star, let alone the same thing.&#xA0; Beliefs are not planets.</p>
+<a id="more"></a><blockquote><p>morning star = evening star<br>"morning star" &#x2260; "evening star"</p></blockquote><p>The
+problem, in my view, stems from the failure to enforce the type
+distinction between beliefs and things.&#xA0; The original error was writing
+an AI that stores its beliefs about Mary's beliefs about "the morning
+star" using the same representation as in its beliefs about the morning
+star.</p>
+<p>If Mary believes the "morning star" is Lucifer, that doesn't mean
+Mary believes the "evening star" is Lucifer, because "morning star" &#x2260;
+"evening star".&#xA0; The whole paradox stems from the failure to use quote
+marks in appropriate places.</p>
+<p>You may recall that this is not the first time I've talked about
+enforcing type discipline - the last time was when I spoke about the
+error of <a href="http://www.overcomingbias.com/2007/11/terminal-values.html">confusing expected utilities with utilities</a>. 
+It is immensely helpful, when one is first learning physics, to learn
+to keep track of one's units - it may seem like a bother to keep
+writing down 'cm' and 'kg' and so on, until you notice that (a) your
+answer seems to be the wrong order of magnitude and (b) it is expressed
+in seconds per square gram.</p>
+<p>Similarly, beliefs are different things than planets.&#xA0; If we're
+talking about human beliefs, at least, then:&#xA0; Beliefs live in brains,
+planets live in space.&#xA0; Beliefs weigh a few micrograms, planets weigh a
+lot more.&#xA0; Planets are larger than beliefs... but you get the idea.</p>
+<p>Merely putting quote marks around "morning star" seems insufficient
+to prevent people from confusing it with the morning star, due to the
+visual similarity of the text.&#xA0; So perhaps a better way to enforce type
+discipline would be with a visibly different encoding:</p><blockquote><p>morning star = evening star<br>13.15.18.14.9.14.7.0.19.20.1.18 &#x2260; 5.22.5.14.9.14.7.0.19.20.1.18</p></blockquote><p>Studying mathematical logic may also help you learn to distinguish the quote and the referent.&#xA0; In mathematical logic, <tt>|- P</tt> (P is a theorem) and <tt>|- []'P'</tt>
+(it is provable that there exists an encoded proof of the encoded
+sentence P in some encoded proof system) are very distinct
+propositions.&#xA0; If you drop a level of quotation in mathematical logic,
+it's like dropping a metric unit in physics - you can derive visibly
+ridiculous results, like "The speed of light is 299,792,458 meters
+long."</p>
+<p>Alfred Tarski once tried to define the meaning of 'true' using
+an infinite family of sentences:</p><blockquote><p>("Snow is white" is true) if and only (snow is white)<br>
+("Weasels are green" is true) if and only if (weasels are green)<br>...</p></blockquote><p>When sentences like these start seeming meaningful, you'll know that you've started to distinguish between encoded sentences and states of the outside world.</p>
+<p>Similarly, the notion of <a href="http://yudkowsky.net/bayes/truth.html">truth</a> is quite different from the notion of <em>reality.</em>&#xA0; Saying "true" <em>compares</em> a belief to reality.&#xA0; Reality itself does not need to be compared to any beliefs in order to be real.&#xA0; Remember this the next time someone claims that nothing is true.</p></div></div></div>
