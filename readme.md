@@ -1,3 +1,5 @@
+% Print Ready Lesswrong Sequences
+
 # Lesswrong Sequences
 
 Print friendly versions of the 
