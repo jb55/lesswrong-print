@@ -1,6 +1,6 @@
 # Lesswrong Sequences
 
-Print friendly versions of 
+Print friendly versions of the 
 [Lesswrong Sequences](http://wiki.lesswrong.com/wiki/Sequences), enjoy!
 
 ## Major Sequences
