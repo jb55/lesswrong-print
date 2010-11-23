@@ -8,9 +8,9 @@ Print friendly versions of lesswrong sequences, enjoy!
 > that don't answer or say or mean anything. The first (and probably most
 > important) core sequence on Less Wrong.
 
-[epub](sequences/mysterious/Mysterious Answers to Mysterious Questions.epub) |
-[pdf](sequences/mysterious/Mysterious Answers to Mysterious Questions.pdf) |
-[markdown](sequences/mysterious/mysterious.md)
+[epub](https://github.com/jb55/lesswrong-print/blob/master/sequences/mysterious/Mysterious%20Answers%20to%20Mysterious%20Questions.epub) |
+[pdf](https://github.com/jb55/lesswrong-print/blob/master/sequences/mysterious/Mysterious%20Answers%20to%20Mysterious%20Questions.pdf) |
+[markdown](https://github.com/jb55/lesswrong-print/blob/master/sequences/mysterious/mysterious.md)
 
 ## Reductionism
 
@@ -19,7 +19,7 @@ Print friendly versions of lesswrong sequences, enjoy!
 > feeling disappointed about the fact that complicated things are made of
 > simpler things.
 
-[epub](sequences/reductionism/Reductionism.epub) |
-[pdf](sequences/reductionism/Reductionism.pdf) |
-[markdown](sequences/reductionism/Reductionism.md)
+[epub](https://github.com/jb55/lesswrong-print/blob/master/sequences/reductionism/Reductionism.epub) |
+[pdf](https://github.com/jb55/lesswrong-print/blob/master/sequences/reductionism/Reductionism.pdf) |
+[markdown](https://github.com/jb55/lesswrong-print/blob/master/sequences/reductionism/Reductionism.md)
 
