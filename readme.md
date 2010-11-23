@@ -1,7 +1,7 @@
 # Lesswrong Sequences
 
 Print friendly versions of 
-[lesswrong sequences](http://wiki.lesswrong.com/wiki/Sequences), enjoy!
+[Lesswrong Sequences](http://wiki.lesswrong.com/wiki/Sequences), enjoy!
 
 ## Major Sequences
 
