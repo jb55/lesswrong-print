@@ -1,0 +1,3307 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Eliezer S. Yudkowsky, Rationality, An Intuitive Explanation of Bayes' Theorem, , artificial intelligence, ai, artificial general intelligence, agi, rationality, bias, technological singularity, singularity, friendly artificial intelligence, fai, global risks, bayesian conspiracy" />
+    <meta name="description" content="Bayes' Theorem for the curious and bewildered; an excruciatingly gentle introduction." />
+
+    <title>Yudkowsky - Bayes' Theorem</title>
+<script language="Javascript"> 
+<!--
+ 
+function parsetext(text) {
+ text = text.replace(/%/g, '*0.01');
+ text = text.replace(/\[|\{/g, '(');
+ text = text.replace(/\]|\}/g, ')');
+ return eval(text);
+}
+ 
+function compute(form) {
+ form.result.value = ' '
+ evtext = parsetext(form.expression.value);
+ form.result.value = evtext.toString().substring(0, 6);
+} // end compute
+ 
+// --> 
+</script>
+    <link href="/stylesheets/main.css" rel="stylesheet" type="text/css" />
+<!--[if lt IE 7]>
+    <link href="/stylesheets/ie6.css" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/menuhover.js" type="text/javascript"></script>
+<![endif]-->
+<!--[if IE 7]>
+    <link href="/stylesheets/ie7.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+    <link href="/stylesheets/print.css" rel="stylesheet" type="text/css" media="print" />
+
+    <link href="/assets/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery.defaultvalue.js"></script>
+    <script type="text/javascript" src="/javascripts/sitewide.js"></script>
+    <link href="/feeds/essays.atom" rel="alternate" type="application/atom+xml" title="Eliezer S. Yudkowsky Essays" />
+  </head>
+  <body class="rational">
+
+    <div id="header">
+      <div class="wrapper">
+        <a href="/sitemap" class="tab"><span>Site Map</span></a>
+        <strong class="name"><span>Eliezer S. Yudkowsky</span></strong>
+        <span class="tagline">Research Fellow - <em>Singularity Institute for Artificial Intelligence</em></span>
+        <div class="quote">
+
+        </div><!-- .quote -->
+<ul id="nav">
+  <li class="homepage"><a href="/">Introduction</a></li>
+  <li class="rationality"><a href="/rational">Rationality</a>
+    <ul>
+      <li><a href="/rational/virtues">Twelve Virtues</a></li>
+      <li><a href="/rational/overcoming-bias">Overcoming Bias</a></li>
+      <li><a href="/rational/cognitive-biases">Cognitive Biases</a></li>
+      <li><a href="/rational/the-simple-truth">The Simple Truth</a></li>
+      <li><a href="/rational/bayes">Bayes' Theorem</a></li>
+      <li><a href="/rational/technical">Technical Explanation</a></li>
+      <li><a href="/rational/lobs-theorem">Löb's Theorem</a></li>
+    </ul>
+  </li>
+  <li class="singularity"><a href="/singularity">Singularity</a>
+    <ul>
+      <li><a href="/singularity/schools">Three Major Schools</a></li>
+      <li><a href="/singularity/ai-risk">AI and Global Risk</a></li>
+      <li><a href="/singularity/power">Power of Intelligence</a></li>
+      <li><a href="/singularity/simplified">Simplified Humanism</a></li>
+      <li><a href="/singularity/intro">5 Minute Intro</a></li>
+      <li><a href="/singularity/aibox">The AI-Box Experiment</a></li>
+      <li><a href="/singularity/fun-theory">Fun Theory</a></li>
+    </ul>
+  </li>
+  <li class="other"><a href="/other">Other</a>
+    <ul>
+      <li><a href="/other/yehuda">Yehuda Yudkowsky</a></li>
+      <li><a href="/other/fiction">Fiction</a></li>
+    </ul>
+  </li>
+  <li class="contact"><a href="/contact">Contact</a>
+    <ul>
+      <li><a href="/contact/media">Media</a></li>
+      <li><a href="/contact/speaking">Speaking</a></li>
+    </ul>
+  </li>
+</ul>
+      </div><!-- .wrapper -->
+    </div><!-- #header -->
+    <div id="main">
+      <div class="wrapper clear">
+        <div id="content" class="clear">
+<div id="breadcrumbs"><a href="/">Eliezer S. Yudkowsky</a> &gt; <a href="/rational">Rationality</a> &gt; An Intuitive Explanation of Bayes' Theorem</div>
+<div id="text-size">
+<img id="text-size-inc" src='/assets/images/text-size/plus.png' width='27px' height='26px' title="Increase size of text" />
+<img id="text-size-reset" src='/assets/images/text-size/reset.png' width='27px' height='26px' title="Reset size of text to normal" />
+<img id="text-size-dec" src='/assets/images/text-size/minus.png' width='25px' height='26px' title="Decrease size of text" />
+<p>Text size</p>
+</div>
+
+<h1>An Intuitive Explanation of Bayes' Theorem</h1>
+ 
+<p><em>
+Bayes' Theorem<br />
+for the curious and bewildered;<br /> 
+an excruciatingly gentle introduction.
+</em></p>
+
+<hr style="width: 100%; height: 2px;">
+
+Your friends and colleagues are talking about something called "Bayes'
+Theorem" or "Bayes' Rule", or something called Bayesian
+reasoning.&nbsp;
+They sound really enthusiastic about it, too, so you google and find a
+webpage about Bayes' Theorem and...<br> 
+<br> 
+It's this equation.&nbsp; That's all.&nbsp; Just one equation.&nbsp;
+The page you found gives a definition of it, but it doesn't say what it
+is, or why it's useful, or why your friends would be interested in
+it.&nbsp; It looks like this random statistics thing.<br> 
+<br> 
+So you came here.&nbsp; Maybe you don't understand what the equation
+says.&nbsp; Maybe you understand it in theory, but every time you try
+to
+apply it in practice you get mixed up trying to remember the difference
+between <span style="font-family: monospace;">p(a|x)</span> and <span 
+ style="font-family: monospace;">p(x|a)</span>, and whether <span 
+ style="font-family: monospace;">p(a)*p(x|a)</span> belongs in the
+numerator or the denominator.&nbsp; Maybe you see the theorem, and you
+understand the theorem, and you can use the theorem, but you can't
+understand why your friends and/or research colleagues seem to think
+it's the secret of the universe.&nbsp; Maybe your friends are all
+wearing Bayes' Theorem T-shirts, and you're feeling left out.&nbsp;
+Maybe you're a girl looking for a boyfriend, but the boy you're
+interested in refuses to date anyone who "isn't Bayesian".&nbsp; What
+matters is that Bayes is cool, and if you don't know Bayes, you aren't
+cool.<br> 
+<br> 
+Why does a mathematical concept generate this strange enthusiasm in its
+students?&nbsp; What is the so-called Bayesian Revolution now sweeping
+through the sciences, which claims to subsume even the experimental
+method itself as a special case?&nbsp; What is the secret that the
+adherents of Bayes know?&nbsp; What is the light that they have seen?<br> 
+<br> 
+Soon you will know.&nbsp; Soon you will be one of us.<br> 
+<br> 
+While there are a few existing online explanations of Bayes' Theorem,
+my experience with trying to introduce people to Bayesian reasoning is
+that the existing online explanations are too abstract.&nbsp; Bayesian
+reasoning is very<span style="font-style: italic;"></span> <span 
+ style="font-style: italic;">counterintuitive.</span>&nbsp; People do
+not employ Bayesian reasoning intuitively, find it very difficult to
+learn Bayesian reasoning when tutored, and rapidly forget Bayesian
+methods once the tutoring is over.&nbsp; This holds equally true for
+novice students and highly trained professionals in a field.&nbsp;
+Bayesian reasoning is apparently one of those things which, like
+quantum
+mechanics or the Wason Selection Test, is inherently difficult for
+humans to grasp with our built-in mental faculties.<br> 
+<br> 
+Or so they claim.&nbsp; Here you will find an attempt to offer an <span 
+ style="font-style: italic;">intuitive</span> explanation of Bayesian
+reasoning - an excruciatingly gentle introduction that invokes all the
+human ways of grasping numbers, from natural frequencies to spatial
+visualization.&nbsp; The intent is to convey, not abstract rules for
+manipulating numbers, but what the numbers mean, and why the rules are
+what they are (and cannot possibly be anything else).&nbsp; When you
+are
+finished reading this page, you will see Bayesian problems in your
+dreams.<br> 
+<br> 
+And let's begin.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+Here's a story problem about a situation that doctors often encounter:<br> 
+<br> 
+<div style="margin-left: 40px;">1% of women at age forty who
+participate in routine screening have breast cancer.&nbsp; 80% of women
+with breast cancer will get positive mammographies.&nbsp; 9.6% of women
+without breast cancer will also get positive mammographies.&nbsp; A
+woman in this age group had a positive mammography in a routine
+screening.&nbsp; What is the probability that she actually has breast
+cancer?<br> 
+</div> 
+<br> 
+What do you think the answer is?&nbsp; If you haven't encountered this
+kind of problem before, please take a moment to come up with your own
+answer before continuing.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+Next, suppose I told you that most doctors get the same wrong answer on
+this problem - usually, only around 15% of doctors get it right.&nbsp;
+("Really?&nbsp; 15%?&nbsp; Is that a real number, or an urban legend
+based on an Internet poll?"&nbsp; It's a real number.&nbsp; See
+Casscells, Schoenberger, and Grayboys 1978; Eddy 1982; Gigerenzer and
+Hoffrage 1995; and many other studies.&nbsp; It's a surprising result
+which is easy to replicate, so it's been extensively replicated.)<br> 
+<br> 
+Do you want to think about your answer again?&nbsp; Here's a Javascript
+calculator if you need one.&nbsp; This calculator has the usual
+precedence rules; multiplication before addition and so on.&nbsp; If
+you're not sure, I suggest using parentheses.<br> 
+<br> 
+<form> Calculator: <input type="text" name="expression"
+ value="(1 + 2) * 3 + 4" onchange="compute(this.form)"
+ onkeyup="compute(this.form)" size="50"> Result: <input type="text"
+ name="result" size="5" value=""> <input type="button"
+ name="computeButton" value="Compute!" onclick="compute(this.form)"> </form> 
+<hr style="width: 100%; height: 2px;"><br> 
+On the story problem above, most doctors estimate the probability to be
+between 70% and 80%, which is wildly incorrect.<br> 
+<br> 
+Here's an alternate version of the problem on which doctors fare
+somewhat better:<br> 
+<br> 
+<div style="margin-left: 40px;">10 out of 1000 women at age forty who
+participate in routine screening have breast cancer.&nbsp; 800 out of
+1000 women with breast cancer will get positive mammographies.&nbsp; 96
+out of 1000 women without breast cancer will also get positive
+mammographies.&nbsp; If 1000 women in this age group undergo a routine
+screening, about what fraction of women with positive mammographies
+will
+actually have breast cancer?<br> 
+</div> 
+<br> 
+<form> Calculator: <input type="text" name="expression"
+ value="(1 + 2) * 3 + 4" onchange="compute(this.form)"
+ onkeyup="compute(this.form)" size="50"> Result: <input name="result"
+ size="5" value=""> <input type="button" name="computeButton"
+ value="Compute!" onclick="compute(this.form)"> </form> 
+<hr style="width: 100%; height: 2px;"><br> 
+And finally, here's the problem on which doctors fare best of all, with
+46% - nearly half - arriving at the correct answer:<br> 
+<div style="margin-left: 40px;"><br> 
+100 out of 10,000 women at age forty who participate in routine
+screening have breast cancer.&nbsp; 80 of every 100 women with breast
+cancer will get a positive mammography.&nbsp; 950 out of&nbsp; 9,900
+women without breast cancer will also get a positive mammography.&nbsp;
+If 10,000 women in this age group undergo a routine screening, about
+what fraction of women with positive mammographies will actually have
+breast cancer?<br> 
+</div> 
+<br> 
+<form> Calculator: <input type="text" name="expression"
+ value="(1 + 2) * 3 + 4" onchange="compute(this.form)"
+ onkeyup="compute(this.form)" size="50"> Result: <input name="result"
+ size="5"> <input type="button" name="computeButton" value="Compute!"
+ onclick="compute(this.form)"> </form> 
+<hr style="width: 100%; height: 2px;"><br> 
+The correct answer is 7.8%, obtained as follows:&nbsp; Out of 10,000
+women, 100 have breast cancer; 80 of those 100 have positive
+mammographies.&nbsp; From the same 10,000 women, 9,900 will not have
+breast cancer and of those 9,900 women, 950 will also get positive
+mammographies.&nbsp; This makes the total number of women with positive
+mammographies 950+80 or 1,030.&nbsp; Of those 1,030 women with positive
+mammographies, 80 will have cancer.&nbsp; Expressed as a proportion,
+this is 80/1,030 or 0.07767 or 7.8%.<br> 
+<br> 
+To put it another way, before the mammography screening, the 10,000
+women can be divided into two groups:<br> 
+<ul> 
+  <li>Group 1:&nbsp; 100 women <span style="font-style: italic;">with </span>breast
+cancer.</li> 
+  <li>Group 2:&nbsp; 9,900 women <span style="font-style: italic;">without </span>breast
+cancer.<br> 
+  </li> 
+</ul> 
+Summing these two groups gives a total of 10,000 patients, confirming
+that none have been lost in the math.&nbsp; After the mammography, the
+women can be divided into four groups:<br> 
+<ul> 
+  <li>Group A:&nbsp; 80 women <span style="font-style: italic;">with </span>breast
+cancer, and a <span style="font-style: italic;">positive </span>mammography.<br> 
+  </li> 
+  <li>Group B:&nbsp; 20 women <span style="font-style: italic;">with </span>breast
+cancer, and a <span style="font-style: italic;">negative </span>mammography.<br> 
+  </li> 
+  <li>Group C:&nbsp; 950 women <span style="font-style: italic;">without</span>&nbsp;
+breast cancer, and a <span style="font-style: italic;">positive </span>mammography.<br> 
+  </li> 
+  <li>Group D:&nbsp; 8,950 women <span style="font-style: italic;">without</span> 
+breast cancer, and a <span style="font-style: italic;">negative</span> 
+mammography.<br> 
+  </li> 
+</ul> 
+<form> Calculator: <input name="expression"
+ value="80 + 20 + 950 + 8950" onchange="compute(this.form)"
+ onkeyup="compute(this.form)" size="50"> 
+Result: <input name="result" size="5"> <input type="button"
+ name="computeButton" value="Compute!" onclick="compute(this.form)"> </form> 
+As you can check, the sum of all four groups is still 10,000.&nbsp; The
+sum of groups A and B, the groups with breast cancer, corresponds to
+group 1; and the sum of groups C and D, the groups without breast
+cancer, corresponds to group 2; so administering a mammography does not
+actually <span style="font-style: italic;">change</span> the number of
+women with breast cancer.&nbsp; The proportion of the cancer patients
+(A
++ B) within the complete set of patients (A + B + C + D) is the same as
+the 1% prior chance that a woman has cancer: (80 + 20) / (80 + 20 + 950
++ 8950) = 100 / 10000 = 1%.<br> 
+<br> 
+The proportion of cancer patients with positive results, within the
+group of <span style="font-style: italic;">all</span> patients with
+positive results, is the proportion of (A) within (A + C):&nbsp;&nbsp;
+80 / (80 + 950) = 80 / 1030 = 7.8%.&nbsp; If you administer a
+mammography to 10,000 patients, then out of the 1030 with positive
+mammographies, 80 of those positive-mammography patients will have
+cancer.&nbsp; This is the correct answer, the answer a doctor should
+give a positive-mammography patient if she asks about the chance she
+has
+breast cancer; if thirteen patients ask this question, roughly 1 out of
+those 13 will have cancer.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+The most common mistake is to ignore the original fraction of women
+with breast cancer, and the fraction of women without breast cancer who
+receive false positives, and focus only on the fraction of women with
+breast cancer who get positive results.&nbsp; For example, the vast
+majority of doctors in these studies seem to have thought that if
+around
+80% of women with breast cancer have positive mammographies, then the
+probability of a women with a positive mammography having breast cancer
+must be around 80%.<br> 
+<br> 
+Figuring out the final answer always requires <span 
+ style="font-style: italic;">all three</span> pieces of information -
+the percentage of women with breast cancer, the percentage of women
+without breast cancer who receive false positives, and the percentage
+of
+women with breast cancer who receive (correct) positives.<br> 
+<br> 
+To see that the final answer always depends on the original fraction of
+women with breast cancer, consider an alternate universe in which only
+one woman out of a million has breast cancer.&nbsp; Even if mammography
+in this world&nbsp;<span style="font-style: italic;"></span>detects
+breast cancer in 8 out of 10 cases, while returning a false positive on
+a woman without breast cancer in only 1 out of 10 cases, there will
+still be a hundred thousand false positives for every real case of
+cancer detected.&nbsp; The original probability that a woman has cancer
+is so extremely low that, although a positive result on the mammography
+does <span style="font-style: italic;">increase</span> the estimated
+probability, the probability isn't increased to certainty or even "a
+noticeable chance"; the probability goes from 1:1,000,000 to 1:100,000.<br> 
+<br> 
+Similarly, in an alternate universe where only one out of a million
+women does <span style="font-style: italic;">not</span> have breast
+cancer, a positive result on the patient's mammography obviously
+doesn't
+mean that she has an 80% chance of having breast cancer!&nbsp; If this
+were the case her estimated probability of having cancer would have
+been
+revised drastically <span style="font-style: italic;">downward</span> 
+after she got a <span style="font-style: italic;">positive</span> 
+result
+on her mammography - an 80% chance of having cancer is a lot less than
+99.9999%!&nbsp; If you administer mammographies to ten million women in
+this world, around eight million women with breast cancer will get
+correct positive results, while one woman without breast cancer will
+get
+false positive results.&nbsp; Thus, if you got a positive mammography
+in
+this alternate universe, your chance of having cancer would go from
+99.9999% up to 99.999987%.&nbsp; That is, your chance of being healthy
+would go from 1:1,000,000 down to 1:8,000,000.<br> 
+<br> 
+These two extreme examples help demonstrate that the mammography result
+doesn't <span style="font-style: italic;">replace</span> your old
+information about the patient's chance of having cancer; the
+mammography <span style="font-style: italic;">slides</span> the
+estimated probability in
+the direction of the result.&nbsp; A positive result slides the
+original
+probability upward; a negative result slides the probability
+downward.&nbsp; For example, in the original problem where 1% of the
+women have cancer, 80% of women with cancer get positive mammographies,
+and 9.6% of women without cancer get positive mammographies, a positive
+result on the mammography <span style="font-style: italic;">slides </span>the
+1% chance upward to 7.8%.<br> 
+<br> 
+Most people encountering problems of this type for the first time carry
+out the mental operation of <span style="font-style: italic;">replacing</span> 
+the original 1% probability with the 80% probability that a woman with
+cancer gets a positive mammography.&nbsp; It may seem like a good idea,
+but it just doesn't work.&nbsp; "The probability that a woman with a
+positive mammography has breast cancer" is not at all the same thing as
+"the probability that a woman with breast cancer has a positive
+mammography"; they are as unlike as apples and cheese.&nbsp; Finding
+the
+final answer, "the probability that a woman with a positive mammography
+has breast cancer", uses all three pieces of problem information - "the
+prior probability that a woman has breast cancer", "the probability
+that
+a woman with breast cancer gets a positive mammography", and "the
+probability that a woman without breast cancer gets a positive
+mammography".<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+<table align="center"
+ style="text-align: left; margin-left: auto; margin-right: auto; width: 80%; height: 1%;"
+ border="2" cellpadding="2"> 
+  <tbody> 
+    <tr> 
+      <td 
+ style="background-color: rgb(255, 255, 153); width: 0%; text-align: center; vertical-align: top;"><b>Fun<br> 
+Fact!</b> </td> 
+      <td style="background-color: rgb(204, 255, 255);"><b>Q.&nbsp;
+What is the Bayesian Conspiracy?</b><br> 
+      <span style="font-weight: bold;">A.&nbsp; </span>The Bayesian
+Conspiracy is a multinational, interdisciplinary, and shadowy group of
+scientists that controls publication, grants, tenure, and the illicit
+traffic in grad students.&nbsp; The best way to be accepted into the
+Bayesian Conspiracy is to join the Campus Crusade for Bayes in high
+school or college, and gradually work your way up to the inner
+circles.&nbsp; It is rumored that at the upper levels of the Bayesian
+Conspiracy exist nine silent figures known only as the Bayes Council. </td> 
+    </tr> 
+  </tbody> 
+</table> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+To see that the final answer always depends on the chance that a woman <span 
+ style="font-style: italic;">without</span> breast cancer gets a
+positive mammography, consider an alternate test, mammography+.&nbsp;
+Like the original test, mammography+ returns positive for 80% of women
+with breast cancer.&nbsp; However, mammography+ returns a positive
+result for only one out of a million women without breast cancer -
+mammography+ has the same rate of false negatives, but a vastly lower
+rate of false positives.&nbsp; Suppose a patient receives a positive
+mammography+.&nbsp; What is the chance that this patient has breast
+cancer?&nbsp; Under the new test, it is a virtual certainty - 99.988%,
+i.e., a 1 in 8082 chance of being healthy.<br> 
+<br> 
+<form> Calculator: <input name="expression"
+ value="80 / [80 + (9900 * 0.000001)]" onchange="compute(this.form)"
+ onkeyup="compute(this.form)" size="50"> Result: <input name="result"
+ size="5"> <input type="button" name="computeButton" value="Compute!"
+ onclick="compute(this.form)"><br> 
+</form> 
+Remember, at this point, that neither mammography nor mammography+
+actually <span style="font-style: italic;">change</span> the number of
+women who have breast cancer.&nbsp; It may seem like "There is a
+virtual
+certainty you have breast cancer" is a terrible thing to say, causing
+much distress and despair; that the more hopeful verdict of the
+previous
+mammography test - a 7.8% chance of having breast cancer - was much to
+be preferred.&nbsp; This comes under the heading of "Don't shoot the
+messenger".&nbsp; The number of women who really do have cancer stays
+exactly the same between the two cases.&nbsp; Only the accuracy with
+which we <span style="font-style: italic;">detect </span>cancer
+changes.&nbsp; Under the previous mammography test, 80 women with
+cancer
+(who <span style="font-style: italic;">already</span> had cancer,
+before
+the mammography) are first told that they have a 7.8% chance of having
+cancer, creating X amount of uncertainty and fear, after which more
+detailed tests will inform them that they definitely do have breast
+cancer.&nbsp; The old mammography test also involves informing 950
+women <span style="font-style: italic;">without</span> breast cancer
+that they have
+a 7.8% chance of having cancer, thus creating twelve times as much
+additional fear and uncertainty.&nbsp; The new test, mammography+, does
+<span style="font-style: italic;">not</span> give 950 women false
+positives,
+and the 80 women with cancer are told the same facts they would have
+learned eventually, only earlier and without an intervening period of
+uncertainty.&nbsp; Mammography+ is thus a better test in terms of its
+total emotional impact on patients, as well as being more
+accurate.&nbsp; Regardless of its emotional impact, it remains a fact
+that a patient with positive mammography+ has a 99.988% chance of
+having
+breast cancer.<br> 
+<br> 
+Of course, that mammography+ does <span style="font-style: italic;">not</span> 
+give 950 healthy women false positives means that all 80 of the
+patients
+with positive mammography+ will be patients with breast cancer.&nbsp;
+Thus, if you have a positive mammography+, your chance of having cancer
+is a virtual certainty.&nbsp; It is <span style="font-style: italic;">because</span> 
+mammography+ does not generate as many false positives (and needless
+emotional stress), that the (much smaller) group of patients who <span 
+ style="font-style: italic;">do</span> get positive results will be
+composed almost entirely of genuine cancer patients (who have bad news
+coming to them regardless of when it arrives).<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+Similarly, let's suppose that we have a <span 
+ style="font-style: italic;">less</span> discriminating test,
+mammography*, that still has a 20% rate of false negatives, as in the
+original case.&nbsp; However, mammography* has an 80% rate of false
+positives.&nbsp; In other words, a patient <span 
+ style="font-style: italic;">without </span>breast cancer has an 80%
+chance of getting a false positive result on her mammography*
+test.&nbsp; If we suppose the same 1% prior probability that a patient
+presenting herself for screening has breast cancer, what is the chance
+that a patient with positive mammography* has cancer?<br> 
+<ul> 
+  <li>Group 1:&nbsp; 100 patients with breast cancer.</li> 
+  <li>Group 2:&nbsp; 9,900 patients without breast cancer.<br> 
+  </li> 
+</ul> 
+After mammography* screening:<br> 
+<ul> 
+  <li>Group A:&nbsp; 80 patients with breast cancer and a "positive"
+mammography*.</li> 
+  <li>Group B:&nbsp; 20 patients with breast cancer and a "negative"
+mammography*.</li> 
+  <li>Group C:&nbsp; 7920 patients without breast cancer and a
+"positive" mammography*.</li> 
+  <li>Group D:&nbsp; 1980 patients without breast cancer and a
+"negative" mammography*.<br> 
+  </li> 
+</ul> 
+<form> Calculator: <input name="expression" value="80 / (80 + 7920)"
+ onchange="compute(this.form)" onkeyup="compute(this.form)" size="50"> 
+Result: <input name="result" size="5"> <input type="button"
+ name="computeButton" value="Compute!" onclick="compute(this.form)"><br> 
+</form> 
+The result works out to 80 / 8,000, or 0.01.&nbsp; This is exactly the
+same as the 1% prior probability that a patient has breast
+cancer!&nbsp;
+A "positive" result on mammography* doesn't change the probability that
+a woman has breast cancer at all.&nbsp; You can similarly verify that a
+"negative" mammography* also counts for nothing.&nbsp; And in fact it <span 
+ style="font-style: italic;">must</span> be this way, because if
+mammography* has an 80% hit rate for patients with breast cancer, and
+also an 80% rate of false positives for patients without breast cancer,
+then mammography* is completely <span style="font-style: italic;">uncorrelated</span> 
+with breast cancer.&nbsp; There's no reason to call one result
+"positive" and one result "negative"; in fact, there's no reason to
+call
+the test a "mammography".&nbsp; You can throw away your expensive
+mammography* equipment and replace it with a random number generator
+that outputs a red light 80% of the time and a green light 20% of the
+time; the results will be the same.&nbsp; Furthermore, there's no
+reason
+to call the red light a "positive" result or the green light a
+"negative" result.&nbsp; You could have a green light 80% of the time
+and a red light 20% of the time, or a blue light 80% of the time and a
+purple light 20% of the time, and it would all have the same bearing on
+whether the patient has breast cancer: i.e., no bearing whatsoever.<br> 
+<br> 
+We can show algebraically that this <span style="font-style: italic;">must</span> 
+hold for any case where the chance of a true positive and the chance of
+a false positive are the same, i.e:<br> 
+<ul> 
+  <li>Group 1:&nbsp; 100 patients with breast cancer.</li> 
+  <li>Group 2:&nbsp; 9,900 patients without breast cancer.<br> 
+  </li> 
+</ul> 
+Now consider a test where the probability of a true positive and the
+probability of a false positive are the same number M (in the example
+above, M=80% or M = 0.8):<br> 
+<ul> 
+  <li>Group A:&nbsp; 100*M patients with breast cancer and a "positive"
+result.<br> 
+  </li> 
+  <li>Group B:&nbsp; 100*(1 - M) patients with breast cancer and a
+"negative" result.</li> 
+  <li>Group C:&nbsp; 9,900*M patients without breast cancer and a
+"positive" result.</li> 
+  <li>Group D:&nbsp; 9,900*(1 - M) patients without breast cancer and a
+"negative" result.<br> 
+  </li> 
+</ul> 
+The proportion of patients with breast cancer, within the group of
+patients with a "positive" result, then equals 100*M / (100*M + 9900*M)
+= 100 / (100 + 9900) = 1%.&nbsp; This holds true regardless of whether
+M
+is 80%, 30%, 50%, or 100%.&nbsp; If we have a mammography* test that
+returns "positive" results for 90% of patients with breast cancer and
+returns "positive" results for 90% of patients without breast cancer,
+the proportion of "positive"-testing patients who have breast cancer
+will still equal the original proportion of patients with breast
+cancer,
+i.e., 1%.<br> 
+<br> 
+You can run through the same algebra, replacing the prior proportion of
+patients with breast cancer with an arbitrary percentage P:<br> 
+<ul> 
+  <li>Group 1:&nbsp; Within some number of patients, a fraction P have
+breast cancer.</li> 
+  <li>Group 2:&nbsp; Within some number of patients, a fraction (1 - P)
+do not have breast cancer.</li> 
+</ul> 
+After a "cancer test" that returns "positive" for a fraction M of
+patients with breast cancer, and also returns "positive" for the same
+fraction M of patients <span style="font-style: italic;">without</span> 
+cancer:<br> 
+<ul> 
+  <li>Group A:&nbsp; P*M patients have breast cancer and a "positive"
+result.<br> 
+  </li> 
+  <li>Group B:&nbsp; P*(1 - M) patients have breast cancer and a
+"negative" result.</li> 
+  <li>Group C:&nbsp; (1 - P)*M patients have no breast cancer and a
+"positive" result.</li> 
+  <li>Group D:&nbsp; (1 - P)*(1 - M) patients have no breast cancer and
+a "negative" result.<br> 
+  </li> 
+</ul> 
+The chance that a patient with a "positive" result has breast cancer is
+then the proportion of group A within the combined group A + C, or P*M
+/
+[P*M + (1 - P)*M], which, cancelling the common factor M from the
+numerator and denominator, is P / [P + (1 - P)] or P / 1 or just
+P.&nbsp; If the rate of false positives is the same as the rate of true
+positives, you always have the same probability after the test as when
+you started.<br> 
+<br> 
+Which is common sense.&nbsp; Take, for example, the "test" of flipping
+a coin; if the coin comes up heads, does it tell you anything about
+whether a patient has breast cancer?&nbsp; No; the coin has a 50%
+chance
+of coming up heads if the patient has breast cancer, and also a 50%
+chance of coming up heads if the patient does not have breast
+cancer.&nbsp; Therefore there is no reason to call either heads or
+tails
+a "positive" result.&nbsp; It's not the probability being "50/50" that
+makes the coin a bad test; it's that the two probabilities, for "cancer
+patient turns up heads" and "healthy patient turns up heads", are the
+same.&nbsp; If the coin was slightly biased, so that it had a 60%
+chance
+of coming up heads, it still wouldn't be a cancer test - what makes a
+coin a poor test is not that it has a 50/50 chance of coming up heads
+if
+the patient has cancer, but that it also has a 50/50 chance of coming
+up
+heads if the patient does not have cancer.&nbsp; You can even use a
+test
+that comes up "positive" for cancer patients 100% of the time, and
+still
+not learn anything.&nbsp; An example of such a test is "Add 2 + 2 and
+see if the answer is 4."&nbsp; This test returns positive 100% of the
+time for patients with breast cancer.&nbsp; It also returns positive
+100% of the time for patients without breast cancer.&nbsp; So you learn
+nothing.<br> 
+<br> 
+The original proportion of patients with breast cancer is known as the <span 
+ style="font-style: italic;">prior probability.</span>&nbsp; The chance
+that a patient with breast cancer gets a positive mammography, and the
+chance that a patient without breast cancer gets a positive
+mammography,
+are known as the two <span style="font-style: italic;">conditional
+probabilities.</span>&nbsp; Collectively, this initial information is
+known as <span style="font-style: italic;">the priors</span><span 
+ style="font-style: italic;">.</span>&nbsp; The final answer - the
+estimated probability that a patient has breast cancer, given that we
+know she has a positive result on her mammography - is known as the <span 
+ style="font-style: italic;">revised probability</span> or the <span 
+ style="font-style: italic;">posterior probability.</span>&nbsp; What
+we've just shown is that <span style="font-style: italic;">if the two
+conditional probabilities are equal, the posterior probability equals
+the prior probability.</span><br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+<table align="center"
+ style="text-align: left; margin-left: auto; margin-right: auto; width: 80%; height: 1%;"
+ border="2" cellpadding="2"> 
+  <tbody> 
+    <tr> 
+      <td 
+ style="background-color: rgb(255, 255, 153); width: 0%; text-align: center; vertical-align: top;"><b>Fun<br> 
+Fact!</b> </td> 
+      <td style="background-color: rgb(204, 255, 255);"> <span 
+ style="font-weight: bold;">Q.&nbsp; How can I find the priors for a
+problem?</span><br> 
+      <span style="font-weight: bold;">A.</span>&nbsp; Many commonly
+used priors are listed in the <span style="font-style: italic;">Handbook
+of Chemistry and Physics.</span><br> 
+      <br> 
+      <span style="font-weight: bold;"> Q.&nbsp; Where do priors </span><span 
+ style="font-style: italic; font-weight: bold;">originally</span><span 
+ style="font-weight: bold;"> come from?</span><br> 
+      <span style="font-weight: bold;">A.</span>&nbsp; Never ask that
+question.<br> 
+      <br> 
+      <span style="font-weight: bold;"> Q.&nbsp; Uh huh.&nbsp; Then
+where do scientists get their priors?</span><br 
+ style="font-weight: bold;"> 
+      <span style="font-weight: bold;"> A.</span>&nbsp; Priors for
+scientific problems are established by annual vote of the AAAS.&nbsp;
+In
+recent years the vote has become fractious and controversial, with
+widespread acrimony, factional polarization, and several outright
+assassinations.&nbsp; This may be a front for infighting within the
+Bayes Council, or it may be that the disputants have too much spare
+time.&nbsp; No one is really sure.<br> 
+      <br> 
+      <span style="font-weight: bold;"> Q.&nbsp; I see.&nbsp; And where
+does everyone else get their priors?</span><br 
+ style="font-weight: bold;"> 
+      <span style="font-weight: bold;"> A.</span>&nbsp; They download
+their priors from Kazaa.<br> 
+      <br> 
+      <span style="font-weight: bold;"> Q.&nbsp; What if the priors I
+want aren't available on Kazaa?</span><br style="font-weight: bold;"> 
+      <span style="font-weight: bold;"> A.</span>&nbsp; There's a
+small,
+cluttered antique shop in a back alley of San Francisco's
+Chinatown.&nbsp; <span style="font-style: italic;">Don't ask about the
+bronze rat.</span> </td> 
+    </tr> 
+  </tbody> 
+</table> 
+<br> 
+Actually, priors are true or false just like the final answer - they
+reflect reality and can be judged by comparing them against
+reality.&nbsp; For example, if you think that 920 out of 10,000 women
+in
+a sample have breast cancer, and the actual number is 100 out of
+10,000,
+then your priors are wrong.&nbsp; For our particular problem, the
+priors
+might have been established by three studies - a study on the case
+histories of women with breast cancer to see how many of them tested
+positive on a mammography, a study on women without breast cancer to
+see
+how many of them test positive on a mammography, and an epidemiological
+study on the prevalence of breast cancer in some specific demographic.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+Suppose that a barrel contains many small plastic eggs.&nbsp; Some eggs
+are painted red and some are painted blue.&nbsp; 40% of the eggs in the
+bin contain pearls, and 60% contain nothing.&nbsp;&nbsp; 30% of eggs
+containing pearls are painted blue, and 10% of eggs containing nothing
+are painted blue.&nbsp; What is the probability that a blue egg
+contains
+a pearl?&nbsp; For this example the arithmetic is simple enough that
+you
+may be able to do it in your head, and I would suggest trying to do so.<br> 
+<br> 
+<form> But just in case... <input type="text" name="expression"
+ value="(1 + 2) * 3 + 4" onchange="compute(this.form)"
+ onkeyup="compute(this.form)" size="50"> Result: <input name="result"
+ size="5" value=""> <input type="button" name="computeButton"
+ value="Compute!" onclick="compute(this.form)"> </form> 
+A more compact way of specifying the problem:<br> 
+<ul> 
+  <li style="font-family: monospace;">p(pearl) = 40%</li> 
+  <li style="font-family: monospace;">p(blue|pearl) = 30%</li> 
+  <li style="font-family: monospace;">p(blue|~pearl) = 10%</li> 
+  <li><span style="font-family: monospace;">p(pearl|blue) = ?</span><br> 
+  </li> 
+</ul> 
+<span style="font-family: monospace;">"~"</span> is shorthand for
+"not",
+so <span style="font-family: monospace;">~pearl</span> reads "not
+pearl".<br> 
+<br> 
+<span style="font-family: monospace;">blue|pearl</span> is shorthand
+for
+"blue given pearl" or "the probability that an egg is painted blue,
+given that the egg contains a pearl".&nbsp; One thing that's confusing
+about this notation is that the order of implication is read
+right-to-left, as in Hebrew or Arabic.&nbsp; <span 
+ style="font-family: monospace;">blue|pearl</span> means "blue<span 
+ style="font-family: monospace;">&lt;-</span>pearl", the degree to
+which pearl-ness implies blue-ness, not the degree to which blue-ness
+implies pearl-ness.&nbsp; This is confusing, but it's unfortunately the
+standard notation in probability theory.<br> 
+<br> 
+Readers familiar with quantum mechanics will have already encountered
+this peculiarity; in quantum mechanics, for example, <span 
+ style="font-family: monospace;">&lt;d|c&gt;&lt;c|b&gt;&lt;b|a&gt;</span> 
+reads as "the probability that a particle at A goes to B, then to C,
+ending up at D".&nbsp; To follow the particle, you move your eyes from
+right to left.&nbsp; Reading from left to right, <span 
+ style="font-family: monospace;">"|"</span> means "given"; reading from
+right to left, <span style="font-family: monospace;">"|"</span> means
+"implies" or "leads to".&nbsp; Thus, moving your eyes from left to
+right, <span style="font-family: monospace;">blue|pearl</span> reads
+"blue given pearl" or "the probability that an egg is painted blue,
+given that the egg contains a pearl".&nbsp; Moving your eyes from right
+to left, <span style="font-family: monospace;">blue|pearl</span> reads
+"pearl implies blue" or "the probability that an egg containing a pearl
+is painted blue".<br> 
+<br> 
+The item on the right side is what you <span 
+ style="font-style: italic;">already know</span> or the <span 
+ style="font-style: italic;">premise,</span> and the item on the left
+side is the <span style="font-style: italic;">implication</span> or <span 
+ style="font-style: italic;">conclusion.</span>&nbsp; If we have <span 
+ style="font-family: monospace;">p(blue|pearl) = 30%</span>, and we <span 
+ style="font-style: italic;">already know</span> that some egg contains
+a pearl, then we can <span style="font-style: italic;">conclude </span>there
+is a 30% chance that the egg is painted blue.&nbsp; Thus, the final
+fact we're looking for - "the chance that a blue egg contains a pearl"
+or "the probability that an egg contains a pearl, if we know the egg is
+painted blue" - reads <span style="font-family: monospace;">p(pearl|blue)</span>.<br> 
+<br> 
+Let's return to the problem.&nbsp; We have that 40% of the eggs contain
+pearls, and 60% of the eggs contain nothing.&nbsp; 30% of the eggs
+containing pearls are painted blue, so 12% of the eggs altogether
+contain pearls and are painted blue.&nbsp; 10% of the eggs containing
+nothing are painted blue, so altogether 6% of the eggs contain nothing
+and are painted blue.&nbsp; A total of 18% of the eggs are painted
+blue,
+and a total of 12% of the eggs are painted blue and contain pearls, so
+the chance a blue egg contains a pearl is 12/18 or 2/3 or around 67%.<br> 
+<br> 
+The applet below, courtesy of Christian Rovner, shows a graphic
+representation of this problem:<br> 
+(Are you having trouble seeing this applet?&nbsp; Do you see an image
+of the applet rather than the applet itself?&nbsp; Try downloading an
+updated <a href="http://www.java.com/en/index.jsp">Java</a>.)<span 
+ style="font-style: italic;"></span><br> 
+<br> 
+<iframe 
+  scrolling="no" 
+  width="550px" 
+  height="300px" 
+  frameborder="0" 
+  src="/rational/bayes/applet/1">
+  <applet code="BayesApplet.class" codebase="/assets/images/" width="550" height="300"> <img 
+ width="550" height="250" src="/assets/images/bayes-10.png"> <param name="event1"
+ value="pearl"> <param name="event2" value="blue"> <param 
+ name="event2alt" value="red"><param name="noButton1" value="true"> <param 
+ name="noGroups" value="true"> <param name="noButton2" value="true"> <param 
+ name="viewMode" value="P"> <param name="xtop" value="30"> <param 
+ name="topbar" value=""> <param name="topleft" value="pearl"> <param 
+ name="topright" value="empty"> <param name="condleft"
+ value="blue|pearl"> <param name="condleftalt" value="red|pearl"> <param 
+ name="condright" value="blue|empty"> <param name="condrightalt"
+ value="red|empty"> <param name="botbar" value=""> <param 
+ name="botbaralt" value=""> <param name="botleft" value="blue&amp;pearl"> <param 
+ name="botleftalt" value="red&amp;pearl"> <param name="botright"
+ value="blue&amp;empty"> <param name="botrightalt" value="red&amp;empty"> <param 
+ name="prior" value="0.40"> <param name="cond1" value="0.30"> <param 
+ name="cond2" value="0.10"> <param name="group1" value="Pearl eggs:"> <param 
+ name="group2" value="Empty eggs:"> <param name="groupA"
+ value="Blue pearl eggs:"> <param name="groupB" value="Red pearl eggs:"> 
+<param name="groupC" value="Blue empty eggs:"> <param name="groupD"
+ value="Red empty eggs:"> <param name="groupTotal" value="Total eggs:"> 
+<param name="totalNum" value="1000"> </applet>
+</iframe>
+ <br> 
+<br> 
+Looking at this applet, it's easier to see why the final answer depends
+on all three probabilities; it's the <span style="font-style: italic;">differential
+pressure</span> between the two conditional probabilities,&nbsp; <span 
+ style="font-family: monospace;">p(blue|pearl)</span> and <span 
+ style="font-family: monospace;">p(blue|~pearl)</span>, that <span 
+ style="font-style: italic;">slides </span>the prior probability <span 
+ style="font-family: monospace;">p(pearl)</span> to the posterior
+probability <span style="font-family: monospace;">p(pearl|blue)</span>.<br> 
+<br> 
+As before, we can see the necessity of all three pieces of information
+by considering extreme cases (feel free to type them into the
+applet).&nbsp; In a (large) barrel in which only one egg out of a
+thousand contains a pearl, knowing that an egg is painted blue slides
+the probability from 0.1% to 0.3% (instead of sliding the probability
+from 40% to 67%).&nbsp; Similarly, if 999 out of 1000 eggs contain
+pearls, knowing that an egg is blue slides the probability from 99.9%
+to
+99.966%; the probability that the egg does <span 
+ style="font-style: italic;">not</span> contain a pearl goes from
+1/1000
+to around 1/3000.&nbsp; Even when the prior probability changes, the
+differential pressure of the two conditional probabilities always
+slides
+the probability in the same <span style="font-style: italic;">direction.</span>&nbsp;
+If you learn the egg is painted blue, the probability the egg contains
+a pearl always goes <span style="font-style: italic;">up</span> - but
+it
+goes up <span style="font-style: italic;">from</span> the prior
+probability, so you need to know the prior probability in order to
+calculate the final answer.&nbsp; 0.1% goes up to 0.3%, 10% goes up to
+25%, 40% goes up to 67%, 80% goes up to 92%, and 99.9% goes up to
+99.966%.&nbsp; If you're interested in knowing how any other
+probabilities slide, you can type your own prior probability into the
+Java applet.&nbsp; You can also click and drag the dividing line
+between <span style="font-family: monospace;">pearl </span>and <span 
+ style="font-family: monospace;">~pearl</span> in the upper bar, and
+watch the posterior probability change in the bottom bar.<br> 
+<br> 
+Studies of clinical reasoning show that most doctors carry out the
+mental operation of <span style="font-style: italic;">replacing</span> 
+the original 1% probability with the 80% probability that a woman with
+cancer would get a positive mammography.&nbsp; Similarly, on the
+pearl-egg problem, most respondents unfamiliar with Bayesian reasoning
+would probably respond that the probability a blue egg contains a pearl
+is 30%, or perhaps 20% (the 30% chance of a true positive minus the 10%
+chance of a false positive).&nbsp; Even if this mental operation seems
+like a good idea at the time, it makes no sense in terms of the
+question
+asked.&nbsp; It's like the experiment in which you ask a
+second-grader:&nbsp; "If eighteen people get on a bus, and then seven
+more people get on the bus, how old is the bus driver?"&nbsp; Many
+second-graders will respond:&nbsp; "Twenty-five."&nbsp; They understand
+when they're being prompted to carry out a particular mental procedure,
+but they haven't quite connected the procedure to reality.&nbsp;
+Similarly, to find the probability that a woman with a positive
+mammography has breast cancer, it makes no sense whatsoever to <span 
+ style="font-style: italic;">replace</span> the original probability
+that the woman has cancer with the probability that a woman with breast
+cancer gets a positive mammography.&nbsp; Neither can you subtract the
+probability of a false positive from the probability of the true
+positive.&nbsp; These operations are as wildly irrelevant as adding the
+number of people on the bus to find the age of the bus driver.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+I keep emphasizing the idea that evidence <span 
+ style="font-style: italic;">slides</span> probability because of
+research that shows people tend to use spatial intutions to grasp
+numbers.&nbsp; In particular, there's interesting evidence that we have
+an innate sense of quantity that's localized to left inferior parietal
+cortex - patients with damage to this area can selectively lose their
+sense of whether 5 is less than 8, while retaining their ability to
+read, write, and so on.&nbsp; (Yes, really!)&nbsp; The parietal cortex
+processes our sense of where things are in space (roughly speaking), so
+an innate "number line", or rather "quantity line", may be responsible
+for the human sense of numbers.&nbsp; This is why I suggest visualizing
+Bayesian evidence as <span style="font-style: italic;">sliding</span> 
+the probability along the number line; my hope is that this will
+translate Bayesian reasoning into something that makes sense to innate
+human brainware.&nbsp; (That, really, is what an "intuitive
+explanation" <span style="font-style: italic;">is.</span>)&nbsp; For
+more information,
+see Stanislas Dehaene's <span style="font-style: italic;">The Number
+Sense.<br> 
+<br> 
+</span> 
+<hr style="width: 100%; height: 2px;"><br> 
+A study by Gigerenzer and Hoffrage in 1995 showed that some ways of
+phrasing story problems are much more evocative of correct Bayesian
+reasoning.&nbsp; The <span style="font-style: italic;">least</span> 
+evocative phrasing used probabilities.&nbsp; A slightly more evocative
+phrasing used frequencies instead of probabilities; the problem
+remained
+the same, but instead of saying that 1% of women had breast cancer, one
+would say that 1 out of 100 women had breast cancer, that 80 out of 100
+women with breast cancer would get a positive mammography, and so
+on.&nbsp; Why did a higher proportion of subjects display Bayesian
+reasoning on this problem?&nbsp; Probably because saying "1 out of 100
+women" encourages you to concretely visualize X women with cancer,
+leading you to visualize X women with cancer and a positive
+mammography,
+etc.<br> 
+<br> 
+The most effective presentation found so far is what's known as <span 
+ style="font-style: italic;">natural frequencies</span> - saying that
+40
+out of 100 eggs contain pearls, 12 out of 40 eggs containing pearls are
+painted blue, and 6 out of 60 eggs containing nothing are painted
+blue.&nbsp; A <span style="font-style: italic;">natural frequencies</span> 
+presentation is one in which the information about the prior
+probability
+is included in presenting the conditional probabilities.&nbsp; If you
+were just learning about the eggs' conditional probabilities through
+natural experimentation, you would - in the course of cracking open a
+hundred eggs - crack open around 40 eggs containing pearls, of which 12
+eggs would be painted blue, while cracking open 60 eggs containing
+nothing, of which about 6 would be painted blue.&nbsp; In the course of
+learning the conditional probabilities, you'd see examples of blue eggs
+containing pearls about twice as often as you saw examples of blue eggs
+containing nothing.<span style="font-style: italic;"></span><br> 
+<br> 
+It may seem like presenting the problem in this way is "cheating", and
+indeed if it were a story problem in a math book, it probably <span 
+ style="font-style: italic;">would</span> be cheating.&nbsp; However,
+if
+you're talking about real doctors, you <span 
+ style="font-style: italic;">want</span> 
+to cheat; you <span style="font-style: italic;">want</span> the
+doctors
+to draw the right conclusions as easily as possible.&nbsp; The obvious
+next move would be to present all medical statistics in terms of
+natural
+frequencies.&nbsp; Unfortunately, while natural frequencies are a step
+in the right direction, it probably won't be enough.&nbsp; When
+problems
+are presented in natural frequences, the proportion of people using
+Bayesian reasoning rises to around half.&nbsp; A big improvement, but
+not big enough when you're talking about real doctors and real patients.<span 
+ style="font-style: italic;"></span><br> 
+<br> 
+A presentation of the problem in <span style="font-style: italic;">natural
+frequencies</span> might be visualized like this:<br> 
+<br> 
+<iframe 
+  scrolling="no" 
+  width="550px" 
+  height="300px" 
+  frameborder="0" 
+  src="/rational/bayes/applet/2">
+  <applet code="BayesApplet.class" codebase="/assets/images/" width="550" height="300"> <img 
+ width="550" height="250" src="/assets/images/bayes-20.png"> <param name="xtop"
+ value="30"><param name="noGroups" value="true"> <param name="event1"
+ value="pearl"> <param name="event2" value="blue"> <param 
+ name="event2alt" value="red"> <param name="topbar" value="all eggs"> <param 
+ name="topleft" value="pearl"> <param name="topright" value="empty"> <param 
+ name="condleft" value="blue|pearl"> <param name="condleftalt"
+ value="red|pearl"> <param name="condright" value="blue|empty"> <param 
+ name="condrightalt" value="red|empty"> <param name="botbar"
+ value="all blue eggs"> <param name="botbaralt" value="all red eggs"> <param 
+ name="botleft" value="blue&amp;pearl"> <param name="botleftalt"
+ value="red&amp;pearl"> <param name="botright" value="blue&amp;empty"> <param 
+ name="botrightalt" value="red&amp;empty"> <param name="prior" value="0.40"> 
+<param name="cond1" value="0.30"> <param name="cond2" value="0.10"> <param 
+ name="group1" value="Pearl eggs:"> <param name="group2"
+ value="Empty eggs:"> <param name="groupA" value="Blue pearl eggs:"> <param 
+ name="groupB" value="Red pearl eggs:"> <param name="groupC"
+ value="Blue empty eggs:"> <param name="groupD" value="Red empty eggs:"> 
+<param name="groupTotal" value="Total eggs:"> <param name="totalNum"
+ value="1000"> </applet>
+</iframe>
+ <br> 
+<br> 
+In the frequency visualization, the <span style="font-style: italic;">selective
+attrition</span> of the two conditional probabilities changes the <span 
+ style="font-style: italic;">proportion</span> of eggs that contain
+pearls.&nbsp; The bottom bar is shorter than the top bar, just as the
+number of eggs painted blue is less than the total number of
+eggs.&nbsp;
+The probability graph shown earlier is really just the frequency graph
+with the bottom bar "renormalized", stretched out to the same length as
+the top bar.&nbsp; In the frequency applet you can change the
+conditional probabilities by clicking and dragging the left and right
+edges of the graph.&nbsp; (For example, to change the conditional
+probability <span style="font-family: monospace;">blue|pearl</span>,
+click and drag the line on the left that stretches from the left edge
+of
+the top bar to the left edge of the bottom bar.)<br> 
+<br> 
+In the probability applet, you can see that when the conditional
+probabilities are equal, there's no <span style="font-style: italic;">differential</span> 
+pressure - the arrows are the same size - so the prior probability
+doesn't slide between the top bar and the bottom bar.&nbsp; But the
+bottom bar in the probability applet is just a renormalized (stretched
+out) version of the bottom bar in the frequency applet, and the
+frequency applet shows <span style="font-style: italic;">why</span> 
+the
+probability doesn't slide if the two conditional probabilities are
+equal.&nbsp; Here's a case where the prior proportion of pearls remains
+40%, and the proportion of pearl eggs painted blue remains 30%, but the
+number of empty eggs painted blue is also 30%:<br> 
+<br> 
+<iframe 
+  scrolling="no" 
+  width="700px" 
+  height="300px" 
+  frameborder="0" 
+  src="/rational/bayes/applet/3">
+  <applet code="BayesApplet.class" codebase="/assets/images/" width="700" height="300"> <img 
+ width="700" height="250" src="/assets/images/bayes-30.png"> <param name="likelihood"
+ value="true"> <param name="event2alt" value="red"> <param 
+ name="event1" value="pearl"> <param name="event2" value="blue"> <param 
+ name="topbar" value="all eggs"> <param name="topleft" value="pearl"> <param 
+ name="topright" value="empty"> <param name="condleft"
+ value="blue|pearl"> <param name="condleftalt" value="red|pearl"> <param 
+ name="condright" value="blue|empty"> <param name="condrightalt"
+ value="red|empty"> <param name="botbar" value="all blue eggs"> <param 
+ name="botbaralt" value="all red eggs"> <param name="botleft"
+ value="blue&amp;pearl"> <param name="botleftalt" value="red&amp;pearl"> <param 
+ name="botright" value="blue&amp;empty"> <param name="botrightalt"
+ value="red&amp;empty"> <param name="prior" value="0.40"> <param 
+ name="cond1" value="0.30"> <param name="cond2" value="0.30"> <param 
+ name="group1" value="Pearl eggs:"> <param name="group2"
+ value="Empty eggs:"> <param name="groupA" value="Blue pearl eggs:"> <param 
+ name="groupB" value="Red pearl eggs:"> <param name="groupC"
+ value="Blue empty eggs:"> <param name="groupD" value="Red empty eggs:"> 
+<param name="groupTotal" value="Total eggs:"> <param name="totalNum"
+ value="1000"> </applet>
+</iframe> 
+ <br> 
+<br> 
+If you diminish two shapes by the same factor, their relative
+proportion will be the same as before.&nbsp; If you diminish the left
+section of the top bar by the same factor as the right section, then
+the
+bottom bar will have the same proportions as the top bar - it'll just
+be
+smaller.&nbsp; If the two conditional probabilities are equal, learning
+that the egg is blue doesn't change the probability that the egg
+contains a pearl - for the same reason that similar triangles have
+identical angles; geometric figures don't change shape when you shrink
+them by a constant factor.<br> 
+<br> 
+In this case, you might as well just say that <span 
+ style="font-style: italic;">30% of eggs are painted blue,</span> since
+the probability of an egg being painted blue is independent of whether
+the egg contains a pearl.&nbsp; Applying a "test" that is statistically
+independent of its condition just shrinks the sample size.&nbsp; In
+this
+case, requiring that the egg be painted blue doesn't shrink the group
+of
+eggs with pearls any more or less than it shrinks the group of eggs
+without pearls.&nbsp; It just shrinks the total number of eggs in the
+sample.<span style="font-style: italic;"></span><br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+<table align="center"
+ style="text-align: left; margin-left: auto; margin-right: auto;"
+ border="2" cellpadding="2"> 
+  <tbody> 
+    <tr> 
+      <td 
+ style="background-color: rgb(255, 255, 153); width: 0%; text-align: center; vertical-align: top;"><b>Fun<br> 
+Fact!</b> </td> 
+      <td style="background-color: rgb(204, 255, 255);"><b>Q.&nbsp; Why
+did the Bayesian reasoner cross the road?</b><br> 
+      <span style="font-weight: bold;">A.&nbsp; </span>You need more
+information to answer this question.<br> 
+      </td> 
+    </tr> 
+  </tbody> 
+</table> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+Here's what the original medical problem looks like when graphed.&nbsp;
+1% of women have breast cancer, 80% of those women test positive on a
+mammography, and 9.6% of women without breast cancer also receive
+positive mammographies.<br> 
+<br> 
+<iframe 
+  scrolling="no" 
+  width="730px" 
+  height="300px" 
+  frameborder="0" 
+  src="/rational/bayes/applet/4">
+  <applet code="BayesApplet.class" codebase="/assets/images/" width="730" height="300"> <img 
+ width="730" height="250" src="/assets/images/bayes-40.png"> <param name="event2alt"
+ value="negative"> <param name="event1" value="cancer"> <param 
+ name="event2" value="positive"> <param name="topbar"
+ value="all patients"> <param name="topleft" value="cancer"> <param 
+ name="topright" value="healthy"> <param name="condleft"
+ value="positive|cancer"> <param name="condleftalt"
+ value="negative|cancer"> <param name="condright"
+ value="positive|health"> <param name="condrightalt"
+ value="negative|health"> <param name="botbar"
+ value="all patients with positive results"> <param name="botbaralt"
+ value="all patients with negative results"> <param name="botleft"
+ value="p&amp;c"> <param name="botleftalt" value="n&amp;c"> <param 
+ name="botright" value="p&amp;h"> <param name="botrightalt" value="n&amp;h"> <param 
+ name="prior" value="0.01"> <param name="cond1" value="0.8"> <param 
+ name="cond2" value="0.096"> <param name="group1" value="Cancer:"> <param 
+ name="group2" value="Healthy:"> <param name="groupA"
+ value="Cancer &amp; positive:"> <param name="groupB"
+ value="Cancer &amp; negative:"> <param name="groupC"
+ value="Healthy &amp; positive:"> <param name="groupD"
+ value="Healthy &amp; negative:"> <param name="groupTotal"
+ value="Total patients:"> <param name="totalNum" value="10000"> </applet> 
+</iframe>
+<br> 
+<br> 
+As is now clearly visible, the mammography doesn't increase the
+probability a positive-testing woman has breast cancer by increasing
+the
+number of women with breast cancer - of course not; if mammography
+increased the number of women with breast cancer, no one would ever
+take
+the test!&nbsp; However, <span style="font-style: italic;">requiring </span>a
+positive mammography is a membership test that <span 
+ style="font-style: italic;">eliminates</span> many more women without
+breast cancer than women with cancer.&nbsp; The number of women without
+breast cancer diminishes by a factor of more than ten, from 9,900 to
+950, while the number of women with breast cancer is diminished only
+from 100 to 80.&nbsp; Thus, the proportion of 80 within 1,030 is much
+larger than the proportion of 100 within 10,000.&nbsp; In the graph,
+the
+left sector (representing women with breast cancer) is small, but the
+mammography test projects almost all of this sector into the bottom
+bar.&nbsp; The right sector (representing women without breast cancer)
+is large, but the mammography test projects a much smaller fraction <span 
+ style="font-style: italic;"></span>of this sector into the bottom
+bar.&nbsp; There are, indeed, fewer women with breast cancer and
+positive mammographies than there are women with breast cancer -
+obeying
+the law of probabilities which requires that <span 
+ style="font-family: monospace;">p(A) &gt;= p(A&amp;B)</span>.&nbsp;
+But even though the left sector in the bottom bar is actually slightly
+smaller, the proportion of the left sector <span 
+ style="font-style: italic;">within</span> the bottom bar is greater -
+though still not very great.&nbsp; If the bottom bar were renormalized
+to the same length as the top bar, it would look like the left sector
+had expanded.&nbsp; This is why the proportion of "women with breast
+cancer" in the group "women with positive mammographies" is higher than
+the proportion of "women with breast cancer" in the general population
+-
+although the proportion is still not very high.&nbsp; The evidence of
+the positive mammography slides the prior probability of 1% to the
+posterior probability of 7.8%.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+Suppose there's yet another variant of the mammography test,
+mammography@, which behaves as follows.&nbsp; 1% of women in a certain
+demographic have breast cancer.&nbsp; Like ordinary mammography,
+mammography@ returns positive 9.6% of the time for women without breast
+cancer.&nbsp; However, mammography@ returns positive 0% of the time
+(say, once in a billion) for women with breast cancer.&nbsp; The graph
+for this scenario looks like this:<br> 
+<br> 
+<iframe 
+  scrolling="no" 
+  width="730px" 
+  height="300px" 
+  frameborder="0" 
+  src="/rational/bayes/applet/5">
+  <applet code="BayesApplet.class" codebase="/assets/images/" width="730" height="300"> <img 
+ width="730" height="250" src="/assets/images/bayes-50.png"> <param name="event2alt"
+ value="negative"><param name="event1" value="cancer"> <param 
+ name="event2" value="positive"> <param name="topbar"
+ value="all patients"> <param name="topleft" value="cancer"> <param 
+ name="topright" value="healthy"> <param name="condleft"
+ value="positive|cancer"> <param name="condleftalt"
+ value="negative|cancer"> <param name="condright"
+ value="positive|health"> <param name="condrightalt"
+ value="negative|health"> <param name="botbar"
+ value="all patients with positive results"> <param name="botbaralt"
+ value="all patients with negative results"> <param name="botleft"
+ value="p&amp;c"> <param name="botleftalt" value="n&amp;c"> <param 
+ name="botright" value="p&amp;h"> <param name="botrightalt" value="n&amp;h"> <param 
+ name="prior" value="0.01"> <param name="cond1" value="0.0"> <param 
+ name="cond2" value="0.096"> <param name="group1" value="Cancer:"> <param 
+ name="group2" value="Healthy:"> <param name="groupA"
+ value="Cancer &amp; positive:"> <param name="groupB"
+ value="Cancer &amp; negative:"> <param name="groupC"
+ value="Healthy &amp; positive:"> <param name="groupD"
+ value="Healthy &amp; negative:"> <param name="groupTotal"
+ value="Total patients:"> <param name="totalNum" value="10000"> </applet> 
+</iframe> 
+<br> 
+<br> 
+What is it that this test actually does?&nbsp; If a patient comes to
+you with a positive result on her mammography@, what do you say?<br> 
+<br> 
+<hr style="height: 4px; width: 50%;"><br> 
+"Congratulations, you're among the rare 9.5% of the population whose
+health is definitely established by this test."<br> 
+<br> 
+Mammography@ isn't a cancer test; it's a health test!&nbsp; Few women
+without breast cancer get positive results on mammography@, but <span 
+ style="font-style: italic;">only</span> women without breast cancer
+ever get positive results at all.&nbsp; Not much of the right sector of
+the top bar projects into the bottom bar, but <span 
+ style="font-style: italic;">none</span> of the left sector projects
+into the bottom bar.&nbsp; So a positive result on mammography@ means
+you <span style="font-style: italic;">definitely </span>don't have
+breast cancer.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+What makes ordinary mammography a <span style="font-style: italic;">positive</span> 
+indicator for breast cancer is not that someone <span 
+ style="font-style: italic;">named</span> the result "positive", but
+rather that the test result stands in a specific Bayesian relation to
+the condition of breast cancer.&nbsp; You could call the same result
+"positive" or "negative" or "blue" or "red" or "James Rutherford", or
+give it no name at all, and the test result would still slide the
+probability in exactly the same way.&nbsp; To minimize confusion, a
+test
+result which slides the probability of breast cancer upward should be
+called "positive".&nbsp; A test result which slides the probability of
+breast cancer downward should be called "negative".&nbsp; If the test
+result is statistically unrelated to the presence or absence of breast
+cancer - if the two conditional probabilities are equal - then we
+shouldn't call the procedure a "cancer test"!&nbsp; The <span 
+ style="font-style: italic;">meaning</span> of the test is determined
+by
+the two conditional probabilities; any names attached to the results
+are
+simply convenient labels.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"> <br> 
+<iframe 
+  scrolling="no" 
+  width="730px" 
+  height="300px" 
+  frameborder="0" 
+  src="/rational/bayes/applet/5b">
+  <applet code="BayesApplet.class" codebase="/assets/images/" width="730" height="300"> <img 
+ width="730" height="250" src="/assets/images/bayes-50.png"> <param name="event2alt"
+ value="negative"><param name="event1" value="cancer"> <param 
+ name="event2" value="positive"> <param name="topbar"
+ value="all patients"> <param name="topleft" value="cancer"> <param 
+ name="topright" value="healthy"> <param name="condleft"
+ value="positive|cancer"> <param name="condleftalt"
+ value="negative|cancer"> <param name="condright"
+ value="positive|health"> <param name="condrightalt"
+ value="negative|health"> <param name="botbar"
+ value="all patients with positive results"> <param name="botbaralt"
+ value="all patients with negative results"> <param name="botleft"
+ value="p&amp;c"> <param name="botleftalt" value="n&amp;c"> <param 
+ name="botright" value="p&amp;h"> <param name="botrightalt" value="n&amp;h"> <param 
+ name="prior" value="0.01"> <param name="cond1" value="0.0"> <param 
+ name="cond2" value="0.096"> <param name="group1" value="Cancer:"> <param 
+ name="group2" value="Healthy:"> <param name="groupA"
+ value="Cancer &amp; positive:"> <param name="groupB"
+ value="Cancer &amp; negative:"> <param name="groupC"
+ value="Healthy &amp; positive:"> <param name="groupD"
+ value="Healthy &amp; negative:"> <param name="groupTotal"
+ value="Total patients:"> <param name="totalNum" value="10000"> </applet> 
+</iframe>
+<br> 
+<br> 
+The bottom bar for the graph of mammography@ is small; mammography@ is
+a test that's only rarely useful.&nbsp; Or rather, the test only rarely
+gives <span style="font-style: italic;">strong</span> evidence, and
+most
+of the time gives <span style="font-style: italic;">weak</span> 
+evidence.&nbsp; A negative result on mammography@ does slide
+probability
+- it just doesn't slide it very far.&nbsp; Click the "Result" switch at
+the bottom left corner of the applet to see what a <span 
+ style="font-style: italic;">negative</span> result on mammography@
+would imply.&nbsp; You might intuit that since the test <span 
+ style="font-style: italic;">could</span> have returned positive for
+health, but didn't, then the failure of the test to return positive
+must
+mean that the woman has a higher chance of having breast cancer - that
+her probability of having breast cancer must be slid upward by the
+negative result on her health test.<br> 
+<br> 
+This intuition is correct!&nbsp; The sum of the groups with negative
+results and positive results must always equal the group of all
+women.&nbsp; If the positive-testing group has "more than its fair
+share" of women <span style="font-style: italic;">without </span>breast
+cancer, there must be an at least slightly higher proportion of women <span 
+ style="font-style: italic;">with</span> cancer in the negative-testing
+group.&nbsp; A positive result is rare but very strong evidence in one
+direction, while a negative result is common but very weak evidence in
+the opposite direction.&nbsp; You might call this the Law of
+Conservation of Probability - not a standard term, but the conservation
+rule is exact.&nbsp; If you take the revised probability of breast
+cancer after a positive result, times the <span 
+ style="font-style: italic;">probability </span>of a positive result,
+and add that to the revised probability of breast cancer after a
+negative result, times the <span style="font-style: italic;">probability</span> 
+of a negative result, then you must always arrive at the prior
+probability.&nbsp; If you don't yet <span style="font-style: italic;">know</span> 
+what the test result is, the <span style="font-style: italic;">expected
+revised probability</span> after the test result arrives - taking both
+possible results into account - should always equal the prior
+probability.<br> 
+<br> 
+On ordinary mammography, the test is expected to return "positive"
+10.3% of the time - 80 positive women with cancer plus 950 positive
+women without cancer equals 1030 women with positive results.&nbsp;
+Conversely, the mammography should return negative 89.7% of the
+time:&nbsp; 100% - 10.3% = 89.7%.&nbsp; A positive result slides the
+revised probability from 1% to 7.8%, while a negative result slides the
+revised probability from 1% to 0.22%.&nbsp; So <span 
+ style="font-family: monospace;">p(cancer|positive)*p(positive)</span> 
++ <span style="font-family: monospace;">p(cancer|negative)*p(negative)
+=
+7.8%*10.3% + 0.22%*89.7% = 1% = p(cancer)</span>, as expected.<br> 
+<br> 
+<form>Calculator: <input name="expression"
+ value="7.8%*10.3% + 0.22%*89.7%" onchange="compute(this.form)"
+ onkeyup="compute(this.form)" size="50"> Result: <input name="result"
+ size="5" value=""> <input type="button" name="computeButton"
+ value="Compute!" onclick="compute(this.form)"> </form> 
+<hr style="width: 100%; height: 2px;"><br> 
+Why "as expected"?&nbsp; Let's take a look at the quantities involved:<br> 
+<br> 
+<table border="0" cellspacing="3" cellpadding="0"> 
+  <tbody> 
+    <tr valign="top"> 
+      <td 
+ style="text-align: left; background-color: rgb(255, 238, 255);"><span 
+ style="font-family: monospace;">p(cancer):</span></td> 
+      <td align="right"
+ style="font-family: monospace; background-color: rgb(255, 248, 255);">0.01</td> 
+      <td style="vertical-align: top;">&nbsp;&nbsp; <br> 
+      </td> 
+      <td style="background-color: rgb(255, 255, 238);">Group 1: 100
+women with breast cancer </td> 
+    </tr> 
+    <tr> 
+      <td align="left" style="background-color: rgb(255, 238, 255);"><span 
+ style="font-family: monospace;">p(~cancer):</span></td> 
+      <td align="right"
+ style="font-family: monospace; background-color: rgb(255, 248, 255);">0.99</td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td style="background-color: rgb(255, 255, 238);">Group 2: 9900
+women without breast cancer<br> 
+      </td> 
+    </tr> 
+    <tr> 
+      <td>&nbsp;</td> 
+      <td><br> 
+      </td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td> <br> 
+      </td> 
+    </tr> 
+    <tr valign="top"> 
+      <td align="left" style="background-color: rgb(238, 255, 255);"><span 
+ style="font-family: monospace;">p(positive|cancer):</span></td> 
+      <td align="right" style="background-color: rgb(244, 255, 255);"><span 
+ style="font-family: monospace;">80.0%</span> </td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td style="background-color: rgb(255, 255, 238);"> 80% of women
+with breast cancer have positive mammographies </td> 
+    </tr> 
+    <tr valign="top"> 
+      <td align="left" style="background-color: rgb(238, 255, 255);"><span 
+ style="font-family: monospace;">p(~positive|cancer):</span></td> 
+      <td align="right" style="background-color: rgb(244, 255, 255);"><span 
+ style="font-family: monospace;"> 20.0%</span> </td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td style="background-color: rgb(255, 255, 238);">20% of women
+with breast cancer have negative mammographies</td> 
+    </tr> 
+    <tr valign="top"> 
+      <td align="left" style="background-color: rgb(238, 255, 255);"><span 
+ style="font-family: monospace;">p(positive|~cancer):</span></td> 
+      <td align="right" style="background-color: rgb(244, 255, 255);"><span 
+ style="font-family: monospace;">9.6%</span> </td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td style="background-color: rgb(255, 255, 238);">9.6% of women
+without breast cancer have positive mammographies </td> 
+    </tr> 
+    <tr valign="top"> 
+      <td align="left" style="background-color: rgb(238, 255, 255);"><span 
+ style="font-family: monospace;">p(~positive|~cancer):</span></td> 
+      <td align="right" style="background-color: rgb(244, 255, 255);"><span 
+ style="font-family: monospace;">90.4%</span> </td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td style="background-color: rgb(255, 255, 238);"> 90.4% of women
+without breast cancer have negative mammographies</td> 
+    </tr> 
+    <tr> 
+      <td>&nbsp;</td> 
+      <td><br> 
+      </td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td> <br> 
+      </td> 
+    </tr> 
+    <tr valign="top"> 
+      <td align="left" style="background-color: rgb(255, 238, 238);"><span 
+ style="font-family: monospace;">p(cancer&amp;positive):</span></td> 
+      <td align="right"
+ style="font-family: monospace; background-color: rgb(255, 248, 248);">0.008</td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td style="background-color: rgb(255, 255, 238);">Group A:&nbsp;
+80 women with breast cancer and positive mammographies</td> 
+    </tr> 
+    <tr valign="top"> 
+      <td align="left" style="background-color: rgb(255, 238, 238);"><span 
+ style="font-family: monospace;">p(cancer&amp;~positive):</span></td> 
+      <td align="right"
+ style="font-family: monospace; background-color: rgb(255, 248, 248);">0.002</td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td style="background-color: rgb(255, 255, 238);">Group B: 20
+women with breast cancer and negative mammographies</td> 
+    </tr> 
+    <tr valign="top"> 
+      <td align="left" style="background-color: rgb(255, 238, 238);"><span 
+ style="font-family: monospace;">p(~cancer&amp;positive):</span></td> 
+      <td align="right"
+ style="font-family: monospace; background-color: rgb(255, 248, 248);">0.095</td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td style="background-color: rgb(255, 255, 238);">Group C: 950
+women without breast cancer and positive mammographies</td> 
+    </tr> 
+    <tr valign="top"> 
+      <td align="left" style="background-color: rgb(255, 238, 238);"><span 
+ style="font-family: monospace;">p(~cancer&amp;~positive):</span></td> 
+      <td align="right"
+ style="font-family: monospace; background-color: rgb(255, 248, 248);">0.895</td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td style="background-color: rgb(255, 255, 238);">Group D: 8950
+women without breast cancer and negative mammographies</td> 
+    </tr> 
+    <tr valign="top"> 
+      <td>&nbsp;</td> 
+      <td><br> 
+      </td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td> <br> 
+      </td> 
+    </tr> 
+    <tr valign="top"> 
+      <td align="left" style="background-color: rgb(238, 255, 238);"><span 
+ style="font-family: monospace;">p(positive):</span></td> 
+      <td align="right"
+ style="font-family: monospace; background-color: rgb(248, 255, 248);">0.103</td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td style="background-color: rgb(255, 255, 238);">1030 women with
+positive results</td> 
+    </tr> 
+    <tr valign="top"> 
+      <td align="left" style="background-color: rgb(238, 255, 238);"><span 
+ style="font-family: monospace;">p(~positive):</span></td> 
+      <td align="right"
+ style="font-family: monospace; background-color: rgb(248, 255, 248);">0.897</td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td style="background-color: rgb(255, 255, 238);"> 8970 women
+with
+negative results</td> 
+    </tr> 
+    <tr valign="top"> 
+      <td>&nbsp;</td> 
+      <td><br> 
+      </td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td> <br> 
+      </td> 
+    </tr> 
+    <tr valign="top"> 
+      <td align="left" style="background-color: rgb(238, 238, 255);"><span 
+ style="font-family: monospace;">p(cancer|positive):</span></td> 
+      <td align="right" style="background-color: rgb(248, 248, 255);"><span 
+ style="font-family: monospace;">7.80%</span></td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td style="background-color: rgb(255, 255, 238);">Chance you have
+breast cancer if mammography is positive: 7.8% </td> 
+    </tr> 
+    <tr valign="top"> 
+      <td align="left" style="background-color: rgb(238, 238, 255);"><span 
+ style="font-family: monospace;">p(~cancer|positive):</span></td> 
+      <td align="right" style="background-color: rgb(248, 248, 255);"><span 
+ style="font-family: monospace;"> 92.20%</span></td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td style="background-color: rgb(255, 255, 238);"> Chance you are
+healthy if mammography is positive: 92.2% </td> 
+    </tr> 
+    <tr valign="top"> 
+      <td align="left" style="background-color: rgb(238, 238, 255);"><span 
+ style="font-family: monospace;">p(cancer|~positive):</span></td> 
+      <td align="right"
+ style="font-family: monospace; background-color: rgb(248, 248, 255);">0.22%</td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td style="background-color: rgb(255, 255, 238);">Chance you have
+breast cancer if mammography is negative: 0.22% </td> 
+    </tr> 
+    <tr valign="top"> 
+      <td align="left" style="background-color: rgb(238, 238, 255);"><span 
+ style="font-family: monospace;">p(~cancer|~positive):</span></td> 
+      <td align="right"
+ style="font-family: monospace; background-color: rgb(248, 248, 255);">99.78%</td> 
+      <td style="vertical-align: top;"><br> 
+      </td> 
+      <td style="background-color: rgb(255, 255, 238);">Chance you are
+healthy if mammography is negative: 99.78% </td> 
+    </tr> 
+  </tbody> 
+</table> 
+<br> 
+One of the common confusions in using Bayesian reasoning is to mix up
+some or all of these quantities - which, as you can see, are all
+numerically different and have different meanings.&nbsp; <span 
+ style="font-family: monospace;">p(A&amp;B)</span> is the same as <span 
+ style="font-family: monospace;">p(B&amp;A)</span>, but <span 
+ style="font-family: monospace;">p(A|B)</span> is not the same thing as
+<span style="font-family: monospace;">p(B|A)</span>, and <span 
+ style="font-family: monospace;">p(A&amp;B)</span> is completely
+different from <span style="font-family: monospace;">p(A|B)</span>.&nbsp;
+(I don't know who chose the symmetrical <span 
+ style="font-family: monospace;">"|"</span> symbol to mean "implies",
+and then made the direction of implication right-to-left, but it was
+probably a bad idea.)<br> 
+<br> 
+To get acquainted with all these quantities and the relationships
+between them, we'll play "follow the degrees of freedom".&nbsp; For
+example, the two quantities <span style="font-family: monospace;">p(cancer)</span> 
+and <span style="font-family: monospace;">p(~cancer)</span> have 1
+degree of freedom between them, because of the general law <span 
+ style="font-family: monospace;">p(A) + p(~A) = 1</span>.&nbsp; If you
+know that <span style="font-family: monospace;">p(~cancer) = .99</span>,
+you can obtain <span style="font-family: monospace;">p(cancer) = 1 -
+p(~cancer) = .01</span>.&nbsp; There's no room to say that <span 
+ style="font-family: monospace;">p(~cancer) = .99</span> and then also
+specify <span style="font-family: monospace;">p(cancer) = .25</span>;
+it would violate the rule <span style="font-family: monospace;">p(A) +
+p(~A) = 1</span>.<br> 
+<br> 
+<span style="font-family: monospace;">p(positive|cancer)</span> and <span 
+ style="font-family: monospace;">p(~positive|cancer)</span> also have
+only one degree of freedom between them; either a woman with breast
+cancer gets a positive mammography or she doesn't.&nbsp; On the other
+hand, <span style="font-family: monospace;">p(positive|cancer)</span> 
+and <span style="font-family: monospace;">p(positive|~cancer)</span> 
+have <span style="font-style: italic;">two</span> degrees of
+freedom.&nbsp; You can have a mammography test that returns positive
+for
+80% of cancerous patients and 9.6% of healthy patients, or that returns
+positive for 70% of cancerous patients and 2% of healthy patients, or
+even a health test that returns "positive" for 30% of cancerous
+patients
+and 92% of healthy patients.&nbsp; The two quantities, the output of
+the
+mammography test for cancerous patients and the output of the
+mammography test for healthy patients, are in mathematical terms
+independent; one cannot be obtained from the other in any way, and so
+they have two degrees of freedom between them.<br> 
+<br> 
+What about <span style="font-family: monospace;">p(positive&amp;cancer)</span>,<span 
+ style="font-family: monospace;"> p(positive|cancer)</span>, and <span 
+ style="font-family: monospace;">p(cancer)</span>?&nbsp; Here we have
+three quantities; how many degrees of freedom are there?&nbsp; In this
+case the equation that must hold is <span 
+ style="font-family: monospace;">p(positive&amp;cancer) =
+p(positive|cancer) * p(cancer)</span>.&nbsp; This equality reduces the
+degrees of freedom by one.&nbsp; If we know the fraction of patients
+with cancer, and chance that a cancerous patient has a positive
+mammography, we can deduce the fraction of patients who have breast
+cancer <span style="font-style: italic;">and</span> a positive
+mammography by multiplying.&nbsp; You should recognize this operation
+from the graph; it's the projection of the top bar into the bottom
+bar.&nbsp; <span style="font-family: monospace;">p(cancer)</span> is
+the
+left sector of the top bar, and <span style="font-family: monospace;">p(positive|cancer)</span> 
+determines how much of that sector projects into the bottom bar, and
+the
+left sector of the bottom bar is <span style="font-family: monospace;">p(positive&amp;cancer)</span>.<br> 
+<br> 
+<iframe 
+  scrolling="no" 
+  width="730px" 
+  height="300px" 
+  frameborder="0" 
+  src="/rational/bayes/applet/6">
+  <applet code="BayesApplet.class" codebase="/assets/images/" width="730" height="300"> <img 
+ width="730" height="250" src="/assets/images/bayes-60.png"> <param name="event2alt"
+ value="negative"> <param name="event1" value="cancer"> <param 
+ name="event2" value="positive"> <param name="topbar"
+ value="all patients"> <param name="topleft" value="cancer"> <param 
+ name="topright" value="healthy"> <param name="condleft"
+ value="positive|cancer"> <param name="condleftalt"
+ value="negative|cancer"> <param name="condright"
+ value="positive|health"> <param name="condrightalt"
+ value="negative|health"> <param name="botbar"
+ value="all patients with positive results"> <param name="botbaralt"
+ value="all patients with negative results"> <param name="botleft"
+ value="p&amp;c"> <param name="botleftalt" value="n&amp;c"> <param 
+ name="botright" value="p&amp;h"> <param name="botrightalt" value="n&amp;h"> <param 
+ name="prior" value="0.01"> <param name="cond1" value="0.8"> <param 
+ name="cond2" value="0.096"> <param name="group1" value="Cancer:"> <param 
+ name="group2" value="Healthy:"> <param name="groupA"
+ value="Cancer &amp; positive:"> <param name="groupB"
+ value="Cancer &amp; negative:"> <param name="groupC"
+ value="Healthy &amp; positive:"> <param name="groupD"
+ value="Healthy &amp; negative:"> <param name="groupTotal"
+ value="Total patients:"> <param name="totalNum" value="852000"> </applet> 
+</iframe>
+<br> 
+<br> 
+Similarly, if we know the number of patients with breast cancer and
+positive mammographies, and also the number of patients with breast
+cancer, we can estimate the chance that a woman with breast cancer gets
+a positive mammography by dividing: <span 
+ style="font-family: monospace;">p(positive|cancer) =
+p(positive&amp;cancer) / p(cancer)</span>.&nbsp; In fact, this is
+exactly how such medical diagnostic tests are calibrated; you do a
+study
+on 8,520 women with breast cancer and see that there are 6,816 (or
+thereabouts) women with breast cancer <span style="font-style: italic;">and</span>positive
+mammographies, then divide 6,816 by 8520 to find that 80% of women with
+breast cancer had positive mammographies.&nbsp; (Incidentally, if you
+accidentally divide 8520 by 6,816 instead of the other way around, your
+calculations will start doing strange things, such as insisting that
+125% of women with breast cancer and positive mammographies have breast
+cancer.&nbsp; This is a common mistake in carrying out Bayesian
+arithmetic, in my experience.)&nbsp; And finally, if you know <span 
+ style="font-family: monospace;">p(positive&amp;cancer)</span> and <span 
+ style="font-family: monospace;">p(positive|cancer)</span>, you can
+deduce how many cancer patients there must have been originally.&nbsp;
+There are two degrees of freedom shared out among the three quantities;
+if we know any two, we can deduce the third.<br> 
+<br> 
+How about <span style="font-family: monospace;">p(positive)</span>, <span 
+ style="font-family: monospace;">p(positive&amp;cancer)</span>, and <span 
+ style="font-family: monospace;">p(positive&amp;~cancer)</span>?&nbsp;
+Again there are only two degrees of freedom among these three
+variables.&nbsp; The equation occupying the extra degree of freedom is <span 
+ style="font-family: monospace;"><span style="font-family: monospace;"></span>p(positive)
+= p(positive&amp;cancer) + p(positive&amp;~cancer)</span>.&nbsp; This
+is how <span style="font-family: monospace;">p(positive)</span> is
+computed to begin with; we figure out the number of women with breast
+cancer who have positive mammographies, and the number of women without
+breast cancer who have positive mammographies, then add them together
+to
+get the total number of women with positive mammographies.&nbsp; It
+would be very strange to go out and conduct a study to determine the
+number of women with positive mammographies - just that one number and
+nothing else - but in theory you could do so.&nbsp; And if you then
+conducted another study and found the number of those women who had
+positive mammographies <span style="font-style: italic;">and</span> 
+breast cancer, you would also know the number of women with positive
+mammographies and <span style="font-style: italic;">no </span>breast
+cancer - either a woman with a positive mammography has breast cancer
+or
+she doesn't.&nbsp; In general, <span style="font-family: monospace;">p(A&amp;B)
++ p(A&amp;~B) = p(A)</span>.&nbsp; Symmetrically, <span 
+ style="font-family: monospace;"></span><span 
+ style="font-family: monospace;">p(A&amp;B) + p(~A&amp;B) = p(B)</span>.<br> 
+&nbsp;<br> 
+What about <span style="font-family: monospace;">p(positive&amp;cancer)</span>,<span 
+ style="font-family: monospace;"> p(positive&amp;~cancer)</span>, <span 
+ style="font-family: monospace;">p(~positive&amp;cancer)</span>, and <span 
+ style="font-family: monospace;">p(~positive&amp;~cancer)</span>?&nbsp;
+You might at first be tempted to think that there are only two degrees
+of freedom for these four quantities - that you can, for example, get <span 
+ style="font-family: monospace;">p(positive&amp;~cancer)</span> by
+multiplying <span style="font-family: monospace;">p(positive) *
+p(~cancer)</span>, and thus that all four quantities can be found given
+only the two quantities <span style="font-family: monospace;">p(positive)</span> 
+and <span style="font-family: monospace;">p(cancer)</span>.&nbsp; This
+is not the case!&nbsp; <span style="font-family: monospace;">p(positive&amp;~cancer)
+= p(positive) * p(~cancer)</span> only if the two probabilities are <span 
+ style="font-style: italic;">statistically independent</span> - if the
+chance that a woman has breast cancer has no bearing on whether she has
+a positive mammography.&nbsp; As you'll recall, this amounts to
+requiring that the two conditional probabilities be equal to each other
+- a requirement which would eliminate one degree of freedom.&nbsp; If
+you remember that these four quantities are the groups A, B, C, and D,
+you can look over those four groups and realize that, in theory, you
+can
+put any number of people into the four groups.&nbsp; If you start with
+a
+group of 80 women with breast cancer and positive mammographies,
+there's
+no reason why you can't add another group of 500 women with breast
+cancer and negative mammographies, followed by a group of 3 women
+without breast cancer and negative mammographies, and so on.&nbsp; So
+now it seems like the four quantities have four degrees of
+freedom.&nbsp; And they would, except that in expressing them as <span 
+ style="font-style: italic;">probabilities,</span> we need to normalize
+them to <span style="font-style: italic;">fractions</span> of the
+complete group, which adds the constraint that <span 
+ style="font-family: monospace;">p(positive&amp;cancer) + </span><span 
+ style="font-family: monospace;">p(positive&amp;~cancer) + </span><span 
+ style="font-family: monospace;">p(~positive&amp;cancer) + </span><span 
+ style="font-family: monospace;">p(~positive&amp;~cancer) = 1</span>.&nbsp;
+This equation takes up one degree of freedom, leaving three degrees of
+freedom among the four quantities.&nbsp; If you specify the <span 
+ style="font-style: italic;">fractions</span> of women in groups A, B,
+and D, you can deduce the fraction of women in group C.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+Given the four groups A, B, C, and D, it is very straightforward to
+compute everything else:&nbsp; <span style="font-family: monospace;">p(cancer)
+= A + B</span>, <span style="font-family: monospace;">p(~positive|cancer)
+= B / (A + B)</span>, and so on.&nbsp; Since ABCD contains three
+degrees of freedom, it follows that the entire set of 16 probabilities
+contains only three degrees of freedom.&nbsp; Remember that in our
+problems we always needed <span style="font-style: italic;">three</span> 
+pieces of information - the prior probability and the two conditional
+probabilities - which, indeed, have three degrees of freedom among
+them.&nbsp; Actually, for Bayesian problems, <span 
+ style="font-style: italic;">any</span> three quantities with three
+degrees of freedom between them should logically specify the entire
+problem.&nbsp; For example, let's take a barrel of eggs with <span 
+ style="font-family: monospace;">p(blue) = 0.40</span>,&nbsp; <span 
+ style="font-family: monospace;">p(blue|pearl) = 5/13</span>, and <span 
+ style="font-family: monospace;">p(~blue&amp;~pearl) = 0.20</span>.&nbsp;
+Given this information, you <span style="font-style: italic;">can </span>compute<span 
+ style="font-family: monospace;"> p(pearl|blue)</span>. <br> 
+<br> 
+As a story problem:<br> 
+Suppose you have a large barrel containing a number of plastic
+eggs.&nbsp; Some eggs contain pearls, the rest contain nothing.&nbsp;
+Some eggs are painted blue, the rest are painted red.&nbsp; Suppose
+that
+40% of the eggs are painted blue, 5/13 of the eggs containing pearls
+are
+painted blue, and 20% of the eggs are both empty and painted red.&nbsp;
+What is the probability that an egg painted blue contains a pearl?<br> 
+<br> 
+Try it - I assure you it is possible.<br> 
+<br> 
+<form>Calculator: <input name="expression" value="0"
+ onchange="compute(this.form)" onkeyup="compute(this.form)" size="50"> 
+Result: <input name="result" size="5" value=""> <input type="button"
+ name="computeButton" value="Good luck!" onclick="compute(this.form)"> </form> 
+You probably shouldn't try to solve this with just a Javascript
+calculator, though.&nbsp; I used a Python console.&nbsp; (In theory,
+pencil and paper should also work, but I don't know anyone who owns a
+pencil so I couldn't try it personally.)<br> 
+<br> 
+As a check on your calculations, does the (meaningless) quantity <span 
+ style="font-family: monospace;">p(~pearl|~blue)/p(pearl)</span> 
+roughly
+equal .51?&nbsp; (In story problem terms:&nbsp; The likelihood that a
+red egg is empty, divided by the likelihood that an egg contains a
+pearl, equals approximately .51.)&nbsp; Of course, using this
+information in the problem would be cheating.<!-- PC = 0.25, PH = 0.15, NC = 0.4, NH = 0.2 --><br> 
+<br> 
+If you can solve <span style="font-style: italic;">that</span> 
+problem,
+then when we revisit Conservation of Probability, it seems perfectly
+straightforward.&nbsp; Of course the mean revised probability, after
+administering the test, must be the same as the prior
+probability.&nbsp;
+Of course strong but rare evidence in one direction must be
+counterbalanced by common but weak evidence in the other direction.<br> 
+<br> 
+Because:<br> 
+<span style="font-style: italic;"> <br> 
+<span style="font-family: monospace;">&nbsp; </span></span><span 
+ style="font-family: monospace;">p(cancer|positive)*p(positive)<br> 
++ p(cancer|~positive)*p(~positive)<br> 
+= p(cancer)</span><br> 
+<br> 
+In terms of the four groups:<br> 
+<br> 
+<span style="font-family: monospace;">p(cancer|positive)&nbsp; = A / (A
++ C)<br> 
+p(positive)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = A + C<br> 
+</span><span style="font-family: monospace;">p(cancer&amp;positive)&nbsp;
+= A<br> 
+</span><span style="font-family: monospace;">p(cancer|~positive) = B /
+(B + D)<br> 
+p(~positive)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = B + D<br> 
+</span><span style="font-family: monospace;">p(cancer&amp;~positive) = B<br> 
+</span><span style="font-family: monospace;">p(cancer)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+= A + B<br> 
+</span> <br> 
+<hr style="width: 100%; height: 2px;"><br> 
+Let's return to the original barrel of eggs - 40% of the eggs
+containing pearls, 30% of the pearl eggs painted blue, 10% of the empty
+eggs painted blue.&nbsp; The graph for this problem is:<br> 
+<br> 
+<iframe 
+  scrolling="no" 
+  width="700px" 
+  height="300px" 
+  frameborder="0" 
+  src="/rational/bayes/applet/7">
+  
+<applet code="BayesApplet.class" codebase="/assets/images/" width="700" height="300"> <img 
+ width="700" height="250" src="/assets/images/bayes-70.png"> <param name="likelihood"
+ value="true"> <param name="event2alt" value="red"> <param 
+ name="event1" value="pearl"> <param name="event2" value="blue"> <param 
+ name="topbar" value="all eggs"> <param name="topleft" value="pearl"> <param 
+ name="topright" value="empty"> <param name="condleft"
+ value="blue|pearl"> <param name="condleftalt" value="red|pearl"> <param 
+ name="condright" value="blue|empty"> <param name="condrightalt"
+ value="red|empty"> <param name="botbar" value="all blue eggs"> <param 
+ name="botbaralt" value="all red eggs"> <param name="botleft"
+ value="blue&amp;pearl"> <param name="botleftalt" value="red&amp;pearl"> <param 
+ name="botright" value="blue&amp;empty"> <param name="botrightalt"
+ value="red&amp;empty"> <param name="prior" value="0.40"> <param 
+ name="cond1" value="0.30"> <param name="cond2" value="0.10"> <param 
+ name="group1" value="Pearl eggs:"> <param name="group2"
+ value="Empty eggs:"> <param name="groupA" value="Blue pearl eggs:"> <param 
+ name="groupB" value="Red pearl eggs:"> <param name="groupC"
+ value="Blue empty eggs:"> <param name="groupD" value="Red empty eggs:"> 
+<param name="groupTotal" value="Total eggs:"> <param name="totalNum"
+ value="1000"> </applet>
+</iframe>
+ <br> 
+<br> 
+What happens to the revised probability, <span 
+ style="font-family: monospace;">p(pearl|blue)</span>, if the
+proportion of eggs containing pearls is kept constant, but 60% of the
+eggs with pearls are painted blue (instead of 30%), and 20% of the
+empty
+eggs are painted blue (instead of 10%)?&nbsp; You could type 60% and
+20%
+into the inputs for the two conditional probabilities, and see how the
+graph changes - but can you figure out in advance what the change will
+look like?<br> 
+<br> 
+<hr style="height: 4px; width: 50%;"><br> 
+If you guessed that the revised probability <span 
+ style="font-style: italic;">remains the same,</span> because the
+bottom
+bar grows by a factor of 2 but retains the same proportions,
+congratulations!&nbsp; Take a moment to think about how far you've
+come.&nbsp; Looking at a problem like<br> 
+<br> 
+<div style="margin-left: 40px;">1% of women have breast cancer.&nbsp;
+80% of women with breast cancer get positive mammographies.&nbsp; 9.6%
+of women without breast cancer get positive mammographies.&nbsp; If a
+woman has a positive mammography, what is the probability she has
+breast
+cancer?<br> 
+</div> 
+<br> 
+the vast majority of respondents intuit that around 70-80% of women
+with positive mammographies have breast cancer.&nbsp; Now, looking at a
+problem like<br> 
+<br> 
+<div style="margin-left: 40px;">Suppose there are two barrels
+containing many small plastic eggs.&nbsp; In both barrels, some eggs
+are
+painted blue and the rest are painted red.&nbsp; In both barrels, 40%
+of
+the eggs contain pearls and the rest are empty.&nbsp; In the first
+barrel, 30% of the pearl eggs are painted blue, and 10% of the empty
+eggs are painted blue.&nbsp; In the second barrel, 60% of the pearl
+eggs
+are painted blue, and 20% of the empty eggs are painted blue.&nbsp;
+Would you rather have a blue egg from the first or second barrel?<br> 
+</div> 
+<br> 
+you can see it's <span style="font-style: italic;">intuitively obvious</span> 
+that the probability of a blue egg containing a pearl is the same for
+either barrel.&nbsp; Imagine how hard it would be to see that using the
+old way of thinking!<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+It's intuitively obvious, but how to prove it?&nbsp; Suppose that we
+call P the prior probability that an egg contains a pearl, that we call
+M the first conditional probability (that a pearl egg is painted blue),
+and N the second conditional probability (that an empty egg is painted
+blue).&nbsp; Suppose that M and N are both increased or diminished by
+an
+arbitrary factor X - for example, in the problem above, they are both
+increased by a factor of 2.&nbsp; Does the revised probability that an
+egg contains a pearl, given that we know the egg is blue, stay the same?<br> 
+<ul style="font-family: monospace;"> 
+  <li>p(pearl) = P</li> 
+  <li>p(blue|pearl) = M*X</li> 
+  <li>p(blue|~pearl) = N*X</li> 
+  <li>p(pearl|blue) = ?<br> 
+  </li> 
+</ul> 
+From these quantities, we get the four groups:<br> 
+<ul> 
+  <li>Group A:&nbsp; <span style="font-family: monospace;">p(pearl&amp;blue)&nbsp;&nbsp;
+= P*M*X</span></li> 
+  <li>Group B:&nbsp; <span style="font-family: monospace;">p(pearl&amp;~blue)&nbsp;
+= P*(1 - (M*X))</span></li> 
+  <li>Group C:&nbsp; <span style="font-family: monospace;">p(~pearl&amp;blue)&nbsp;
+= (1 - P)*N*X</span></li> 
+  <li>Group D:&nbsp; <span style="font-family: monospace;">p(~pearl&amp;~blue)
+= (1 - P)*(1 - (N*X))</span></li> 
+</ul> 
+The proportion of eggs that contain pearls and are blue, within the
+group of all blue eggs, is then the proportion of group (A) within the
+group (A + C), equalling <span style="font-family: monospace;">P*M*X /
+(P*M*X + (1 - P)*N*X)</span>.&nbsp; The factor X in the numerator and
+denominator cancels out, so increasing or diminishing both conditional
+probabilities by a constant factor doesn't change the revised
+probability.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+<table align="center"
+ style="text-align: left; margin-left: auto; margin-right: auto; width: 80%; height: 1%;"
+ border="2" cellpadding="2"> 
+  <tbody> 
+    <tr> 
+      <td 
+ style="background-color: rgb(255, 255, 153); width: 0%; text-align: center; vertical-align: top;"><b>Fun<br> 
+Fact!</b> </td> 
+      <td style="background-color: rgb(204, 255, 255);"><b 
+ style="font-weight: bold;">Q.&nbsp; </b><span 
+ style="font-weight: bold;">Suppose that there are two barrels, each
+containing a number of plastic eggs.&nbsp; In both barrels, some eggs
+are painted blue and the rest are painted red.&nbsp; In the first
+barrel, 90% of the eggs contain pearls and 20% of the pearl eggs are
+painted blue.&nbsp; In the second barrel, 45% of the eggs contain
+pearls
+and 60% of the empty eggs are painted red.&nbsp; Would you rather have
+a
+blue pearl egg from the first or second barrel?</span><br 
+ style="font-weight: bold;"> 
+      <span style="font-weight: bold;">A.</span>&nbsp; Actually, it
+doesn't matter which barrel you choose!&nbsp; Can you see why?</td> 
+    </tr> 
+  </tbody> 
+</table> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+<span style="font-style: italic;">The probability that a test gives a
+true positive</span> divided by <span style="font-style: italic;">the
+probability that a test gives a false positive</span> is known as the <span 
+ style="font-style: italic;">likelihood ratio</span> of that test.<span 
+ style="font-style: italic;"></span>&nbsp; Does the likelihood ratio of
+a medical test sum up everything there is to know about the usefulness
+of the test?<br> 
+<br> 
+No, it does not!&nbsp; The likelihood ratio sums up everything there is
+to know about the <span style="font-style: italic;">meaning </span>of
+a <span style="font-style: italic;">positive</span> result on the
+medical test, but the meaning of a <span style="font-style: italic;">negative</span> 
+result on the test is not specified, nor is the frequency with which
+the
+test is useful.&nbsp; If we examine the algebra above, while <span 
+ style="font-family: monospace;">p(pearl|blue)</span> remains constant,
+<span style="font-family: monospace;">p(pearl|~blue)</span> may change
+- the
+X does <span style="font-style: italic;">not</span> cancel out.&nbsp;
+As
+a story problem, this strange fact would look something like this:<br> 
+<br> 
+<div style="margin-left: 40px;">Suppose that there are two barrels,
+each containing a number of plastic eggs.&nbsp; In both barrels, 40% of
+the eggs contain pearls and the rest contain nothing.&nbsp; In both
+barrels, some eggs are painted blue and the rest are painted red.&nbsp;
+In the first barrel, 30% of the eggs with pearls are painted blue, and
+10% of the empty eggs are painted blue.&nbsp; In the second barrel, 90%
+of the eggs with pearls are painted blue, and 30% of the empty eggs are
+painted blue.&nbsp; Would you rather have a blue egg from the first or
+second barrel?&nbsp; Would you rather have a red egg from the first or
+second barrel?<br> 
+</div> 
+<br> 
+For the first question, the answer is that we don't care whether we get
+the blue egg from the first or second barrel.&nbsp; For the second
+question, however, the probabilities <span style="font-style: italic;">do</span> 
+change - in the first barrel, 34% of the red eggs contain pearls, while
+in the second barrel 8.7% of the red eggs contain pearls!&nbsp; Thus,
+we
+should prefer to get a red egg from the first barrel.&nbsp; In the
+first
+barrel, 70% of the pearl eggs are painted red, and 90% of the empty
+eggs
+are painted red.&nbsp; In the second barrel, 10% of the pearl eggs are
+painted red, and 70% of the empty eggs are painted red.<br> 
+<br> 
+<form>Calculator: <input name="expression"
+ value="70%*40% / (70%*40% + 90%*60%)" onchange="compute(this.form)"
+ onkeyup="compute(this.form)" size="50"> Result: <input name="result"
+ size="5" value=""> <input type="button" name="computeButton"
+ value="Compute!" onclick="compute(this.form)"> </form> 
+What goes on here?&nbsp; We start out by noting that, counter to
+intuition, <span style="font-family: monospace;">p(pearl|blue)</span> 
+and <span style="font-family: monospace;">p(pearl|~blue)</span> have
+two
+degrees of freedom among them even when <span 
+ style="font-family: monospace;">p(pearl)</span> is fixed - so there's
+no reason why one quantity shouldn't change while the other remains
+constant.&nbsp; But we didn't we just get through establishing a law
+for
+"Conservation of Probability", which says that <span 
+ style="font-family: monospace;">p(pearl|blue)*p(blue) +
+p(pearl|~blue)*p(~blue) = p(pearl)</span>?&nbsp; Doesn't this equation
+take up one degree of freedom?&nbsp; No, because <span 
+ style="font-family: monospace;">p(blue)</span> isn't fixed between the
+two problems.&nbsp; In the second barrel, the proportion of blue eggs
+containing pearls is the same as in the first barrel, but a much larger
+fraction of eggs are painted blue!&nbsp; This alters the set of <span 
+ style="font-style: italic;">red</span> eggs in such a way that the
+proportions <span style="font-style: italic;">do</span> change.&nbsp;
+Here's a graph for the red eggs in the second barrel:<br> 
+<br> 
+<iframe 
+  scrolling="no" 
+  width="700" 
+  height="300px" 
+  frameborder="0" 
+  src="/rational/bayes/applet/8">
+  <applet code="BayesApplet.class" codebase="/assets/images/"  width="700" height="300"> <img 
+ width="700" height="250" src="/assets/images/bayes-80.png"> <param name="likelihood"
+ value="true"> <param name="altResult" value="true"> <param 
+ name="event2alt" value="red"> <param name="event1" value="pearl"> <param 
+ name="event2" value="blue"> <param name="topbar" value="all eggs"> <param 
+ name="topleft" value="pearl"> <param name="topright" value="empty"> <param 
+ name="condleft" value="blue|pearl"> <param name="condleftalt"
+ value="red|pearl"> <param name="condright" value="blue|empty"> <param 
+ name="condrightalt" value="red|empty"> <param name="botbar"
+ value="all blue eggs"> <param name="botbaralt" value="all red eggs"> <param 
+ name="botleft" value="blue&amp;pearl"> <param name="botleftalt"
+ value="red&amp;pearl"> <param name="botright" value="blue&amp;empty"> <param 
+ name="botrightalt" value="red&amp;empty"> <param name="prior" value="0.40"> 
+<param name="cond1" value="0.90"> <param name="cond2" value="0.30"> <param 
+ name="group1" value="Pearl eggs:"> <param name="group2"
+ value="Empty eggs:"> <param name="groupA" value="Blue pearl eggs:"> <param 
+ name="groupB" value="Red pearl eggs:"> <param name="groupC"
+ value="Blue empty eggs:"> <param name="groupD" value="Red empty eggs:"> 
+<param name="groupTotal" value="Total eggs:"> <param name="totalNum"
+ value="1000"> </applet>
+</iframe> <br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+Let's return to the example of a medical test.&nbsp; The likelihood
+ratio of a medical test - the number of true positives divided by the
+number of false positives - tells us everything there is to know about
+the <span style="font-style: italic;">meaning </span>of a <span 
+ style="font-style: italic;">positive </span>result.&nbsp; But it
+doesn't tell us the meaning of a negative result, and it doesn't tell
+us
+how often the test is useful.&nbsp; For example, a mammography with a
+hit rate of 80% for patients with breast cancer and a false positive
+rate of 9.6% for healthy patients has the same likelihood ratio as a
+test with an 8% hit rate and a false positive rate of 0.96%.&nbsp;
+Although these two tests have the same likelihood ratio, the first test
+is more useful in every way - it detects disease more often, and a
+negative result is stronger evidence of health.<br> 
+<br> 
+The likelihood ratio for a positive result summarizes the differential
+pressure of the two conditional probabilities for a positive result,
+and
+thus summarizes how much a positive result will slide the prior
+probability.&nbsp; Take a probability graph, like this one:<br> 
+<br> 
+<iframe 
+  scrolling="no" 
+  width="730" 
+  height="300px" 
+  frameborder="0" 
+  src="/rational/bayes/applet/9">
+  <applet code="BayesApplet.class" codebase="/assets/images/" width="730" height="300"> <img 
+ width="730" height="250" src="/assets/images/bayes-90.png"> <param name="likelihood"
+ value="true"><param name="viewMode" value="P"> <param name="event2alt"
+ value="negative"><param name="event1" value="cancer"> <param 
+ name="event2" value="positive"> <param name="topbar"
+ value="all patients"> <param name="topleft" value="cancer"> <param 
+ name="topright" value="healthy"> <param name="condleft"
+ value="positive|cancer"> <param name="condleftalt"
+ value="negative|cancer"> <param name="condright"
+ value="positive|health"> <param name="condrightalt"
+ value="negative|health"> <param name="botbar"
+ value="all patients with positive results"> <param name="botbaralt"
+ value="all patients with negative results"> <param name="botleft"
+ value="p&amp;c"> <param name="botleftalt" value="n&amp;c"> <param 
+ name="botright" value="p&amp;h"> <param name="botrightalt" value="n&amp;h"> <param 
+ name="prior" value="0.01"> <param name="cond1" value="0.8"> <param 
+ name="cond2" value="0.096"> <param name="group1" value="Cancer:"> <param 
+ name="group2" value="Healthy:"> <param name="groupA"
+ value="Cancer &amp; positive:"> <param name="groupB"
+ value="Cancer &amp; negative:"> <param name="groupC"
+ value="Healthy &amp; positive:"> <param name="groupD"
+ value="Healthy &amp; negative:"> <param name="groupTotal"
+ value="Total patients:"> <param name="totalNum" value="10000"> </applet>
+</iframe> 
+<br> 
+<br> 
+The likelihood ratio of the mammography is what determines the slant of
+the line.&nbsp; If the prior probability is 1%, then knowing only the
+likelihood ratio is enough to determine the posterior probability after
+a positive result.<br> 
+<br> 
+But, as you can see from the frequency graph, the likelihood ratio
+doesn't tell the whole story - in the frequency graph, the <span 
+ style="font-style: italic;">proportions </span>of the bottom bar can
+stay fixed while the <span style="font-style: italic;">size</span> of
+the bottom bar changes.&nbsp;&nbsp;<span style="font-family: monospace;"></span><span 
+ style="font-family: monospace;">p(blue)</span> increases but <span 
+ style="font-family: monospace;">p(pearl|blue)</span> doesn't change,
+because <span style="font-family: monospace;">p(pearl&amp;blue)</span> 
+and <span style="font-family: monospace;">p(~pearl&amp;blue)</span> 
+increase by the same factor.&nbsp; But when you flip the graph to look
+at <span style="font-family: monospace;">p(~blue)</span>, the
+proportions of <span style="font-family: monospace;">p(pearl&amp;~blue)</span> 
+and <span style="font-family: monospace;">p(~pearl&amp;~blue)</span> 
+do <span style="font-style: italic;">not</span> remain constant.<br> 
+<br> 
+Of course the likelihood ratio <span style="font-style: italic;">can't</span> 
+tell the whole story; the likelihood ratio and the prior probability
+together are only two numbers, while the problem has three degrees of
+freedom.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+Suppose that you apply <span style="font-style: italic;">two</span> 
+tests for breast cancer in succession - say, a standard mammography and
+also some other test which is independent of mammography.&nbsp; Since I
+don't know of any such test which is <span style="font-style: italic;">independent</span> 
+of mammography, I'll invent one for the purpose of this problem, and
+call it the Tams-Braylor Division Test, which checks to see if any
+cells
+are dividing more rapidly than other cells.&nbsp; We'll suppose that
+the
+Tams-Braylor gives a true positive for 90% of patients with breast
+cancer, and gives a false positive for 5% of patients without
+cancer.&nbsp; Let's say the prior prevalence of breast cancer is
+1%.&nbsp; If a patient gets a positive result on her mammography <span 
+ style="font-style: italic;">and</span> her Tams-Braylor, what is the
+revised probability she has breast cancer?<br> 
+<br> 
+One way to solve this problem would be to take the revised probability
+for a positive mammography, which we already calculated as 7.8%, and
+plug that into the Tams-Braylor test as the new prior
+probability.&nbsp;
+If we do this, we find that the result comes out to 60%.<br> 
+<br> 
+<form> Calculator: <input type="text" name="expression"
+ value="(1 + 2) * 3 + 4" onchange="compute(this.form)"
+ onkeyup="compute(this.form)" size="50"> Result: <input name="result"
+ size="5"> <input type="button" name="computeButton" value="Compute!"
+ onclick="compute(this.form)"> </form> 
+But this assumes that first we see the positive mammography result, and
+then the positive result on the Tams-Braylor.&nbsp; What if first the
+woman gets a positive result on the Tams-Braylor, followed by a
+positive
+result on her mammography.&nbsp; Intuitively, it seems like it
+shouldn't
+matter.&nbsp; Does the math check out?<br> 
+<br> 
+First we'll administer the Tams-Braylor to a woman with a 1% prior
+probability of breast cancer.&nbsp; <br> 
+<br> 
+<form> Calculator: <input type="text" name="expression"
+ value="(1 + 2) * 3 + 4" onchange="compute(this.form)"
+ onkeyup="compute(this.form)" size="50"> Result: <input name="result"
+ size="5"> <input type="button" name="computeButton" value="Compute!"
+ onclick="compute(this.form)"> </form> 
+<span style="font-style: italic;"></span>Then we administer a
+mammography, which gives 80% true positives and 9.6% false positives,
+and it also comes out positive.<br> 
+<br> 
+<form> Calculator: <input type="text" name="expression"
+ value="(1 + 2) * 3 + 4" onchange="compute(this.form)"
+ onkeyup="compute(this.form)" size="50"> Result: <input name="result"
+ size="5"> <input type="button" name="computeButton" value="Compute!"
+ onclick="compute(this.form)"> </form> 
+Lo and behold, the answer is again 60%.&nbsp; (If it's not exactly the
+same, it's due to rounding error - you can get a more precise
+calculator, or work out the fractions by hand, and the numbers will be
+exactly equal.)<br> 
+<br> 
+An algebraic proof that both strategies are equivalent is left to the
+reader.&nbsp; To visualize, imagine that the lower bar of the frequency
+applet for mammography projects an even lower bar using the
+probabilities of the Tams-Braylor Test, and that the final lowest bar
+is
+the same regardless of the order in which the conditional probabilities
+are projected.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+We might also reason that since the two tests are independent, the
+probability a woman with breast cancer gets a positive mammography <span 
+ style="font-style: italic;">and</span> a positive Tams-Braylor is 90%
+*
+80% = 72%.&nbsp; And the probability that a woman without breast cancer
+gets false positives on mammography and Tams-Braylor is 5% * 9.6% =
+0.48%.&nbsp; So if we wrap it all up as a single test with a likelihood
+ratio of 72%/0.48%, and apply it to a woman with a 1% prior probability
+of breast cancer:<br> 
+<br> 
+<form> Calculator: <input type="text" name="expression"
+ value="(1 + 2) * 3 + 4" onchange="compute(this.form)"
+ onkeyup="compute(this.form)" size="50"> Result: <input name="result"
+ size="5"> <input type="button" name="computeButton" value="Compute!"
+ onclick="compute(this.form)"> </form> 
+...we find once again that the answer is 60%.<br> 
+<br> 
+Suppose that the prior prevalence of breast cancer in a demographic is
+1%.&nbsp; Suppose that we, as doctors, have a repertoire of three
+independent tests for breast cancer.&nbsp; Our first test, test A, a
+mammography, has a likelihood ratio of 80%/9.6% = 8.33.&nbsp; The
+second
+test, test B, has a likelihood ratio of 18.0 (for example, from 90%
+versus 5%); and the third test, test C, has a likelihood ratio of 3.5
+(which could be from 70% versus 20%, or from 35% versus 10%; it makes
+no
+difference).&nbsp; Suppose a patient gets a positive result on all
+three
+tests.&nbsp; What is the probability the patient has breast cancer?<br> 
+<br> 
+Here's a fun trick for simplifying the bookkeeping.&nbsp; If the prior
+prevalence of breast cancer in a demographic is 1%, then 1 out of 100
+women have breast cancer, and 99 out of 100 women do not have breast
+cancer.&nbsp; So if we rewrite the <span style="font-style: italic;">probability</span> 
+of 1% as an <span style="font-style: italic;">odds ratio,</span> the
+odds are:<br> 
+<br> 
+<span style="font-family: monospace;">1:99</span><br> 
+<br> 
+And the likelihood ratios of the three tests A, B, and C are:<br> 
+<br> 
+<span style="font-family: monospace;">8.33:1 = 25:3</span><br 
+ style="font-family: monospace;"> 
+<span style="font-family: monospace;">18.0:1 = 18:1</span><br 
+ style="font-family: monospace;"> 
+<span style="font-family: monospace;">&nbsp;3.5:1 =&nbsp; 7:2</span><br> 
+<br> 
+The <span style="font-style: italic;">odds </span>for women with
+breast cancer who score positive on all three tests, versus women
+without breast cancer who score positive on all three tests, will equal:<br> 
+<br> 
+<span style="font-family: monospace;">1*25*18*7:99*3*1*2 =</span><br 
+ style="font-family: monospace;"> 
+<span style="font-family: monospace;">3,150:594</span><br> 
+<br> 
+To recover the probability from the odds, we just write:<br> 
+<span style="font-family: monospace;">3,150 / (3,150 + 594) = 84%</span><br> 
+<br> 
+This always works regardless of how the odds ratios are written; i.e.,
+8.33:1 is just the same as 25:3 or 75:9.&nbsp; It doesn't matter in
+what
+order the tests are administered, or in what order the results are
+computed.&nbsp; The proof is left as an exercise for the reader.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+E. T. Jaynes, in "Probability Theory With Applications in Science and
+Engineering", suggests that credibility and evidence should be measured
+in decibels.<br> 
+<br> 
+Decibels?<br> 
+<br> 
+Decibels are used for measuring exponential differences of
+intensity.&nbsp; For example, if the sound from an automobile horn
+carries 10,000 times as much energy (per square meter per second) as
+the sound from an alarm clock, the automobile horn would be 40 decibels
+louder.&nbsp; The sound of a bird singing might carry 1,000 times less
+energy than an alarm clock, and hence would be 30 decibels
+softer.&nbsp; To get the number of decibels,
+you take the logarithm base 10 and multiply by 10.<br> 
+<br> 
+<span style="font-family: monospace;">decibels = 10 log<sub>10</sub> 
+(intensity)<br> 
+</span><span style="font-style: italic;">&nbsp;&nbsp;&nbsp; or</span><span 
+ style="font-family: monospace;"><br> 
+intensity = 10<sup>(decibels/10)</sup><br> 
+</span><br> 
+Suppose we start with a prior probability of 1% that a woman has breast
+cancer, corresponding to an odds ratio of 1:99.&nbsp; And then we
+administer three tests of likelihood ratios 25:3, 18:1, and 7:2.&nbsp;
+You <span style="font-style: italic;">could </span>multiply those
+numbers... or you could just add their logarithms:<br> 
+<br> 
+<span style="font-family: monospace;">10 log<sub>10</sub> (1/99) = -20<br> 
+</span><span style="font-family: monospace;">10 log<sub>10</sub> (25/3)
+= 9<br> 
+</span><span style="font-family: monospace;">10 log<sub>10</sub> (18/1)
+= 13<br> 
+</span><span style="font-family: monospace;">10 log<sub>10</sub> 
+(7/2)&nbsp; = 5</span><br> 
+<br> 
+It starts out as fairly unlikely that a woman has breast cancer - our
+credibility level is at -20 decibels.&nbsp; Then three test results
+come
+in, corresponding to 9, 13, and 5 decibels of evidence.&nbsp; This
+raises the credibility level by a total of 27 decibels, meaning that
+the
+prior credibility of -20 decibels goes to a posterior credibility of 7
+decibels.&nbsp; So the odds go from 1:99 to 5:1, and the probability
+goes from 1% to around 83%.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+<div style="margin-left: 40px;">In front of you is a bookbag containing
+1,000 poker chips.&nbsp; I started out with two such bookbags, one
+containing 700 red and 300 blue chips, the other containing 300 red and
+700 blue.&nbsp; I flipped a fair coin to determine which bookbag to
+use,
+so your prior probability that the bookbag in front of you is the red
+bookbag is 50%.&nbsp; Now, you sample randomly, with replacement after
+each chip.&nbsp; In 12 samples, you get 8 reds and 4 blues.&nbsp; What
+is the probability that this is the predominantly red bag?<br> 
+</div> 
+<br> 
+Just for fun, try and work this one out in your head.&nbsp; You don't
+need to be exact - a rough estimate is good enough.&nbsp; When you're
+ready, continue onward.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+According to a study performed by Lawrence Phillips and Ward Edwards in
+1966, most people, faced with this problem, give an answer in the range
+70% to 80%.&nbsp; Did you give a substantially higher probability than
+that?&nbsp; If you did, congratulations - Ward Edwards wrote that very
+seldom does a person answer this question properly, even if the person
+is relatively familiar with Bayesian reasoning.&nbsp; The correct
+answer
+is 97%.<br> 
+<br> 
+The likelihood ratio for the test result "red chip" is 7/3, while the
+likelihood ratio for the test result "blue chip" is 3/7.&nbsp;
+Therefore
+a blue chip is exactly the same amount of evidence as a red chip, just
+in the other direction - a red chip is 3.6 decibels of evidence for the
+red bag, and a blue chip is -3.6 decibels of evidence.&nbsp; If you
+draw
+one blue chip and one red chip, they cancel out.&nbsp; So the <span 
+ style="font-style: italic;">ratio </span>of red chips to blue chips
+does not matter; only the <span style="font-style: italic;">excess</span> 
+of red chips over blue chips matters.&nbsp; There were eight red chips
+and four blue chips in twelve samples; therefore, four <span 
+ style="font-style: italic;">more</span> red chips than blue
+chips.&nbsp; Thus the posterior odds will be:<br> 
+<br> 
+<span style="font-family: monospace;">7</span><sup 
+ style="font-family: monospace;">4</sup><span 
+ style="font-family: monospace;">:3</span><sup 
+ style="font-family: monospace;">4</sup><span 
+ style="font-family: monospace;"> = 2401:81<br> 
+</span>which is around 30:1, i.e., around 97%.<br> 
+<br> 
+The prior credibility starts at 0 decibels and there's a total of
+around 14 decibels of evidence, and indeed this corresponds to odds of
+around 25:1 or around 96%.&nbsp; Again, there's some rounding error,
+but
+if you performed the operations using exact arithmetic, the results
+would be identical.<br> 
+<br> 
+We can now see <span style="font-style: italic;">intuitively</span> 
+that the bookbag problem would have exactly the same answer, obtained
+in
+just the same way, if sixteen chips were sampled and we found ten red
+chips and six blue chips.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+<div style="margin-left: 40px;">You are a mechanic for gizmos.&nbsp;
+When a gizmo stops working, it is due to a blocked hose 30% of the
+time.&nbsp; If a gizmo's hose is blocked, there is a 45% probability
+that prodding the gizmo will produce sparks.&nbsp; If a gizmo's hose is
+unblocked, there is only a 5% chance that prodding the gizmo will
+produce sparks.&nbsp; A customer brings you a malfunctioning
+gizmo.&nbsp; You prod the gizmo and find that it produces sparks.&nbsp;
+What is the probability that a spark-producing gizmo has a blocked hose?<br> 
+</div> 
+<br> 
+<form>Calculator: <input name="expression" value="0"
+ onchange="compute(this.form)" onkeyup="compute(this.form)" size="50"> 
+Result: <input name="result" size="5" value=""> <input type="button"
+ name="computeButton" value="Compute!" onclick="compute(this.form)"> </form> 
+What is the sequence of arithmetical operations that you performed to
+solve this problem?<br> 
+<br> 
+(45%*30%) / (45%*30% + 5%*70%)<br> 
+<br> 
+<iframe 
+  scrolling="no" 
+  width="730" 
+  height="300px" 
+  frameborder="0" 
+  src="/rational/bayes/applet/10">
+  <applet code="BayesApplet.class" codebase="/assets/images/" width="730" height="300"> <img 
+ width="730" height="250" src="/assets/images/bayes-100.png"> <param name="event2alt"
+ value="no sparks"><param name="event1" value="hose"> <param 
+ name="event2" value="sparks"> <param name="topbar" value="all gizmos"> 
+<param name="topleft" value="hose blocked"> <param name="topright"
+ value="hose unblocked"> <param name="condleft" value="sparks|blocked"> 
+<param name="condleftalt" value="no sparks|blocked"> <param 
+ name="condright" value="sparks|unblocked"> <param name="condrightalt"
+ value="no sparks|unblocked"> <param name="botbar"
+ value="gizmos with sparks"> <param name="botbaralt"
+ value="gizmos with no sparks"> <param name="botleft" value="s&amp;b"> <param 
+ name="botleftalt" value="~s&amp;b"> <param name="botright" value="s&amp;~b"> <param 
+ name="botrightalt" value="~s&amp;~b"> <param name="prior" value="0.3"> <param 
+ name="cond1" value="0.45"> <param name="cond2" value="0.05"> <param 
+ name="group1" value="Blocked:"> <param name="group2"
+ value="Unblocked:"> <param name="groupA" value="Blocked &amp; sparky:"> <param 
+ name="groupB" value="Blocked &amp; unsparky:"> <param name="groupC"
+ value="Unblocked &amp; sparky:"> <param name="groupD"
+ value="Unblocked &amp; unsparky:"> <param name="groupTotal"
+ value="Total gizmos:"> <param name="totalNum" value="1000"> </applet> 
+</iframe>
+<br> 
+<br> 
+Similarly, to find the chance that a woman with positive mammography
+has breast cancer, we computed:<br> 
+<br> 
+<div style="text-align: center;"><span style="font-family: monospace;"> 
+p(positive|cancer)*p(cancer)<br> 
+_______________________________________________<br> 
+</span><span style="font-family: monospace;">p(positive|cancer)*p(cancer)
++ p(positive|~cancer)*p(~cancer)<br> 
+<br> 
+</span></div> 
+&nbsp;&nbsp;&nbsp; <span style="font-style: italic;">which is</span><br> 
+<span style="font-family: monospace;"> p(positive&amp;cancer) /
+[p(positive&amp;cancer) + p(positive&amp;~cancer)]</span><br> 
+&nbsp;&nbsp;&nbsp; <span style="font-style: italic;">which is</span><br> 
+<span style="font-family: monospace;"> p(positive&amp;cancer) /
+p(positive)</span><br> 
+&nbsp;&nbsp;&nbsp; <span style="font-style: italic;">which is</span><br> 
+<span style="font-family: monospace;"> p(cancer|positive)</span><br> 
+<br> 
+The fully general form of this calculation is known as <span 
+ style="font-style: italic;">Bayes' Theorem</span> or <span 
+ style="font-style: italic;">Bayes' Rule:</span><br> 
+<br> 
+<table align="center"
+ style="text-align: left; margin-left: auto; margin-right: auto;"> 
+  <tbody> 
+    <tr align="center"> 
+      <td colspan="2" style="text-align: center;"><img src="/assets/images/bayes.jpg"
+ title="" alt="Bayes' Theorem:" style="width: 393px; height: 80px;"><br> 
+      </td> 
+    </tr> 
+    <tr> 
+      <td style="vertical-align: middle; text-align: left;"><span 
+ style="font-family: monospace;">p(A|X) =</span> </td> 
+      <td style="vertical-align: middle; text-align: right;"
+ alight="left"><span style="font-family: monospace;"><span 
+ style="text-decoration: underline;"><span 
+ style="text-decoration: underline;"> &nbsp; &nbsp; &nbsp; &nbsp; </span>p(X|A)*</span></span><span 
+ style="font-family: monospace; text-decoration: underline;">p(A)&nbsp;
+&nbsp; &nbsp; &nbsp;&nbsp; </span><br 
+ style="font-family: monospace; font-weight: bold;"> 
+&nbsp; <span style="font-family: monospace; font-weight: bold;"></span><span 
+ style="font-family: monospace;">p(X|A)*</span><span 
+ style="font-family: monospace;">p(A) + p(X|~A)*</span><span 
+ style="font-family: monospace;">p(~A)</span><br> 
+      </td> 
+    </tr> 
+  </tbody> 
+</table> 
+<br> 
+Given some phenomenon A that we want to investigate, and an observation
+X that is evidence about A - for example, in the previous example, A is
+breast cancer and X is a positive mammography - Bayes' Theorem tells us
+how we should <span style="font-style: italic;">update</span> our
+probability of A, given the <span style="font-style: italic;">new
+evidence</span> X.<br> 
+<br> 
+<iframe 
+  scrolling="no" 
+  width="650" 
+  height="300px" 
+  frameborder="0" 
+  src="/rational/bayes/applet/11">
+  
+<applet code="BayesApplet.class" codebase="/assets/images/" width="650" height="300"> <img 
+ width="650" height="250" src="/assets/images/bayes-110.png"> <param name="event1"
+ value="A"> <param name="event2" value="X"> <param name="topbar"
+ value="p(1)"> <param name="topleft" value="p(A)"> <param 
+ name="topright" value="p(~A)"> <param name="condleft" value="p(X|A)"> 
+<param name="condleftalt" value="p(~X|A)"> <param name="condright"
+ value="p(X|~A)"> <param name="condrightalt" value="p(~X|~A)"> <param 
+ name="botbar" value="p(X)"> <param name="botbaralt" value="p(~X)"> <param 
+ name="botleft" value="p(X&amp;A)"> <param name="botleftalt"
+ value="p(~X&amp;A)"> <param name="botright" value="p(X&amp;~A)"> <param 
+ name="botrightalt" value="p(~X&amp;~A)"> <param name="prior" value="0.33"> 
+<param name="cond1" value="0.75"> <param name="cond2" value="0.25"> <param 
+ name="group1" value="A:"> <param name="group2" value="~A:"> <param 
+ name="groupA" value="A &amp; X:"> <param name="groupB" value="A &amp; ~X:"> <param 
+ name="groupC" value="~A &amp; X:"> <param name="groupD" value="~A &amp; ~X:"> 
+<param name="groupTotal" value="Sample:"> <param name="totalNum"
+ value="1000"> </applet>
+</iframe>
+ <br> 
+<br> 
+By this point, Bayes' Theorem may seem blatantly obvious or even
+tautological, rather than exciting and new.&nbsp; If so, this
+introduction has <span style="font-style: italic;">entirely succeeded</span> 
+in its purpose.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+<table align="center"
+ style="text-align: left; margin-left: auto; margin-right: auto; width: 80%; height: 1%;"
+ border="2" cellpadding="2"> 
+  <tbody> 
+    <tr> 
+      <td 
+ style="background-color: rgb(255, 255, 153); width: 0%; text-align: center; vertical-align: top;"><b>Fun<br> 
+Fact!</b> </td> 
+      <td style="background-color: rgb(204, 255, 255);"> <span 
+ style="font-weight: bold;">Q.&nbsp; Who originally discovered Bayes'
+Theorem?</span><br style="font-weight: bold;"> 
+      <span style="font-weight: bold;"> A.&nbsp; </span>The Reverend
+Thomas Bayes, by far the most enigmatic figure in mathematical
+history.&nbsp; Almost nothing is known of Bayes's life, and very few of
+his manuscripts survived.&nbsp; Thomas Bayes was born in 1701 or 1702
+to
+Joshua Bayes and Ann Carpenter, and his date of death is listed as
+1761.&nbsp; The exact date of Thomas Bayes's birth is not known for
+certain because Joshua Bayes, though a surprisingly wealthy man, was a
+member of an unusual, esoteric, and even heretical religious sect, the
+"Nonconformists".&nbsp; The Nonconformists kept their birth registers
+secret, supposedly from fear of religious discrimination; whatever the
+reason, no true record exists of Thomas Bayes's birth.&nbsp; Thomas
+Bayes was raised a Nonconformist and was soon promoted into the higher
+ranks of the Nonconformist theosophers, whence comes the "Reverend" in
+his name.<br> 
+      <br> 
+In 1742 Bayes was elected a Fellow of the Royal Society of London, the
+most prestigious scientific body of its day, despite Bayes having
+published no scientific or mathematical works at that time.&nbsp;
+Bayes's nomination certificate was signed by sponsors including the
+President and the Secretary of the Society, making his election almost
+certain.&nbsp; Even today, however, it remains a mystery <span 
+ style="font-style: italic;">why</span> such weighty names sponsored an
+unknown into the Royal Society.<br> 
+      <br> 
+Bayes's sole publication during his known lifetime was allegedly a
+mystical book entitled <span style="font-style: italic;">Divine
+Benevolence,</span> laying forth the original causation and ultimate
+purpose of the universe.&nbsp; The book is commonly attributed to
+Bayes,
+though it is said that no author appeared on the title page, and the
+entire work is sometimes considered to be of dubious provenance.<br> 
+      <br> 
+Most mysterious of all, Bayes' Theorem itself appears in a Bayes
+manuscript presented to the Royal Society of London in 1764, <span 
+ style="font-style: italic;"><span style="font-style: italic;">three
+years </span>after Bayes's supposed death in 1761!</span><br> 
+      <br> 
+Despite the shocking circumstances of its presentation, Bayes' Theorem
+was soon forgotten, and was popularized within the scientific community
+only by the later efforts of the great mathematician Pierre-Simon
+Laplace.&nbsp; Laplace himself is almost as enigmatic as Bayes; we
+don't
+even know whether it was "Pierre" or "Simon" that was his actual first
+name.&nbsp; Laplace's papers are said to have contained a design for an
+AI capable of predicting all future events, the so-called "Laplacian
+superintelligence".&nbsp; While it is generally believed that Laplace
+never tried to implement his design, there remains the fact that
+Laplace
+presciently fled the guillotine that claimed many of his colleagues
+during the Reign of Terror.&nbsp; Even today, physicists sometimes
+attribute unusual effects to a "Laplacian Operator" intervening in
+their
+experiments.<br> 
+      <br> 
+In summary, we do not know the real circumstances of Bayes's birth, the
+ultimate origins of Bayes' Theorem, Bayes's actual year of death, or
+even whether Bayes ever really died.&nbsp; Nonetheless "Reverend Thomas
+Bayes", whatever his true identity, has the greatest fondness and
+gratitude of Earth's scientific community.</td> 
+    </tr> 
+  </tbody> 
+</table> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+So why is it that some people are so <span style="font-style: italic;">excited</span> 
+about Bayes' Theorem?<br> 
+<br> 
+"Do you believe that a nuclear war will occur in the next 20 years?
+&nbsp;If no, why not?"&nbsp; Since I wanted to use some common answers
+to this question to make a point about rationality, I went ahead and
+asked the above question in an IRC channel, #philosophy on EFNet.<br> 
+<br> 
+One EFNetter who answered replied "No" to the above question, but added
+that he believed biological warfare would wipe out "99.4%" of humanity
+within the next ten years. &nbsp;I then asked whether he believed 100%
+was a possibility. &nbsp;"No," he said. &nbsp;"Why not?", I asked.
+&nbsp;"Because I'm an optimist," he said.&nbsp; (Roanoke of #philosophy
+on EFNet wishes to be credited with this statement, even having been
+warned that it will not be cast in a complimentary light. &nbsp;Good
+for
+him!)&nbsp; Another person who answered the above question said that he
+didn't expect a nuclear war for 100 years, because "All of the players
+involved in decisions regarding nuclear war are not interested right
+now." &nbsp;"But why extend that out for 100 years?", I asked.
+&nbsp;"Pure hope," was his reply.<br> 
+<br> 
+What is it <span style="font-style: italic;">exactly</span> that makes
+these thoughts "irrational" - a poor way of arriving at truth?&nbsp;
+There are a number of intuitive replies that can be given to this; for
+example:&nbsp; "It is not rational to believe things only because they
+are comforting."&nbsp; Of course it is equally irrational to believe
+things only because they are <span style="font-style: italic;">discomforting;</span> 
+the second error is less common, but equally irrational.&nbsp; Other
+intuitive arguments include the idea that "Whether or not you happen to
+be an optimist has nothing to do with whether biological warfare wipes
+out the human species", or "Pure hope is not evidence about nuclear war
+because it is not an observation about nuclear war."<br> 
+<br> 
+There is also a mathematical reply that is precise, exact, and contains
+all the intuitions as special cases.&nbsp; This mathematical reply is
+known as Bayes' Theorem.<br> 
+<br> 
+For example, the reply "Whether or not you happen to be an optimist has
+nothing to do with whether biological warfare wipes out the human
+species" can be translated into the statement:<br> 
+<br> 
+p(you are currently an optimist | biological war occurs within ten
+years and wipes out humanity) =<br> 
+p(you are currently an optimist | biological war occurs within ten
+years and does not wipe out humanity)<br> 
+<br> 
+Since the two probabilities for <span style="font-family: monospace;">p(X|A)</span> 
+and <span style="font-family: monospace;">p(X|~A)</span> are equal,
+Bayes' Theorem says that <span style="font-family: monospace;">p(A|X)
+=
+p(A)</span>; as we have earlier seen, when the two conditional
+probabilities are equal, the revised probability equals the prior
+probability.&nbsp; If X and A are unconnected - statistically
+independent - then finding that X is true cannot be evidence that A is
+true; observing X does not update our probability for A; saying "X" is
+not an argument for A.<br> 
+<br> 
+But suppose you are arguing with someone who is verbally clever and who
+says something like, "Ah, but since I'm an optimist, I'll have renewed
+hope for tomorrow, work a little harder at my dead-end job, pump up the
+global economy a little, eventually, through the trickle-down effect,
+sending a few dollars into the pocket of the researcher who ultimately
+finds a way to stop biological warfare - so you see, the two events are
+related after all, and I can use one as valid evidence about the
+other."&nbsp; In one sense, this is correct - <span 
+ style="font-style: italic;">any</span> correlation, no matter how
+weak,
+is fair prey for Bayes' Theorem; <span style="font-style: italic;">but</span> 
+Bayes' Theorem distinguishes between weak and strong evidence.&nbsp;
+That is, Bayes' Theorem not only tells us what is and isn't evidence,
+it
+also describes the <span style="font-style: italic;">strength</span> 
+of
+evidence.&nbsp; Bayes' Theorem not only tells us <span 
+ style="font-style: italic;">when</span> to revise our probabilities,
+but <span style="font-style: italic;">how much</span> to revise our
+probabilities.&nbsp; A correlation between hope and biological warfare
+may exist, but it's a lot weaker than the speaker wants it to be; he is
+revising his probabilities much too far.<br> 
+<br> 
+Let's say you're a woman who's just undergone a mammography.&nbsp;
+Previously, you figured that you had a very small chance of having
+breast cancer; we'll suppose that you read the statistics somewhere and
+so you know the chance is 1%.&nbsp; When the positive mammography comes
+in, your estimated chance should now shift to 7.8%.&nbsp; There is no
+room to say something like, "Oh, well, a positive mammography isn't
+definite evidence, some healthy women get positive mammographies
+too.&nbsp; I don't want to despair too early, and I'm not going to
+revise my probability until more evidence comes in.&nbsp; Why?&nbsp;
+Because I'm a optimist."&nbsp; And there is similarly no room for
+saying, "Well, a positive mammography may not be definite evidence, but
+I'm going to assume the worst until I find otherwise.&nbsp; Why?&nbsp;
+Because I'm a pessimist."&nbsp; Your revised probability should go to<span 
+ style="font-style: italic;"></span> 7.8%, no more, no less.<br> 
+<br> 
+Bayes' Theorem describes what makes something "evidence" and how much
+evidence it is.&nbsp; Statistical models are judged by comparison to
+the <span style="font-style: italic;">Bayesian method</span> because,
+in
+statistics, the Bayesian method is as good as it gets - the Bayesian
+method defines the maximum amount of mileage you can get out of a given
+piece of evidence, in the same way that thermodynamics defines the
+maximum amount of work you can get out of a temperature
+differential.&nbsp;
+This is why you hear cognitive scientists talking about <span 
+ style="font-style: italic;">Bayesian reasoners</span>.&nbsp; In
+cognitive science, <span style="font-style: italic;">Bayesian reasoner</span> 
+is the technically precise codeword that we use to mean <span 
+ style="font-style: italic;">rational mind.</span><br> 
+<br> 
+There are also a number of general heuristics about human reasoning
+that you can learn from looking at Bayes' Theorem.<br> 
+<br> 
+For example, in many discussions of Bayes' Theorem, you may hear
+cognitive psychologists saying that people <span 
+ style="font-style: italic;">do not take prior frequencies sufficiently
+into account,</span> meaning that when people approach a problem where
+there's some evidence X indicating that condition A might hold true,
+they tend to judge A's likelihood solely by how well the evidence X
+seems to match A, without taking into account the prior frequency of
+A.&nbsp; If you think, for example, that under the mammography example,
+the woman's chance of having breast cancer is in the range of 70%-80%,
+then this kind of reasoning is insensitive to the prior frequency given
+in the problem; it doesn't notice whether 1% of women or 10% of women
+start out having breast cancer.&nbsp; "Pay more attention to the prior
+frequency!" is one of the many things that humans need to bear in mind
+to partially compensate for our built-in inadequacies.<br> 
+<br> 
+A related error is to pay too much attention to p(X|A) and not enough
+to p(X|~A) when determining how much evidence X is for A.&nbsp; The
+degree to which a result X is <i>evidence for A</i> depends, not only
+on
+the strength of the statement <i>we'd expect to see result X if A were
+true,</i> but also on the strength of the statement <i>we <span 
+ style="font-weight: bold;">wouldn't</span> expect to see result X if A
+weren't true.</i>&nbsp; For example, if it is raining, this very
+strongly implies the grass is wet <span style="font-family: monospace;">-
+p(wetgrass|rain) ~ 1 </span>- but seeing that the grass is wet doesn't
+necessarily mean that it has just rained; perhaps the sprinkler was
+turned on, or you're looking at the early morning dew.&nbsp; Since <span 
+ style="font-family: monospace;">p(wetgrass|~rain)</span> is
+substantially greater than zero, <span style="font-family: monospace;">p(rain|wetgrass)</span> 
+is substantially less than one.&nbsp; On the other hand, if the grass
+was <span style="font-style: italic;">never</span> wet when it wasn't
+raining, then knowing that the grass was wet would <span 
+ style="font-style: italic;">always</span> show that it was raining, <span 
+ style="font-family: monospace;">p(rain|wetgrass) ~ 1</span>, even if <span 
+ style="font-family: monospace;">p(wetgrass|rain) = 50%</span>; that
+is, even if the grass only got wet 50% of the times it rained.&nbsp;
+Evidence is always the result of the <span style="font-style: italic;">differential</span> 
+between the two conditional probabilities.&nbsp; <span 
+ style="font-style: italic;">Strong</span> evidence is not the product
+of a very high probability that A leads to X, but the product of a very
+<span style="font-style: italic;">low</span> probability that <span 
+ style="font-style: italic;">not-A</span> could have led to X.<span 
+ style="font-style: italic;"></span><br> 
+<span style="font-style: italic;"></span> <br> 
+The <span style="font-style: italic;">Bayesian revolution in the
+sciences</span> is fueled, not only by more and more cognitive
+scientists suddenly noticing that mental phenomena have Bayesian
+structure in them; not only by scientists in every field learning to
+judge their statistical methods by comparison with the Bayesian method;
+but also by the idea that <span style="font-style: italic;">science
+itself is a special case of Bayes' Theorem; experimental evidence is
+Bayesian evidence.</span>&nbsp; The Bayesian revolutionaries hold that
+when you perform an experiment and get evidence that "confirms" or
+"disconfirms" your theory, this confirmation and disconfirmation is
+governed by the Bayesian rules.&nbsp; For example, you have to take
+into
+account, not only whether your theory predicts the phenomenon, but
+whether other possible explanations also predict the phenomenon.&nbsp;
+Previously, the most popular philosophy of science was probably Karl
+Popper's <span style="font-style: italic;">falsificationism</span> -
+this is the old philosophy that the Bayesian revolution is currently
+dethroning.&nbsp; Karl Popper's idea that theories can be definitely
+falsified, but never definitely confirmed, is yet another special case
+of the Bayesian rules; if <span style="font-family: monospace;">p(X|A)
+~ 1</span> - if the theory makes a definite prediction - then observing
+~X very strongly falsifies A.&nbsp; On the other hand, if <span 
+ style="font-family: monospace;">p(X|A) ~ 1</span>,&nbsp; and we
+observe X, this doesn't definitely confirm the theory; there might be
+some other condition B such that <span style="font-family: monospace;">p(X|B)
+~ 1</span>, in which case observing X doesn't favor A over B.&nbsp; For
+observing X to definitely confirm A, we would have to know, not that <span 
+ style="font-family: monospace;">p(X|A) ~ 1</span>, but that <span 
+ style="font-family: monospace;">p(X|~A) ~ 0</span>, which is something
+that we can't know because we can't range over all possible alternative
+explanations.&nbsp; For example, when Einstein's theory of General
+Relativity toppled Newton's incredibly well-confirmed theory of
+gravity,
+it turned out that all of Newton's predictions were just a special case
+of Einstein's predictions.<br> 
+<br> 
+You can even formalize Popper's philosophy mathematically.&nbsp; The
+likelihood ratio for X, <span style="font-family: monospace;">p(X|A)/p(X|~A)</span>,
+determines how much observing X slides the probability for A; the
+likelihood ratio is what says <span style="font-style: italic;">how
+strong</span> X is as evidence.&nbsp; Well, in your theory A, you can
+predict X with probability 1, if you like; but you can't control the
+denominator of the likelihood ratio, <span 
+ style="font-family: monospace;">p(X|~A)</span> - there will always be
+some alternative theories that also predict X, and while we go with the
+simplest theory that fits the current evidence, you may someday
+encounter some evidence that an alternative theory predicts but your
+theory does not.&nbsp; That's the hidden gotcha that toppled Newton's
+theory of gravity.&nbsp; So there's a limit on how much mileage you can
+get from successful predictions; there's a limit on how high the
+likelihood ratio goes for <span style="font-style: italic;">confirmatory</span> 
+evidence.<br> 
+<br> 
+On the other hand, if you encounter some piece of evidence Y that is
+definitely <span style="font-style: italic;">not</span> predicted by
+your theory, this is <span style="font-style: italic;">enormously</span> 
+strong evidence <span style="font-style: italic;">against</span> your
+theory.&nbsp; If <span style="font-family: monospace;">p(Y|A)</span> 
+is
+infinitesimal, then the likelihood ratio will also be
+infinitesimal.&nbsp; For example, if <span 
+ style="font-family: monospace;">p(Y|A)</span> is 0.0001%, and <span 
+ style="font-family: monospace;">p(Y|~A)</span> is 1%, then the
+likelihood ratio <span style="font-family: monospace;">p(Y|A)/p(Y|~A)</span> 
+will be 1:10000.&nbsp; -40 decibels of evidence!&nbsp; Or flipping the
+likelihood ratio, if <span style="font-family: monospace;">p(Y|A)</span> 
+is <span style="font-style: italic;">very small,</span> then <span 
+ style="font-family: monospace;">p(Y|~A)/p(Y|A)</span> will be <span 
+ style="font-style: italic;">very large,</span> meaning that observing
+Y
+greatly favors ~A over A.&nbsp; Falsification is much stronger than
+confirmation.&nbsp; This is a consequence of the earlier point that <span 
+ style="font-style: italic;">very strong</span> evidence is not the
+product of a very high probability that A leads to X, but the product
+of
+a very <span style="font-style: italic;">low</span> probability that <span 
+ style="font-style: italic;">not-A</span> could have led to X.&nbsp;
+This is the precise Bayesian rule that underlies the heuristic value of
+Popper's falsificationism.<br> 
+<br> 
+Similarly, Popper's dictum that an idea must be falsifiable can be
+interpreted as a manifestation of the Bayesian
+conservation-of-probability rule; if a result X is positive evidence
+for
+the theory, then the result ~X would have disconfirmed the theory to
+some extent.&nbsp; If you try to interpret both X and ~X as
+"confirming"
+the theory, the Bayesian rules say this is impossible!&nbsp; To
+increase
+the probability of a theory you <span style="font-style: italic;">must</span> 
+expose it to tests that can potentially decrease its probability; this
+is not just a rule for detecting would-be cheaters in the social
+process
+of science, but a consequence of Bayesian probability theory.&nbsp; On
+the other hand, Popper's idea that there is <span 
+ style="font-style: italic;">only</span> falsification and <span 
+ style="font-style: italic;">no such thing</span> as confirmation turns
+out to be incorrect.&nbsp; Bayes' Theorem shows that falsification is <span 
+ style="font-style: italic;">very strong</span> evidence compared to
+confirmation, but falsification is still probabilistic in nature; it is
+not governed by fundamentally different rules from confirmation, as
+Popper argued.<span style="font-style: italic;"></span><br> 
+<br> 
+So we find that many phenomena in the cognitive sciences, plus the
+statistical methods used by<span style="font-style: italic;"></span> 
+scientists, plus the scientific method itself, are all turning out to
+be
+special cases of Bayes' Theorem.&nbsp; Hence the Bayesian revolution.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+<table align="center"
+ style="text-align: left; margin-left: auto; margin-right: auto; width: 80%; height: 1%;"
+ border="2" cellpadding="2"> 
+  <tbody> 
+    <tr> 
+      <td 
+ style="background-color: rgb(255, 255, 153); width: 0%; text-align: center; vertical-align: top;"><b>Fun<br> 
+Fact!</b> </td> 
+      <td style="background-color: rgb(204, 255, 255);"> <span 
+ style="font-weight: bold;">Q.&nbsp; Are there any limits to the power
+of Bayes' Theorem?</span><br style="font-weight: bold;"> 
+      <span style="font-weight: bold;"> A.&nbsp; </span>According to
+legend, one who fully grasped Bayes' Theorem would gain the ability to
+create and physically enter an alternate universe using only
+off-the-shelf equipment and a short computer program.&nbsp; One who
+fully grasps Bayes' Theorem, yet remains in our universe to aid others,
+is known as a Bayesattva.</td> 
+    </tr> 
+  </tbody> 
+</table> 
+<br> 
+<hr style="width: 100%; height: 2px;"><span style="font-style: italic;"></span><br> 
+<table align="center"
+ style="text-align: left; margin-left: auto; margin-right: auto;"> 
+  <tbody> 
+    <tr align="center"> 
+      <td colspan="2" style="text-align: center;"><img src="/assets/images/bayes.jpg"
+ title="" alt="Bayes' Theorem:" style="width: 393px; height: 80px;"><br> 
+      </td> 
+    </tr> 
+    <tr> 
+      <td style="vertical-align: middle; text-align: left;"><span 
+ style="font-family: monospace;">p(A|X) =</span> </td> 
+      <td style="vertical-align: middle; text-align: right;"
+ alight="left"><span style="font-family: monospace;"><span 
+ style="text-decoration: underline;"><span 
+ style="text-decoration: underline;"> &nbsp; &nbsp; &nbsp; &nbsp; </span>p(X|A)*</span></span><span 
+ style="font-family: monospace; text-decoration: underline;">p(A)&nbsp;
+&nbsp; &nbsp; &nbsp;&nbsp; </span><br 
+ style="font-family: monospace; font-weight: bold;"> 
+&nbsp; <span style="font-family: monospace; font-weight: bold;"></span><span 
+ style="font-family: monospace;">p(X|A)*</span><span 
+ style="font-family: monospace;">p(A) + p(X|~A)*</span><span 
+ style="font-family: monospace;">p(~A)</span><br> 
+      </td> 
+    </tr> 
+  </tbody> 
+</table> 
+<br> 
+Why wait so long to introduce Bayes' Theorem, instead of just showing
+it at the beginning?&nbsp; Well... because I've tried that before; and
+what happens, in my experience, is that people get all tangled up in
+trying to apply Bayes' Theorem as a set of <span 
+ style="font-style: italic;">poorly grounded mental rules;</span> 
+instead of the Theorem helping, it becomes <span 
+ style="font-style: italic;">one more thing to juggle mentally,</span> 
+so that in addition to trying to remember how many women with breast
+cancer have positive mammographies, the reader is also trying to
+remember whether it's <span style="font-family: monospace;">p(X|A)</span> 
+in the numerator or <span style="font-family: monospace;">p(A|X)</span>,
+and whether a positive mammography result corresponds to A or X, and
+which side of <span style="font-family: monospace;">p(X|A)</span> is
+the
+implication, and what the terms are in the denominator, and so
+on.&nbsp;
+In this excruciatingly gentle introduction, I tried to show all the
+workings of Bayesian reasoning <span style="font-style: italic;">without</span> 
+ever introducing the explicit Theorem as something extra to memorize,
+hopefully reducing the number of factors the reader needed to mentally
+juggle.<br> 
+<br> 
+Even if you happen to be one of the fortunate people who can easily
+grasp and apply abstract theorems, the mental-juggling problem is still
+something to bear in mind if you ever need to explain Bayesian
+reasoning
+to someone else.<br> 
+<br> 
+If you do find yourself losing track, my advice is to forget Bayes'
+Theorem as an <span style="font-style: italic;">equation </span>and
+think about the <span style="font-style: italic;">graph.</span>&nbsp;
+p(A) and p(~A) are at the top.&nbsp; p(X|A) and p(X|~A) are the
+projection factors.&nbsp; p(X&amp;A) and p(X&amp;~A) are at the
+bottom.&nbsp; And p(A|X) equals the proportion of p(X&amp;A) within
+p(X&amp;A)+p(X&amp;~A).&nbsp; The graph isn't shown here - but can you
+see it in your mind?<br> 
+<br> 
+And if thinking about the graph doesn't work, I suggest forgetting
+about Bayes' Theorem entirely - just try to work out the specific
+problem in gizmos, hoses, and sparks, or whatever it is.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+Having introduced Bayes' Theorem explicitly, we can explicitly discuss
+its components.<br> 
+<br> 
+<table align="center"
+ style="text-align: left; margin-left: auto; margin-right: auto;"> 
+  <tbody> 
+    <tr> 
+      <td style="vertical-align: middle; text-align: left;"><span 
+ style="font-family: monospace;">p(A|X) =</span> </td> 
+      <td style="vertical-align: middle; text-align: right;"
+ alight="left"><span style="font-family: monospace;"><span 
+ style="text-decoration: underline;"><span 
+ style="text-decoration: underline;"> &nbsp; &nbsp; &nbsp; &nbsp; </span>p(X|A)*</span></span><span 
+ style="font-family: monospace; text-decoration: underline;">p(A)&nbsp;
+&nbsp; &nbsp; &nbsp;&nbsp; </span><br 
+ style="font-family: monospace; font-weight: bold;"> 
+&nbsp; <span style="font-family: monospace; font-weight: bold;"></span><span 
+ style="font-family: monospace;">p(X|A)*</span><span 
+ style="font-family: monospace;">p(A) + p(X|~A)*</span><span 
+ style="font-family: monospace;">p(~A)</span><br> 
+      </td> 
+    </tr> 
+  </tbody> 
+</table> 
+<br> 
+We'll start with p(A|X).&nbsp; If you ever find yourself getting
+confused about what's A and what's X in Bayes' Theorem, start with
+p(A|X) on the left side of the equation; that's the simplest part to
+interpret.&nbsp; A is the thing we want to know about.&nbsp; X is how
+we're observing it; X is the evidence we're using to make inferences
+about A.&nbsp; Remember that for every expression p(Q|P), we want to
+know about the probability for Q given P, the degree to which P implies
+Q - a more sensible notation, which it is now too late to adopt, would
+be <span style="font-family: monospace;">p(Q&lt;-P)</span>.<br> 
+<br> 
+p(Q|P) is closely related to p(Q&amp;P), but they are not
+identical.&nbsp; Expressed as a probability or a fraction, p(Q&amp;P)
+is
+the proportion of things that have property Q and property P within <span 
+ style="font-style: italic;">all things;</span> i.e., the proportion of
+"women with breast cancer and a positive mammography" within the group
+of <span style="font-style: italic;">all women.</span>&nbsp; If the
+total number of women is 10,000, and 80 women have breast cancer and a
+positive mammography, then p(Q&amp;P) is 80/10,000 = 0.8%.&nbsp; You
+might say that the absolute quantity, 80, is being normalized to a
+probability relative to the <span style="font-style: italic;">group of
+all women.</span>&nbsp; Or to make it clearer, suppose that there's a
+group of 641 women with breast cancer and a positive mammography within
+a total sample group of 89,031 women.&nbsp; 641 is the absolute
+quantity.&nbsp; If you pick out a random woman from the <span 
+ style="font-style: italic;">entire sample,</span> then the <span 
+ style="font-style: italic;">probability</span> you'll pick a woman
+with
+breast cancer and a positive mammography is p(Q&amp;P), or 0.72% (in
+this example).<br> 
+<br> 
+On the other hand, p(Q|P) is the proportion of things that have
+property Q and property P within <span style="font-style: italic;">all
+things that have P;</span> i.e., the proportion of women with breast
+cancer and a positive mammography within the group of <span 
+ style="font-style: italic;">all women with positive mammographies.</span>&nbsp;
+If there are 641 women with breast cancer and positive mammographies,
+7915 women with positive mammographies, and 89,031 women, then
+p(Q&amp;P) is the probability of getting one of those 641 women if
+you're picking at random from the entire group of 89,031, while p(Q|P)
+is the probability of getting one of those 641 women if you're picking
+at random from the smaller group of 7915.<br> 
+<br> 
+In a sense, <span style="font-family: monospace;">p(Q|P)</span>really
+means <span style="font-family: monospace;">p(Q&amp;P|P)</span>, but
+specifying the extra P all the time would be redundant.&nbsp; You
+already <span style="font-style: italic;">know</span> it has property
+P,
+so the property you're <span style="font-style: italic;">investigating</span> 
+is Q - even though you're looking at the size of group Q&amp;P within
+group P, not the size of group Q within group P (which would be
+nonsense).&nbsp; This is what it means to take the property on the
+right-hand side as <span style="font-style: italic;">given;</span> it
+means you know you're working only within the group of things that have
+property P.&nbsp; When you constrict your focus of attention to see
+only
+this smaller group, many other probabilities change.&nbsp; If you're
+taking P as <span style="font-style: italic;">given,</span> then
+p(Q&amp;P) equals just p(Q) - at least, <span 
+ style="font-style: italic;">relative to the group P.</span>&nbsp; The <span 
+ style="font-style: italic;">old</span> p(Q), the frequency of "things
+that have property Q within the entire sample", is revised to the new
+frequency of "things that have property Q within the subsample of
+things
+that have property P".&nbsp; If P is <span style="font-style: italic;">given,</span> 
+if P is our entire world, then looking for Q&amp;P is the same as
+looking for just Q.<br> 
+<br> 
+If you constrict your focus of attention to only the population of eggs
+that are painted blue, then suddenly "the probability that an egg
+contains a pearl" becomes a different number; this proportion is
+different for the population of blue eggs than the population of all
+eggs.&nbsp; The <span style="font-style: italic;">given,</span> the
+property that constricts our focus of attention, is always on the <span 
+ style="font-style: italic;">right</span> side of p(Q|P); the P becomes
+our world, the entire thing we see, and on the other side of the
+"given"&nbsp; P always has probability 1 - that is what it means to
+take
+P as given.&nbsp; So p(Q|P) means "If P has probability 1, what is the
+probability of Q?" or "If we constrict our attention to only things or
+events where P is true, what is the probability of Q?"&nbsp; Q, on the
+other side of the given, is <span style="font-style: italic;">not </span>certain
+- its probability may be 10% or 90% or any other number.&nbsp; So when
+you use Bayes' Theorem, and you write the part on the left side as
+p(A|X) - how to <span style="font-style: italic;">update</span> the
+probability of A after seeing X, the new probability of A <span 
+ style="font-style: italic;">given</span> that we know X, the degree to
+which X <span style="font-style: italic;">implies</span> A - you can
+tell that X is always the <span style="font-style: italic;">observation</span> 
+or the <span style="font-style: italic;">evidence,</span> and A is the
+property being investigated, the thing you want to know about.<br> 
+<br> 
+<hr style="width: 100%; height: 2px;"><br> 
+The right side of Bayes' Theorem is derived from the left side through
+these steps:<br> 
+<br> 
+<table align="center"
+ style="text-align: left; margin-left: auto; margin-right: auto;"> 
+  <tbody> 
+    <tr> 
+      <td style="vertical-align: middle; text-align: left;"><span 
+ style="font-family: monospace;">p(A|X) =&nbsp;</span> </td> 
+      <td style="vertical-align: middle; text-align: center;"
+ alight="left"><span style="font-family: monospace;">p(A|X)</span><br> 
+      </td> 
+    </tr> 
+    <tr> 
+      <td style="vertical-align: middle; text-align: left;"><span 
+ style="font-family: monospace;">p(A|X) =</span> </td> 
+      <td style="vertical-align: middle; text-align: center;"
+ alight="left"><span style="font-family: monospace;"><span 
+ style="text-decoration: underline;"><span 
+ style="text-decoration: underline;">&nbsp;</span>p(X&amp;</span></span><span 
+ style="font-family: monospace; text-decoration: underline;">A) </span><br 
+ style="font-family: monospace; font-weight: bold;"> 
+      <span style="font-family: monospace; font-weight: bold;"></span><span 
+ style="font-family: monospace;">p(X</span><span 
+ style="font-family: monospace;">)</span><br> 
+      </td> 
+    </tr> 
+    <tr> 
+      <td style="vertical-align: middle; text-align: left;"><span 
+ style="font-family: monospace;">p(A|X) =</span> </td> 
+      <td style="vertical-align: middle; text-align: left;"
+ alight="left"> 
+      <div style="text-align: center;"><span 
+ style="font-family: monospace;"><span 
+ style="text-decoration: underline;"><span 
+ style="text-decoration: underline;"> &nbsp;&nbsp;&nbsp;&nbsp; </span>p(X&amp;A</span></span><span 
+ style="font-family: monospace; text-decoration: underline;">)&nbsp;
+&nbsp; &nbsp; </span><br 
+ style="font-family: monospace; font-weight: bold;"> 
+      <span style="font-family: monospace;">p(X&amp;</span><span 
+ style="font-family: monospace;">A) + p(X&amp;~A)</span></div> 
+      </td> 
+    </tr> 
+    <tr> 
+      <td style="vertical-align: middle; text-align: left;"><span 
+ style="font-family: monospace;">p(A|X) =</span> </td> 
+      <td style="vertical-align: middle; text-align: left;"
+ alight="left"><span style="font-family: monospace;"><span 
+ style="text-decoration: underline;"><span 
+ style="text-decoration: underline;"> &nbsp; &nbsp; &nbsp; &nbsp; </span>p(X|A)*</span></span><span 
+ style="font-family: monospace; text-decoration: underline;">p(A)&nbsp;
+&nbsp; &nbsp; &nbsp;&nbsp; </span><br 
+ style="font-family: monospace; font-weight: bold;"> 
+&nbsp; <span style="font-family: monospace; font-weight: bold;"></span><span 
+ style="font-family: monospace;">p(X|A)*</span><span 
+ style="font-family: monospace;">p(A) + p(X|~A)*</span><span 
+ style="font-family: monospace;">p(~A)</span><br> 
+      </td> 
+    </tr> 
+  </tbody> 
+</table> 
+<br> 
+The first step, <span style="font-family: monospace;">p(A|X)</span> to
+<span style="font-family: monospace;">p(X&amp;A)/p(X)</span>, may look
+like
+a tautology.&nbsp; The actual math performed is different,
+though.&nbsp; <span style="font-family: monospace;">p(A|X)</span> is a
+single number, the
+normalized probability or frequency of A within the subgroup X.&nbsp; <span 
+ style="font-family: monospace;">p(X&amp;A)/p(X)</span> are usually the
+percentage frequencies of X&amp;A and X within the entire sample, but
+the calculation also works if X&amp;A and X are absolute numbers of
+people, events, or things.&nbsp; <span style="font-family: monospace;">p(cancer|positive)</span> 
+is a single percentage/frequency/probability, always between 0 and
+1.&nbsp; <span style="font-family: monospace;">(positive&amp;cancer)/(positive)</span> 
+can be measured either in probabilities, such as 0.008/0.103, or it
+might be expressed in groups of women, for example 194/2494.&nbsp; As
+long as both the numerator and denominator are measured in the same
+units, it should make no difference.<br> 
+<br> 
+Going from <span style="font-family: monospace;">p(X)</span> in the
+denominator to <span style="font-family: monospace;">p(X&amp;A)+p(X&amp;~A)</span> 
+is a very straightforward step whose main purpose is as a stepping
+stone
+to the last equation.&nbsp; However, one common arithmetical mistake in
+Bayesian calculations is to divide <span 
+ style="font-family: monospace;">p(X&amp;A)</span> 
+by <span style="font-family: monospace;">p(X&amp;~A)</span>, instead
+of
+dividing <span style="font-family: monospace;">p(X&amp;A)</span> by <span 
+ style="font-family: monospace;">[p(X&amp;A) + p(X&amp;~A)]</span>.&nbsp;
+For example, someone doing the breast cancer calculation tries to get
+the posterior probability by performing the math operation 80 / 950,
+instead of 80 / (80 + 950).&nbsp; I like to think of this as a
+rose-flowers error.&nbsp; Sometimes if you show young children a
+picture
+with eight roses and two tulips, they'll say that the picture contains
+more roses than flowers.&nbsp; (Technically, this would be called a
+class inclusion error.)&nbsp; You have to <span 
+ style="font-style: italic;">add</span> the roses and the tulips to get
+the number of <span style="font-style: italic;">flowers</span>, which
+you need to find the proportion of roses <span 
+ style="font-style: italic;">within</span> the flowers.&nbsp; You can't
+find the proportion of roses in the tulips, or the proportion of tulips
+in the roses.&nbsp; When you look at the graph, the bottom bar consists
+of <span style="font-style: italic;">all</span> the patients with
+positive results.&nbsp; That's what the doctor sees - a patient with a
+positive result.&nbsp; The question then becomes whether this is a
+healthy patient with a positive result, or a cancerous patient with a
+positive result.&nbsp; To figure the odds of that, you have to look at
+the proportion of cancerous patients with positive results within all
+patients who have positive results, because again, "a patient with a
+positive result" is what you actually see.&nbsp; You can't divide 80 by
+950 because that would mean you were trying to find the proportion of
+cancerous patients with positive results within the group of healthy
+patients with positive results; it's like asking how many of the tulips
+are roses, instead of asking how many of the flowers are roses.&nbsp;
+Imagine using the same method to find the proportion of <span 
+ style="font-style: italic;">healthy</span> patients.&nbsp; You would
+divide 950 by 80 and find that 1,187% of the patients were
+healthy.&nbsp; Or to be exact, you would find that 1,187% of cancerous
+patients with positive results were healthy patients with positive
+results.<br> 
+<br> 
+The last step in deriving Bayes' Theorem is going from <span 
+ style="font-family: monospace;">p(X&amp;A)</span> to <span 
+ style="font-family: monospace;">p(X|A)*p(A)</span>, in both the
+numerator and the denominator, and from <span 
+ style="font-family: monospace;">p(X&amp;~A)</span> to <span 
+ style="font-family: monospace;">p(X|~A)*p(~A)</span>, in the
+denominator.<br> 
+<br> 
+Why?&nbsp; Well, one answer is because p(X|A), p(X|~A), and p(A)
+correspond to the initial information given in all the story
+problems.&nbsp; But why were the story problems written that way?<br> 
+<br> 
+Because in many cases, p(X|A), p(X|~A), and p(A) are what we actually <span 
+ style="font-style: italic;">know;</span> and this in turn happens
+because p(X|A) and p(X|~A) are often the quantities that directly
+describe <span style="font-style: italic;">causal relations,</span> 
+with
+the other quantities derived from them and p(A) as <span 
+ style="font-style: italic;">statistical relations.</span>&nbsp; For
+example, p(X|A), the implication from A to X, where A is what we want
+to
+know and X is our way of observing it, corresponds to the implication
+from a woman having breast cancer to a positive mammography.&nbsp; This
+is not just a <span style="font-style: italic;">statistical implication</span> 
+but a <span style="font-style: italic;">direct</span> <span 
+ style="font-style: italic;">causal relation;</span> a woman gets a
+positive mammography <span style="font-style: italic;">because</span> 
+she has breast cancer.&nbsp; The mammography is <span 
+ style="font-style: italic;">designed </span>to detect breast cancer,
+and it is a fact about the physical process of the mammography exam
+that
+it has an 80% probability of detecting breast cancer.&nbsp; As long as
+the design of the mammography machine stays constant, p(X|A) will stay
+at 80%, even if p(A) changes - for example, if we screen a group of
+woman with other risk factors, so that the prior frequency of women
+with
+breast cancer is 10% instead of 1%.&nbsp; In this case, p(X&amp;A) will
+change along with p(A), and so will p(X), p(A|X), and so on; but p(X|A)
+stays at 80%, because that's a fact about the mammography exam
+itself.&nbsp; (Though you do need to test this statement before relying
+on it; it's possible that the mammography exam might work better on
+some
+forms of breast cancer than others.)&nbsp; p(X|A) is one of the <span 
+ style="font-style: italic;">simple</span> facts from which complex
+facts like p(X&amp;A) are constructed; p(X|A) is an <span 
+ style="font-style: italic;">elementary </span>causal relation within
+a complex system, and it has a direct physical interpretation.&nbsp;
+This is why Bayes' Theorem has the form it does; it's not for solving
+math brainteasers, but for reasoning about the physical universe.<br> 
+<br> 
+Once the derivation is finished, all the implications on the right side
+of the equation are of the form <span style="font-family: monospace;">p(X|A)</span> 
+or <span style="font-family: monospace;">p(X|~A)</span>, while the
+implication on the left side is <span style="font-family: monospace;">p(A|X)</span>.&nbsp;
+As long as you remember this and you get the rest of the equation
+right, it shouldn't matter whether you happened to start out with
+p(A|X)
+or p(X|A) on the left side of the equation, as long as the rules are
+applied <span style="font-style: italic;">consistently</span> - if you
+started out with the direction of implication p(X|A) on the left side
+of
+the equation, you would need to end up with the direction p(A|X) on the
+right side of the equation.&nbsp; This, of course, is just changing the
+variable labels; the point is to remember the symmetry, in order to
+remember the structure of Bayes' Theorem.<br> 
+<br> 
+The symmetry arises because the elementary <span 
+ style="font-style: italic;">causal relations</span> are generally
+implications from facts to observations, i.e., from breast cancer to
+positive mammography.&nbsp; The elementary <span 
+ style="font-style: italic;">steps in reasoning </span>are generally
+implications from observations to facts, i.e., from a positive
+mammography to breast cancer.&nbsp; The left side of Bayes' Theorem is
+an elementary <span style="font-style: italic;">inferential </span>step
+from the observation of positive mammography to the conclusion of an
+increased probability of breast cancer.&nbsp; Implication is written
+right-to-left, so we write <span style="font-family: monospace;">p(cancer|positive)</span> 
+on the left side of the equation.&nbsp; The right side of Bayes'
+Theorem
+describes the elementary <span style="font-style: italic;">causal </span>steps
+- for example, from breast cancer to a positive mammography - and so
+the implications on the right side of Bayes' Theorem take the form <span 
+ style="font-family: monospace;">p(positive|cancer)</span> or <span 
+ style="font-family: monospace;">p(positive|~cancer)</span>.<br> 
+<br> 
+And that's Bayes' Theorem.&nbsp; Rational inference on the left end,
+physical causality on the right end; an equation with mind on one side
+and reality on the other.&nbsp; Remember how the scientific method
+turned out to be a special case of Bayes' Theorem?&nbsp; If you wanted
+to put it poetically, you could say that Bayes' Theorem binds reasoning
+into the physical universe.
+<p>Okay, we're done. </p> 
