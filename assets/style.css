@@ -1,0 +1,35 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #eee;
+  font-family: 'Georgia', serif;
+}
+
+#lesswrong-sequences, #TOC {
+  padding: 0px 20px 0px 20px;
+  margin: auto;
+  width: 920px;
+  border: 1px solid #aaa;
+  background-color: #fff;
+}
+
+#TOC {
+  margin: 20px auto 20px auto;
+}
+
+blockquote p {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  font-style: oblique;
+}
+
+a {
+  text-decoration: none;
+  color: #008500;
+}
+
+h1 a, h2 a, h3 a {
+  color: #000;
+}

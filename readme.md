@@ -21,6 +21,8 @@ Print friendly versions of lesswrong sequences, enjoy!
 > feeling disappointed about the fact that complicated things are made of
 > simpler things.
 
+Includes the 'Zombies' and 'Joy in the Merely Real' subsequences
+
 [epub](https://github.com/jb55/lesswrong-print/raw/master/sequences/reductionism/Reductionism.epub) |
 [pdf](https://github.com/jb55/lesswrong-print/raw/master/sequences/reductionism/Reductionism.pdf) |
 [markdown](https://github.com/jb55/lesswrong-print/blob/master/sequences/reductionism/Reductionism.md)

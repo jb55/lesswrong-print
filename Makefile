@@ -1,3 +1,3 @@
 
 index.html: readme.md
-	pandoc -T 'jb55.com' readme.md -o index.html
+	pandoc --toc -c "assets/style.css" --section-divs readme.md -o index.html
