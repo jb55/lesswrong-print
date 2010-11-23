@@ -1,6 +1,7 @@
 # Lesswrong Sequences
 
-Print friendly versions of lesswrong sequences, enjoy!
+Print friendly versions of 
+[lesswrong sequences](http://wiki.lesswrong.com/wiki/Sequences), enjoy!
 
 ## Major Sequences
 
@@ -38,8 +39,8 @@ Includes the 'Zombies' and 'Joy in the Merely Real' subsequences
 > and the nature of evidence, why anyone should care about truth, minds as
 > reflective cognitive engines...
 
-*Note: The Bayes's Theorem article was intentionally left out of this sequence,
-it deserves its own*
+Note: The Bayes's Theorem article was intentionally left out of this sequence,
+it deserves its own
 
 [epub](http://jb55.com/lesswrong/sequences/map_and_territory/Map%20and%20Territory.epub) |
 [pdf](http://jb55.com/lesswrong/sequences/map_and_territory/Map%20and%20Territory.pdf) |
