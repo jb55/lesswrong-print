@@ -30,16 +30,16 @@ Includes the 'Zombies' and 'Joy in the Merely Real' subsequences
 [pdf](http://jb55.com/lesswrong/sequences/reductionism/Reductionism.pdf) |
 [markdown](http://jb55.com/lesswrong/sequences/reductionism/Reductionism.md)
 
-### The Fun Theory
+### Fun Theory
 
 > A concrete theory of transhuman values. How much fun is there in the universe;
 > will we ever run out of fun; are we having fun yet; could we be having more
 > fun. Part of the complexity of value thesis. Also forms part of the fully
 > general answer to religious theodicy.
 
-[epub](http://jb55.com/lesswrong/sequences/the_fun_theory/The%20Fun%20Theory.epub) |
-[pdf](http://jb55.com/lesswrong/sequences/the_fun_theory/The%20Fun%20Theory.pdf) |
-[markdown](http://jb55.com/lesswrong/sequences/the_fun_theory/the_fun_theory.md)
+[epub](http://jb55.com/lesswrong/sequences/fun_theory/Fun%20Theory.epub) |
+[pdf](http://jb55.com/lesswrong/sequences/fun_theory/Fun%20Theory.pdf) |
+[markdown](http://jb55.com/lesswrong/sequences/fun_theory/fun_theory.md)
 
 ## Minor Sequences
 

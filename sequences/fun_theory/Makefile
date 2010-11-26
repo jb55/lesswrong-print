@@ -1,6 +1,6 @@
 
-NAME=The\\\ Fun\\\ Theory
-MD=the_fun_theory.md
+NAME=Fun\\\ Theory
+MD=fun_theory.md
 OPTS=--toc
 
 all: epub pdf
