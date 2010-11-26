@@ -1535,7 +1535,6 @@ In classical physics, a configuration space is a way of visualizing
 the state of an entire system as a single point in a
 higher-dimensional space.
 
-[![Conf1](http://lesswrong.com/static/imported/2008/04/14/conf1.png "Conf1")](http://lesswrong.com/static/imported/2008/04/14/conf1.png)
 Suppose that a system is composed of two particles, A and B, each
 on the same 1-dimensional line.  (We'll call the two directions on
 the line, "forward" and "back".)
@@ -1549,7 +1548,6 @@ system where B is far forward and A is far back.  We can view state
 representation on the right), or view it as one 2-dimensional
 position (the representation on the left).
 
-[![Conf2](http://lesswrong.com/static/imported/2008/04/14/conf2.png "Conf2")](http://lesswrong.com/static/imported/2008/04/14/conf2.png)
 To help grasp the idea of viewing a *system* as a point, this
 alternate graph shows A and B on the same line.
 
@@ -1565,7 +1563,6 @@ The system evolution can be shown as a discrete series of states: 
 Time=1, Time=2, Time=3...  But in configuration space, I can draw
 the system evolution as a smooth trajectory.
 
-[![Conf3](http://lesswrong.com/static/imported/2008/04/14/conf3.png "Conf3")](http://lesswrong.com/static/imported/2008/04/14/conf3.png)
 If I had the time (to learn to use the appropriate software), I'd
 be drawing neat-o 3D diagrams at this point.  Like the diagram at
 right, only with, like, actual graphics.
@@ -1598,7 +1595,6 @@ Mathematically, the two systems are isomorphic - in classical
 physics, that is.  So what's the benefit of imagining a classical
 configuration space?
 
-[![Conf4](http://lesswrong.com/static/imported/2008/04/14/conf4.png "Conf4")](http://lesswrong.com/static/imported/2008/04/14/conf4.png)
 Well, for one thing, it makes it possible to visualize joint
 probability distributions.
 
@@ -1632,7 +1628,6 @@ dynamically into a future system state, and you draw a little cloud
 representing your current probability distribution, you can project
 that cloud into the future.
 
-[![Conf5](http://lesswrong.com/static/imported/2008/04/14/conf5.png "Conf5")](http://lesswrong.com/static/imported/2008/04/14/conf5.png)
 Here I start out with uncertainty represented by the squarish grey
 box in the first configuration space, at bottom right.
 
@@ -1666,7 +1661,6 @@ Just figured I'd mention that, as long as I was drawing diagrams...
 you can see why this "visualize a configuration space" trick is
 useful, even in classical physics.
 
-[![Conf6](http://lesswrong.com/static/imported/2008/04/15/conf6.png "Conf6")](http://lesswrong.com/static/imported/2008/04/15/conf6.png)
 Another idea that's easier to visualize in configuration space is
 the idea of conditional independence between two probabilistic
 variables.
@@ -1691,7 +1685,6 @@ not conditional dependence, that is the unusual special case.
 (I bet when you woke up this morning, you didn't think that today
 you would be visualizing plaid patterns in N dimensions.)
 
-[![Conf4\_2](http://lesswrong.com/static/imported/2008/04/14/conf4_2.png "Conf4_2")](http://lesswrong.com/static/imported/2008/04/14/conf4_2.png)
 In the figure reprised here at right, my little cloud of
 uncertainty is not rectangular.
 
@@ -1724,12 +1717,10 @@ optional, point of view.
 Today we look at quantum physics, which *inherently* takes place
 inside a configuration space, and *cannot be taken out*.
 
-[![Ampl1](http://lesswrong.com/static/imported/2008/04/15/ampl1.png "Ampl1")](http://lesswrong.com/static/imported/2008/04/15/ampl1.png)For
-a start, as you might guess, in quantum physics we deal with
-distributions of complex amplitudes, rather than probability
-distributions made up of positive real numbers.  At left, I've used
-up 3 dimensions drawing a complex distribution over the position of
-*one* particle, A.
+For a start, as you might guess, in quantum physics we deal with distributions
+of complex amplitudes, rather than probability distributions made up of
+positive real numbers.  At left, I've used up 3 dimensions drawing a complex
+distribution over the position of *one* particle, A.
 
 You may recall that yesterday, 3 dimensions let us display the
 position of two 1-dimensional particles plus the system evolution
@@ -1738,7 +1729,6 @@ amplitude distribution over the position of one 1-dimensional
 particle at a single moment in time.  Which is why we did classical
 configuration spaces first.
 
-[![Ampl2](http://lesswrong.com/static/imported/2008/04/15/ampl2.png "Ampl2")](http://lesswrong.com/static/imported/2008/04/15/ampl2.png)
 To clarify the meaning of the above diagram, the left-to-right
 direction is the position of A.
 
@@ -1769,7 +1759,6 @@ particles, which you could visualize as a hypersurface in 4
 dimensions.  I'd draw it for you, but I left my 4-dimensional
 pencil in the pocket of the 3rd leg of my other pants.
 
-[![Conf6\_2](http://lesswrong.com/static/imported/2008/04/15/conf6_2.png "Conf6_2")](http://lesswrong.com/static/imported/2008/04/15/conf6_2.png)
 You may recall from yesterday that a plaid rectangular probability
 distribution factorizes into the product of two independent
 probability distributions.
@@ -1788,9 +1777,6 @@ identity cuts down the size of a 2-particle configuration space by
 and so on.  Here, the diminished configuration space is shown for
 the 2-particle case:
 
-
-
-[![Ampl3\_3](http://lesswrong.com/static/imported/2008/04/15/ampl3_3.png "Ampl3_3")](http://lesswrong.com/static/imported/2008/04/15/ampl3_3.png)
 
 The quantum configuration space is over joint possibilities like "a
 particle here, a particle there", not "this particle here, that
@@ -1975,8 +1961,6 @@ Richard Feynman, that my mind goes blank when trying to imagine how
 to introduce it any other way.  As a compromise with just stealing
 his entire book, I stole one diagram - a diagram of how a mirror
 *really*works.
-
-[![Feynman1](http://lesswrong.com/static/imported/2008/04/16/feynman1.png "Feynman1")](http://lesswrong.com/static/imported/2008/04/16/feynman1.png)
 
 In elementary school, you learn that the angle of incidence equals
 the angle of reflection.  But *actually*, saith Feynman, each part
@@ -2163,8 +2147,7 @@ In previous posts such as
 physics of our universe takes place in a multi-particle
 configuration space.
 
-[![Conf6\_2](http://lesswrong.com/static/imported/2008/04/15/conf6_2.png "Conf6_2")](http://lesswrong.com/static/imported/2008/04/15/conf6_2.png)The
-illusion of individual particles arises from approximate
+The illusion of individual particles arises from approximate
 factorizability of a multi-particle distribution, as shown at left
 for a classical configuration space.
 
@@ -2183,8 +2166,6 @@ the amplitude distribution factorizes enough to let you look at a
 *subspace* of the configuration space, and see a *factor* of the
 amplitude distribution - a factor that might look something like
 this:
-
-[![Ampl1](http://lesswrong.com/static/imported/2008/04/15/ampl1.png "Ampl1")](http://lesswrong.com/static/imported/2008/04/15/ampl1.png)
 
 This isn't an amplitude distribution, mind you.  It's a *factor* in
 an amplitude distribution, which you'd have to multiply by the
@@ -2287,7 +2268,6 @@ for photon A to end up in position 1 and photon B to end up in
 position 2, *or* for A to end up in 2 and B to end up in 1?  Then
 the illusion of classicality breaks down, because the amplitude
 flows overlap:  
-[![Ampl3\_3](http://lesswrong.com/static/imported/2008/04/15/ampl3_3.png "Ampl3_3")](http://lesswrong.com/static/imported/2008/04/15/ampl3_3.png)
 
 In that [triangular region](http://lesswrong.com/lw/pj/the_quantum_arena/) where the
 distribution overlaps itself, no fact exists as to which particle
@@ -2853,7 +2833,6 @@ need to look at how the
 can be destroyed - how the evolution of a quantum system can
 produce entanglement where there was formerly independence.
 
-[![Conf6](http://lesswrong.com/static/imported/2008/04/21/conf6.png "Conf6")](http://lesswrong.com/static/imported/2008/04/21/conf6.png)
 Quantum independence, as you'll recall, is a special case of
 amplitude distributions that approximately factorize - amplitude
 distributions that can be treated as a product of sub-distributions
@@ -2869,7 +2848,6 @@ there was formerly independence - turn a rectangular plaid pattern
 into something else.  Quantum independence, being a special case,
 is easily lost.
 
-[![Entangler](http://lesswrong.com/static/imported/2008/04/21/entangler.png "Entangler")](http://lesswrong.com/static/imported/2008/04/21/entangler.png)
 Let's pretend for a moment that we're looking at a classical
 system, which will make it easier to see what kind of physical
 process leads to entanglement.
@@ -2900,7 +2878,6 @@ state of quantum independence, so that we can view the amplitude
 distribution over the whole system as the product of a "bottom
 thingy distribution" and a "top thingy distribution".
 
-[![Superposition2](http://lesswrong.com/static/imported/2008/04/21/superposition2.png "Superposition2")](http://lesswrong.com/static/imported/2008/04/21/superposition2.png)
 The bottom thingy distribution starts with bulges in three places -
 which, in the Feynman path view, we might think of as three
 possible starting configurations from which amplitude will flow.
@@ -2938,7 +2915,6 @@ joint distribution over "top thingy, bottom thingy" would start out
 looking like the plaid pattern at left, and develop into the
 non-plaid pattern at right:
 
-[![Entanglecloud](http://lesswrong.com/static/imported/2008/04/21/entanglecloud.png "Entanglecloud")](http://lesswrong.com/static/imported/2008/04/21/entanglecloud.png)
 
 Here the horizontal coordinate corresponds to the top thingy, and
 the vertical coordinate corresponds to the bottom thingy.  So we
@@ -2978,7 +2954,6 @@ viewable as a product of distinct factors over subspaces.
 
 Okay, so *now*we're ready to discuss decoherence.
 
-[![Multiblobdeco](http://lesswrong.com/static/imported/2008/04/21/multiblobdeco.png "Multiblobdeco")](http://lesswrong.com/static/imported/2008/04/21/multiblobdeco.png)
 
 The system at left is highly entangled - it's got a joint
 distribution that looks something like, "There's two particles, and
@@ -3019,7 +2994,6 @@ particles were either both *here*, or both *there,* but *here* and
 taking less than a year, couldn't have the different possible
 outcomes *overlapping.*
 
-[![Precohered\_2](http://lesswrong.com/static/imported/2008/04/21/precohered_2.png "Precohered_2")](http://lesswrong.com/static/imported/2008/04/21/precohered_2.png)
 Okay, so let's talk about *three* particles now.
 
 This diagram shows a blob of amplitude that factors into the
@@ -3042,7 +3016,6 @@ particles pass nearby, and attract it magnetically; and the third
 particle falls off the top of the hill and rolls to the bottom, in
 that particular direction.
 
-[![Decohered](http://lesswrong.com/static/imported/2008/04/21/decohered.png "Decohered")](http://lesswrong.com/static/imported/2008/04/21/decohered.png)
 Afterward, the new amplitude distribution might look like this. 
 The third particle is now entangled with the other two particles. 
 And the amplitude distribution as a whole consists of two more
@@ -3185,18 +3158,14 @@ So there is a theorem which *should* have been called the
 Heisenberg Certainty Principle, or the Heisenberg Necessary
 Determination Principle; but what does this theorem actually say?
 
-[![Ampl1](http://lesswrong.com/static/imported/2008/04/22/ampl1.png "Ampl1")](http://lesswrong.com/static/imported/2008/04/22/ampl1.png)
-
 At left is an image I previously used to illustrate a possible
 amplitude distribution over positions of a 1-dimensional particle.
 
-[![Helix](http://lesswrong.com/static/imported/2008/04/22/helix.png "Helix")](http://lesswrong.com/static/imported/2008/04/22/helix.png)Suppose
-that, instead, the amplitude distribution is actually a
-*perfect helix**.*  (I.e., the amplitude at each point has a
-constant modulus, but the complex phase changes linearly with the
-position.)  And neglect the effect of potential energy on the
-system evolution; i.e., this is a particle out in intergalactic
-space, so it's not near any gravity wells or charged particles.
+Suppose that, instead, the amplitude distribution is actually a *perfect
+helix**.*  (I.e., the amplitude at each point has a constant modulus, but the
+complex phase changes linearly with the position.)  And neglect the effect of
+potential energy on the system evolution; i.e., this is a particle out in
+intergalactic space, so it's not near any gravity wells or charged particles.
 
 If you started with an amplitude distribution that looked like a
 perfect spiral helix, the laws of quantum evolution would make the
@@ -3235,7 +3204,7 @@ again.
 
 A sum of nice neat waves, like, say, those perfect spiral helices
 corresponding to precise
-momenta.[![Posmomdual\_2](http://lesswrong.com/static/imported/2008/04/22/posmomdual_2.png "Posmomdual_2")](http://lesswrong.com/static/imported/2008/04/22/posmomdual_2.png)
+momenta.
 
 A physicist can, for mathematical convenience, decompose a position
 distribution into an integral over (infinitely many) helices of
@@ -3284,8 +3253,6 @@ misinterpretations of Heisenberg's Misnamed Principle.
 Here's what actually happens when you "observe a particle's
 position":
 
-[![Heisensplit](http://lesswrong.com/static/imported/2008/04/22/heisensplit.png "Heisensplit")](http://lesswrong.com/static/imported/2008/04/22/heisensplit.png)
-
 [Decoherence](http://lesswrong.com/lw/pp/decoherence/), as discussed yesterday, can
 take apart a formerly coherent amplitude distribution into
 noninteracting blobs.
@@ -3315,8 +3282,7 @@ position distribution into two noninteracting blobs.  Over time,
 each blob spreads itself out again, by Heisenberg's Sharper Bulges
 Have Broader Fourier Transforms Principle.
 
-[![Singleslitheisenberg](http://lesswrong.com/static/imported/2008/04/22/singleslitheisenberg.png "Singleslitheisenberg")](http://lesswrong.com/static/imported/2008/04/22/singleslitheisenberg.png)All
-this gives rise to very real, very observable effects.
+All this gives rise to very real, very observable effects.
 
 In the system shown at right, there is a light source, a screen
 blocking the light source, and a single slit in the screen.
@@ -4525,7 +4491,6 @@ Now apply this mode of visualization to a sensor measuring an atom
 - say, a sensor measuring whether an atom is to the left or right
 of a dividing line.
 
-[![Superposition2](http://lesswrong.com/static/imported/2008/04/26/superposition2.png "Superposition2")](http://lesswrong.com/static/imported/2008/04/26/superposition2.png)
 Which is to say:  The sensor and the atom undergo some physical
 interaction in which the final state of the sensor depends heavily
 on whether the atom is to the left or right of a dividing line.  (I
@@ -4533,8 +4498,7 @@ am reusing some [previous diagrams](http://lesswrong.com/lw/pp/decoherence/), so
 is not an exact depiction; but you should be able to use your own
 imagination at this point.)
 
-[![Entanglecloud](http://lesswrong.com/static/imported/2008/04/26/entanglecloud.png "Entanglecloud")](http://lesswrong.com/static/imported/2008/04/26/entanglecloud.png)You
-may recognize this as the *entangling interaction* described in
+You may recognize this as the *entangling interaction* described in
 "[Decoherence](http://lesswrong.com/lw/pp/decoherence/)". A quantum system that starts
 out highly factorizable, looking plaid and rectangular, that is,
 independent, can evolve into an entangled system as the
@@ -4560,7 +4524,6 @@ and, much earlier, talking about how
 It is possible to appreciate this in a purely philosophical sense,
 but quantum physics helps drive the point home.
 
-[![Ampl1](http://lesswrong.com/static/imported/2008/04/26/ampl1.png "Ampl1")](http://lesswrong.com/static/imported/2008/04/26/ampl1.png)
 Let's say you've got an Atom, whose position has amplitude bulges
 on the left and on the right.  We can regard the Atom's
 distribution as a *sum* (addition, not multiplication) of the left
@@ -4638,12 +4601,11 @@ in which *all* the quadrillions of differentiated particles ended
 up in the *same places*.  So the amplitude flows from LEFT and
 RIGHT don't intersect, and don't interfere.
 
-[![Precohered](http://lesswrong.com/static/imported/2008/04/25/precohered.png "Precohered")](http://lesswrong.com/static/imported/2008/04/25/precohered.png)You
-may recall this principle from
+You may recall this principle from
 "[Decoherence](http://lesswrong.com/lw/pp/decoherence/)", for how a sensitive
 interaction can decohere two interacting blobs of amplitude, into
 two noninteracting
-blobs.[![Decohered](http://lesswrong.com/static/imported/2008/04/25/decohered.png "Decohered")](http://lesswrong.com/static/imported/2008/04/25/decohered.png)
+blobs.
 
 Formerly, the Atom-LEFT and Atom-RIGHT states were close enough in
 configuration space, that the blobs could interact with each other
@@ -5732,7 +5694,6 @@ This is still my position today.
 
 # Decoherence as Projection
 
-[![Heisensplit](http://lesswrong.com/static/imported/2008/05/01/heisensplit.png "Heisensplit")](http://lesswrong.com/static/imported/2008/05/01/heisensplit.png)
 In
 "[The So-Called Heisenberg Uncertainty Principle](http://www.overcomingbias.com/2008/04/heisenberg.html)"
 we got a look at how decoherence can affect the apparent surface
@@ -5773,8 +5734,7 @@ perhaps like dark plastic, with small arrows drawn in marker along
 the sides.  When you hold up one of the sheets in front of you, the
 scene through it is darker - it blocks some of the light.
 
-[![2polaroids](http://lesswrong.com/static/imported/2008/05/01/2polaroids.png "2polaroids")](http://lesswrong.com/static/imported/2008/05/01/2polaroids.png)Now
-you hold up the second sheet in front of the first sheet...
+Now you hold up the second sheet in front of the first sheet...
 
 When the two arrows are aligned, pointing in the same direction,
 the scene is no darker than before - that is, the two sheets in
@@ -5830,8 +5790,7 @@ I hand you a third filter.  "Go ahead," I say, "Try it."
 First you set the first filter at 0° and the second filter at 45°,
 as your reference point.  Half the light gets through.
 
-[![3polaroids](http://lesswrong.com/static/imported/2008/05/01/3polaroids.png "3polaroids")](http://lesswrong.com/static/imported/2008/05/01/3polaroids.png)Then
-you set the first filter at 0°, the second filter at 45°, and the
+Then you set the first filter at 0°, the second filter at 45°, and the
 third filter at 0°.  Now one quarter of the light gets through.
 
 "Huh?" you say.
@@ -5937,8 +5896,7 @@ statement about 2-vectors... that:
 
 > (0 ; 1) = (.5 ; .5) + (-.5 ; .5)
 
-[![Polardecomp](http://lesswrong.com/static/imported/2008/05/01/polardecomp.png "Polardecomp")](http://lesswrong.com/static/imported/2008/05/01/polardecomp.png)Okay,
-so the two vectors on the right-hand-side sum to (0 ; 1) on the
+Okay, so the two vectors on the right-hand-side sum to (0 ; 1) on the
 left-hand-side.
 
 But what about the squared modulus? Just because two vectors sum to
@@ -5951,7 +5909,6 @@ The *squared* length of the vector (.5 ; .5) is (.5)^2^ + (.5)^2^ =
 0.5 + 0.5 = 1.  Which matches the squared length of the vector (0 ;
 1).
 
-[![Polarpythagorean](http://lesswrong.com/static/imported/2008/05/01/polarpythagorean.png "Polarpythagorean")](http://lesswrong.com/static/imported/2008/05/01/polarpythagorean.png)
 So when you decompose (0 ; 1) into (.5 ; .5) + (-.5 ; .5), this
 obeys both linearity and unitarity:  The two parts sum to the
 original, and the squared modulus of the parts sums to the squared
@@ -5964,7 +5921,6 @@ amplitude of (.5 ; .5) for being transmitted and an amplitude of
 amplitudes gives us the observed Born probabilities, i.e.
 fifty-fifty.
 
-[![Polar3060](http://lesswrong.com/static/imported/2008/05/01/polar3060.png "Polar3060")](http://lesswrong.com/static/imported/2008/05/01/polar3060.png)
 What if you interposed the second filter at an angle of 30° from
 the first?  Then that would decohere the incoming amplitude vector
 of (0 ; 1) into the vectors (.433 ; .75) and (-.433, .25).  The
@@ -5979,7 +5935,6 @@ Pythagorean Theorem.
 
 (!)
 
-[![3polaroids\_2](http://lesswrong.com/static/imported/2008/05/01/3polaroids_2.png "3polaroids_2")](http://lesswrong.com/static/imported/2008/05/01/3polaroids_2.png)
 A filter set at 0° followed by a filter set at 90° will block all
 light - any photon that emerges from the first filter will have an
 amplitude vector of (0 ; 1), and the component in the direction of
@@ -6037,7 +5992,6 @@ Next we consider the (-.5x ; .5x) component.  It also strikes the
 90° filter, which transmits the component (-.5x ; 0) and absorbs
 the component (0 ; .5x).
 
-[![Polarbreakdown](http://lesswrong.com/static/imported/2008/05/01/polarbreakdown.png "Polarbreakdown")](http://lesswrong.com/static/imported/2008/05/01/polarbreakdown.png)
 Since no other particles are entangled, we have some
 [identical configurations](http://www.overcomingbias.com/2008/04/distinct-config.html)
 here:  Namely, the two configurations where the photon is
@@ -6261,7 +6215,6 @@ Yes, but the math gets a little more interesting.
 Let's review, from yesterday, the case where a photon previously
 polarized in the up-down/left-right basis encounters a 30° filter.
 
-[![Polar3060](http://lesswrong.com/static/imported/2008/05/02/polar3060.png "Polar3060")](http://lesswrong.com/static/imported/2008/05/02/polar3060.png)
 A 30-60-90 triangle has a hypotenuse of 1, a small side of 1/2, and
 a longer side of (√3)/2, in accordance with the Pythagorean
 Theorem.
@@ -7654,7 +7607,6 @@ the other as "testable" because it seems like the best fit.
 
 As for the math, it begins, as so many things do, with:
 
-![Bayestheorem](http://lesswrong.com/static/imported/2008/05/06/bayestheorem.png "Bayestheorem")
 This is Bayes's Theorem.  I own at least two distinct items of
 clothing printed with this theorem, so it must be important.
 
@@ -7683,8 +7635,7 @@ probability to nearly zero:  There should be things the hypothesis
 theory is *not* compatible.  A theory that can explain everything,
 prohibits nothing, and so gives us no advice about what to expect.
 
-[![Bayestheorem\_3](http://lesswrong.com/static/imported/2008/05/06/bayestheorem_3.png "Bayestheorem_3")](http://lesswrong.com/static/imported/2008/05/06/bayestheorem_3.png)In
-terms of Bayes's Theorem, if there is at least some observation B
+In terms of Bayes's Theorem, if there is at least some observation B
 that the hypothesis A~i~can't explain", i.e., P(B|A~i~) is tiny,
 then the numerator P(B|A~i~)P(A~i~) will also be tiny, and likewise
 the posterior probability P(A~i~|B).  Updating on having seen the
@@ -7726,7 +7677,6 @@ infinitesimal.
 > quantum mechanics!  What about the decoherence part, per se, versus
 > the collapse postulate?"
 
-[![Bayestheorem\_3](http://lesswrong.com/static/imported/2008/05/06/bayestheorem_3.png "Bayestheorem_3")](http://lesswrong.com/static/imported/2008/05/06/bayestheorem_3.png)
 We're getting there.  The point is that I just defined a test that
 leads you to think about one hypothesis at a time (and called it
 "falsifiability").  If you want to distinguish decoherence *versus*
@@ -7786,10 +7736,6 @@ conditional on the decoherence hypothesis being true, versus its
 probability if the collapse hypothesis is true.  Which in turn
 implies that the posterior odds for decoherence and collapse, will
 become different from the prior odds:
-
-[](http://lesswrong.com/static/imported/2008/05/06/bayesodds.png)
-
-[![Bayesodds\_2](http://lesswrong.com/static/imported/2008/05/06/bayesodds_2.png "Bayesodds_2")](http://lesswrong.com/static/imported/2008/05/06/bayesodds_2.png)
 
 This equation is symmetrical (assuming no probability is
 [literally equal to 0](http://www.overcomingbias.com/2008/01/0-and-1-are-not.html)). 
@@ -10011,8 +9957,7 @@ Anyone interested in understanding modern quantum mechanics should
 read this book.  "Must" and "should" are defined as in
 [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt).
 
-[![Jbarbourconfigurationcube\_2](http://lesswrong.com/static/imported/2008/05/23/jbarbourconfigurationcube_2.png "Jbarbourconfigurationcube_2")](http://lesswrong.com/static/imported/2008/05/23/jbarbourconfigurationcube_2.png)Suppose
-that we have three particles, A, B, and C, on a 2-dimensional
+Suppose that we have three particles, A, B, and C, on a 2-dimensional
 plane; and suppose that these are the *only* 3 particles in the
 universe.
 
@@ -10070,7 +10015,6 @@ A and B and C cannot observe their absolute positions in space
 against a fixed background.  Treating these absolute positions as
 elements of reality may be part of our problem.
 
-[![Jbarbourrelative](http://lesswrong.com/static/imported/2008/05/23/jbarbourrelative.png "Jbarbourrelative")](http://lesswrong.com/static/imported/2008/05/23/jbarbourrelative.png)
 What *can* A, B, and C observe?  By hypothesis, they can observe
 their distances from each other.  They can measure the distances
 AB, BC, and CA.
@@ -10091,8 +10035,7 @@ Every different point in this configuration space, corresponds to
 an *experimentally different* state of reality that A, B, and C can
 observe.
 
-[![Jbarbourtriangleland1\_2](http://lesswrong.com/static/imported/2008/05/23/jbarbourtriangleland1_2.png "Jbarbourtriangleland1_2")](http://lesswrong.com/static/imported/2008/05/23/jbarbourtriangleland1_2.png)(Albeit
-this assumes that ABC can measure absolute, rather than relative,
+Albeit this assumes that ABC can measure absolute, rather than relative,
 distances.  Otherwise, different slices of pyramid-space would be
 observationally identical because they would describe the same
 triangle at different scales, as shown at left.)
@@ -10107,7 +10050,6 @@ configurations with A, B, and C on the same line.  E.g., if AB + BC
 The corners of each slice are the configurations in which two
 points coincide; e.g., AB=0, BC=CA.
 
-[![Jbarbourtriangleland2](http://lesswrong.com/static/imported/2008/05/26/jbarbourtriangleland2.png "Jbarbourtriangleland2")](http://lesswrong.com/static/imported/2008/05/26/jbarbourtriangleland2.png)
 At right (or possibly below, depending on your screen width), is a
 diagram showing a single slice in greater detail; Julian Barbour
 credits this to his friend Dierck Liebscher.
@@ -10156,8 +10098,6 @@ you were looking at the evolution of A, B, and C in plain old space
 and time, then a strobe-lit photograph of their motion might look
 like this:
 
-[![Jbarbourtriangleseries](http://lesswrong.com/static/imported/2008/05/23/jbarbourtriangleseries.png "Jbarbourtriangleseries")](http://lesswrong.com/static/imported/2008/05/23/jbarbourtriangleseries.png)
-
 In this time-series photograph, we've seen points A, B, and C
 forming a triangle.  Not only do the points of the triangle orbit
 around each other, but they also seem to be heading down and to the
@@ -10170,8 +10110,6 @@ Now we could also map that whole trajectory over time, onto the
 relative configuration space.  If AB+BC+CA happens to be a constant
 throughout the evolution, then we could conveniently map the
 trajectory onto one slice of configuration space:
-
-[![Jbarbourshapepath](http://lesswrong.com/static/imported/2008/05/23/jbarbourshapepath.png "Jbarbourshapepath")](http://lesswrong.com/static/imported/2008/05/23/jbarbourshapepath.png)
 
 (This doesn't actually represent the triangle-series shown above
 it, but imagine that it does.)
@@ -10270,7 +10208,6 @@ configuration space, it would be *quantum* physics in a relative
 configuration space.  And a single moment of time, might look like
 this:
 
-[![Jbarbourtrianglecloud](http://lesswrong.com/static/imported/2008/05/26/jbarbourtrianglecloud.png "Jbarbourtrianglecloud")](http://lesswrong.com/static/imported/2008/05/26/jbarbourtrianglecloud.png)
 At right we see a cloud of red and blue mist, representing a
 complex amplitude distribution over the relative configuration
 space.  You could imagine that redness is the real part and
@@ -10553,8 +10490,6 @@ mechanics, a very *very* quick summary:
     configurations of all the particles in the entire universe. 
     ([Joint Configurations.](http://www.overcomingbias.com/2008/04/joint-configura.html))
 
-[![Jbarbourconfigurationcube\_3](http://lesswrong.com/static/imported/2008/05/26/jbarbourconfigurationcube_3.png "Jbarbourconfigurationcube_3")](http://lesswrong.com/static/imported/2008/05/26/jbarbourconfigurationcube_3.png)
-
 Above is a diagram that shows what a *configuration space* might
 look like for three particles, A, B, and C.  ABC form a triangle in
 two-dimensional space.  Every individual point in the configuration
@@ -10568,16 +10503,12 @@ The *state of a quantum system* is not a *single point* in this
 space; it is a *distribution* over this space.  You could imagine
 it as a cloud, or a blob, or a colored mist within the space.
 
-[![Jbarbourrelative](http://lesswrong.com/static/imported/2008/05/26/jbarbourrelative.png "Jbarbourrelative")](http://lesswrong.com/static/imported/2008/05/26/jbarbourrelative.png)
-
 Here we see a *relative* configuration space, in which each axis is
 the distance between a pair of particles.  This has some advantages
 I'm not going to recapitulate (it was covered in a
 [previous post](http://www.overcomingbias.com/2008/05/relative-config.html)),
 so if you're dropping into the middle of the series, just pretend
 it's a regular configuration space.
-
-[![Jbarbourtriangleland1](http://lesswrong.com/static/imported/2008/05/26/jbarbourtriangleland1.png "Jbarbourtriangleland1")](http://lesswrong.com/static/imported/2008/05/26/jbarbourtriangleland1.png)
 
 We've just chopped up the pyramidal space you saw before, into a
 series of slices.  In this configuration space, the slices near the
@@ -10594,8 +10525,6 @@ particles.  Configuration space is not the 3D space you know.  It's
 not that there are a bunch of particles resting in the same place
 at the bottom.  The single bottom point *corresponds to* all the
 particles being in the same place in 3D space.)
-
-[![Jbarbourtrianglecloud\_2](http://lesswrong.com/static/imported/2008/05/26/jbarbourtrianglecloud_2.png "Jbarbourtrianglecloud_2")](http://lesswrong.com/static/imported/2008/05/26/jbarbourtrianglecloud_2.png)
 
 Here we take a closer look at one of the slices of configuration
 space, and see a cloud of blue and red mist covering some of it. 
@@ -10714,7 +10643,6 @@ the expansion of the universe, or *your own memories*, that clock
 is encoded in the position of particles - in the **r**.  We have
 never seen a *t* variable apart from the **r**.
 
-[![Jbarbourrelative](http://lesswrong.com/static/imported/2008/05/27/jbarbourrelative.png "Jbarbourrelative")](http://lesswrong.com/static/imported/2008/05/27/jbarbourrelative.png)
 We can recast the quantum wave equations, specifying the time
 evolution of *ψ*(**r**, *t*), as specifying relations *within* a
 wavefunction ψ(**r**).
@@ -10774,8 +10702,6 @@ go into it tomorrow.
 
 And a final intuition-pump, in case you haven't yet gotten
 timelessness on a gut level...
-
-![Manybranches4](http://lesswrong.com/static/imported/2008/05/27/manybranches4.png "Manybranches4")
 
 Think of this as a diagram of the
 [many worlds](http://www.overcomingbias.com/2008/05/many-worlds-one.html)
@@ -11045,10 +10971,6 @@ that smoking cigarettes actually *caused*cancer.
 
 Anyway...
 
-[](http://lesswrong.com/static/imported/2008/05/28/causeundirected2.png)
-
-[![Causeundirected\_2](http://lesswrong.com/static/imported/2008/05/28/causeundirected_2.png "Causeundirected_2")](http://lesswrong.com/static/imported/2008/05/28/causeundirected_2.png)
-
 Let's say we have a data series, generated by taking snapshots over
 time of two variables 1 and 2.  We have a large amount of data from
 the series, laid out on a track, but we don't know the direction
@@ -11067,13 +10989,7 @@ call the three slices L, M, and R for Left, Middle, and Right.
 We are considering two hypotheses.  First, that causality could be
 flowing from L to M to R:
 
-[](http://lesswrong.com/static/imported/2008/05/28/causeright.png)
-
-[![Causeright\_2](http://lesswrong.com/static/imported/2008/05/28/causeright_2.png "Causeright_2")](http://lesswrong.com/static/imported/2008/05/28/causeright_2.png)
-
 Second, that causality could be flowing from R to M to L:
-
-[![Causeleft\_3](http://lesswrong.com/static/imported/2008/05/28/causeleft_3.png "Causeleft_3")](http://lesswrong.com/static/imported/2008/05/28/causeleft_3.png)
 
 As good Bayesians, we realize that to distinguish these two
 hypotheses, we must find some kind of observation that is more
@@ -11091,8 +11007,6 @@ the crash will tend to occur in each other's presence.  But this is
 also true if the sound of the crash causes me to throw a rock.  So
 observing these correlations does not tell us the direction of
 causality, unless we already know the direction of time.
-
-[![Causeundirected\_2](http://lesswrong.com/static/imported/2008/05/28/causeundirected_2.png "Causeundirected_2")](http://lesswrong.com/static/imported/2008/05/28/causeundirected_2.png)
 
 From looking at this undirected diagram, we can guess that M1 will
 correlate to L1, M2 will correlate to R1, R2 will correlate to M2,
@@ -11131,8 +11045,6 @@ causal hypothesis and see if it implies any asymmetrical
 observations.
 
 Say the flow of causality is from left to right:
-
-[![Causeright\_3](http://lesswrong.com/static/imported/2008/05/28/causeright_3.png "Causeright_3")](http://lesswrong.com/static/imported/2008/05/28/causeright_3.png)
 
 Suppose that we *do* know L1 and L2, but we do *not* know R1 and
 R2.  Will learning M1 tell us anything about M2?
@@ -11591,8 +11503,6 @@ rather than "physical continuity".
 [Previously](http://lesswrong.com/lw/qp/timeless_physics/) I drew this diagram of
 *you*in a timeless, branching universe:
 
-[![Manybranches4](http://lesswrong.com/static/imported/2008/06/02/manybranches4.png "Manybranches4")](http://lesswrong.com/static/imported/2008/06/02/manybranches4.png)
-
 To understand many-worlds:  The gold head only *remembers*the green
 heads, creating the illusion of a unique line through time, and the
 intuitive question, "Where does the line go next?"  But it goes to
@@ -11607,8 +11517,6 @@ just there, each thinking that *now* is a different time.
 
 In [Timeless Causality](http://lesswrong.com/lw/qr/timeless_causality/) I drew this
 diagram:
-
-[![Causeright](http://lesswrong.com/static/imported/2008/06/02/causeright.png "Causeright")](http://lesswrong.com/static/imported/2008/06/02/causeright.png)
 
 This was part of an illustration of how we could statistically
 distinguish left-flowing causality from right-flowing causality -
@@ -11627,13 +11535,9 @@ So if you want to know "Where is the computation?  Where is the
 experience?" my best guess would be to point to something like a
 *directional braid:*
 
-[![Braid\_2](http://lesswrong.com/static/imported/2008/06/02/braid_2.png "Braid_2")](http://lesswrong.com/static/imported/2008/06/02/braid_2.png)
-
 This is not a braid of moving particles.  This is a braid of
 interactions within close neighborhoods of timeless configuration
 space.
-
-[![Braidslice](http://lesswrong.com/static/imported/2008/06/02/braidslice.png "Braidslice")](http://lesswrong.com/static/imported/2008/06/02/braidslice.png)
 
 Every point intersected by the red line is unique as a mathematical
 entity; the points are not *moving* from one time to another. 
@@ -11646,10 +11550,6 @@ never changes, but has a direction.
 Embodied in this timeless flow are computations; within the
 computations, experiences.  The experiences' computations'
 configurations might even overlap each other:
-
-[](http://lesswrong.com/static/imported/2008/06/02/braidtime.png)
-
-[![Braidtime\_2](http://lesswrong.com/static/imported/2008/06/02/braidtime_2.png "Braidtime_2")](http://lesswrong.com/static/imported/2008/06/02/braidtime_2.png)
 
 In the causal relations covered by the rectangle 1, there would be
 one moment of Now; in the causal relations covered by the rectangle
@@ -11897,8 +11797,6 @@ People hear:  "The universe runs like clockwork; physics is
 deterministic; the future is fixed."  And their minds form an
 causal network that looks like this:
 
-[![Fwmevsphysics](/static/imported/2008/06/05/fwmevsphysics.png "Fwmevsphysics")](/static/imported/2008/06/05/fwmevsphysics.png)
-
 Here we see the causes "Me" and "Physics", competing to determine
 the state of the "Future" effect.  If the "Future" is fully
 determined by "Physics", then obviously there is no room for it to
@@ -11924,11 +11822,7 @@ around."
 
 Of course the actual diagram should be:
 
-[![Fwmeinphysics](/static/imported/2008/06/05/fwmeinphysics.png "Fwmeinphysics")](/static/imported/2008/06/05/fwmeinphysics.png)
-
 Or better yet:
-
-[![Fwallphysics](/static/imported/2008/06/05/fwallphysics.png "Fwallphysics")](/static/imported/2008/06/05/fwallphysics.png)
 
 Why is this not obvious?  Because there are many
 [levels of organization](http://lesswrong.com/lw/on/reductionism/) that separate our
@@ -12084,7 +11978,6 @@ and separately, writes the outcome at 7:02am.  In which case,
 indeed, the future would be determined *before* you made your
 decision...
 
-[![Fwdeterminism\_2](/static/imported/2008/06/06/fwdeterminism_2.png "Fwdeterminism_2")](/static/imported/2008/06/06/fwdeterminism_2.png)
 In this model, the Determinator writes the script for the Block
 Universe at 6:00am.  And *then* time - the global time of the
 universe - continues, running through the Block Universe and
@@ -12120,7 +12013,6 @@ shared "past".  This is how we can experimentally observe the
 orientation of the Block Universe, the direction of the river that
 never flows.
 
-[![Fwcausality](/static/imported/2008/06/06/fwcausality.png "Fwcausality")](/static/imported/2008/06/06/fwcausality.png)
 If you are going to talk about causality at all - and personally, I
 think we should, because the universe doesn't make much sense
 without it - then causality applies to relations *within* the Block
@@ -12169,10 +12061,6 @@ ancestor, but have no connection between them.
 And then there's the idea that, if you can predict the whole course
 of the universe by looking at the state at the beginning of time,
 the present must have no influence on the future...
-
-[](/static/imported/2008/06/06/fwmarkov.png)
-
-[![Fwmarkov\_2](/static/imported/2008/06/06/fwmarkov_2.png "Fwmarkov_2")](/static/imported/2008/06/06/fwmarkov_2.png)
 
 Surely, if you can determine the Future just by looking at the
 Past, there's no need to look at the Present?
@@ -14902,7 +14790,6 @@ we were smarter than them, and thought faster.
 When I lecture on the Singularity, I often draw a graph of the
 "scale of intelligence" as it appears in everyday life:
 
-[![Mindscaleparochial](http://lesswrong.com/static/imported/2008/05/22/mindscaleparochial.png "Mindscaleparochial")](http://lesswrong.com/static/imported/2008/05/22/mindscaleparochial.png)
 
 But this is a rather *parochial* view of intelligence.  Sure, in
 everyday life, we only deal socially with other humans - only other
@@ -14912,7 +14799,6 @@ Einstein.  But what we really need to talk about Artificial
 Intelligence or theoretical optima of rationality, is *this*
 intelligence scale:
 
-[![Mindscalereal](http://lesswrong.com/static/imported/2008/05/21/mindscalereal.png "Mindscalereal")](http://lesswrong.com/static/imported/2008/05/21/mindscalereal.png)
 
 For us humans, it seems that the scale of intelligence runs from
 "village idiot" at the bottom to "Einstein" at the top.  Yet the
@@ -14931,7 +14817,6 @@ either.
 Carl Shulman has observed that some academics who talk about
 transhumanism, seem to use the following scale of intelligence:
 
-[![Mindscaleacademic](http://lesswrong.com/static/imported/2008/05/21/mindscaleacademic.png "Mindscaleacademic")](http://lesswrong.com/static/imported/2008/05/21/mindscaleacademic.png)
 
 Douglas Hofstadter actually said something like this, at the 2006
 Singularity Summit.  He looked at my diagram showing the "village
