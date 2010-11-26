@@ -1,0 +1,88 @@
+<!-- .meta --><!--<div><i><h0>Part 1 of 13 in the sequence &nbsp;<a href="http://wiki.lesswrong.com/wiki/Mysterious_Answers_to_Mysterious_Questions">Mysterious Answers to Mysterious Questions</a></h0></i><br/><br/></div>--><div id="entry_t3_py" class="content clear"><div class="md">
+        
+  <div><p><em>This post is part of the </em><em><a href="/lw/r5/the_quantum_physics_sequence/">Quantum Physics Sequence</a>.<br>
+</em><strong>Previously in series</strong>:&#xA0; <a dragover="true" href="/lw/pw/decoherence_is_pointless/">Decoherence is Pointless</a><br><strong>Followup to</strong>:&#xA0; <a href="/lw/pt/where_experience_confuses_physicists/">Where Experience Confuses Physicists</a></p>
+<p>One <a href="/lw/pt/where_experience_confuses_physicists/">serious mystery of decoherence</a> is where the Born probabilities come from, or even what they are probabilities <em>of.</em>&#xA0; What does the integral over the squared modulus of the amplitude
+density have to do with anything?</p>
+<p>This was discussed by analogy in "<a href="/lw/pt/where_experience_confuses_physicists/">Where Experience Confuses Physicists</a>", and I
+won't repeat arguments already covered there.&#xA0; I will, however, try to convey exactly what the puzzle <em>is,</em> in the real framework of quantum mechanics.</p><a id="more"></a><p>A professor teaching undergraduates might say:&#xA0; "The probability of finding a
+particle in a particular position is given by the squared modulus of the
+amplitude at that position."</p>
+<p>This is oversimplified in several ways.</p>
+<p>First, for continuous variables like position, amplitude is
+a density, not a <a href="/lw/pw/decoherence_is_pointless/">point mass</a>.&#xA0; You integrate over it.&#xA0; The integral over a single point is
+zero.</p>
+<p>(Historical note:&#xA0; If "observing a particle's position" invoked a
+mysterious event that squeezed the amplitude distribution down to a delta point, or flattened it in one subspace, this would give us a different future amplitude distribution
+from what decoherence would predict.&#xA0; All interpretations of QM that involve quantum systems jumping into a point/flat state, which are both testable and have been tested, have been falsified.&#xA0; The universe does not have a "classical mode" to jump into; it's all amplitudes, all the time.)
+
+</p>
+<p>Second, a single observed particle doesn't <em>have</em> an
+amplitude distribution.&#xA0; Rather the system
+containing yourself, plus the particle, plus the rest of the universe<em>,</em> may approximately <em>factor </em>into the <a href="/lw/pj/the_quantum_arena/">multiplicative product</a> of (1) a sub-distribution over
+the particle position and (2) a sub-distribution over the rest of the universe.&#xA0; Or rather, the particular blob of amplitude that <a href="/lw/pu/on_being_decoherent/">you happen to be in</a>, can factor that way.</p>
+<p>So what could it mean, to associate a "subjective probability" with a component of one <em>factor</em> of a combined amplitude distribution that happens to factorize?</p>
+<p>Recall the physics for:</p><blockquote><p>(Human-BLANK * Sensor-BLANK) * (Atom-LEFT + Atom-RIGHT)<br>&#xA0; &#xA0;&#xA0; &#xA0;&#xA0; =&gt;<br>(Human-LEFT * Sensor-LEFT * Atom-LEFT) + (Human-RIGHT * Sensor-RIGHT * Atom-RIGHT)</p></blockquote><p>Think of the whole process as reflecting the good-old-fashioned distributive rule of algebra.&#xA0; The initial state can be decomposed - note that this is an <em>identity</em>, not an evolution - into:</p><blockquote><p>(Human-BLANK * Sensor-BLANK) * (Atom-LEFT + Atom-RIGHT)<br>&#xA0; &#xA0; =<br>(Human-BLANK * Sensor-BLANK * Atom-LEFT) + (Human-BLANK * Sensor-BLANK * Atom-RIGHT)</p></blockquote>
+<p>We assume that the distribution factorizes.&#xA0; It follows that the term on the left, and the term on the right, initially differ only by
+a multiplicative factor of Atom-LEFT vs. Atom-RIGHT.</p>
+<p>If you were to <em>immediately</em> take the multi-dimensional
+integral over the squared modulus of the amplitude density of that
+whole system,</p>
+<p>Then the <em>ratio</em> of the all-dimensional integral of the squared modulus over the left-side term, <em>to</em>
+the all-dimensional integral over the squared modulus of the right-side term,</p>
+<p>Would equal the <em>ratio</em> of the lower-dimensional
+integral over the squared modulus of the Atom-LEFT, <em>to</em> the lower-dimensional integral over the squared modulus of Atom-RIGHT,</p>
+<p>For essentially the same reason that if you've got (2 * 3) * (5 + 7), the ratio of (2 * 3 * 5) to (2 * 3 * 7) is the same as the ratio of 5 to 7.</p>
+<p>Doing an integral over the squared modulus of a complex amplitude distribution in N dimensions doesn't change that.</p>
+<p>There's also a rule called "unitary evolution" in quantum
+mechanics, which says that quantum evolution never changes the <em>total</em> integral
+over the squared modulus of the amplitude density.</p>
+<p>So if you assume
+that the initial left term and the initial right term evolve, without
+overlapping each other, into the final LEFT term and the final RIGHT term, they'll
+have the same ratio of integrals over etcetera as before.</p>
+<p>What all this says is that,</p>
+<p>If some roughly independent Atom has got a blob of amplitude on the left of its factor, and a blob of amplitude on the right,</p>
+<p>Then, after the Sensor senses the atom, and <em>you</em> look at the Sensor,</p>
+<p dragover="true">The integrated squared modulus of the whole LEFT blob, and the integrated squared modulus of the whole RIGHT blob,</p>
+<p>Will have the same ratio,</p>
+<p dragover="true">As the ratio of the squared moduli of the original Atom-LEFT and Atom-RIGHT components.</p>
+<p>This is why it's important to remember that apparently individual particles have amplitude distributions that are <em>multiplicative factors</em> within the total <em>joint</em> distribution over <em>all</em> the particles.</p>
+<p>If a whole gigantic human experimenter made up of quintillions of particles,</p>
+<p>Interacts with one teensy little atom whose amplitude <em>factor</em> has a big bulge on the left and a small bulge on the right,</p>
+<p>Then the resulting amplitude distribution, in the <em>joint</em> configuration space,</p>
+<p>Has a big amplitude blob for "human sees atom on the left", and a small amplitude blob of "human sees atom on the right".</p>
+<p dragover="true">And what <em>that</em> means, is that the Born probabilities seem to be about <em>finding yourself in a particular blob,</em> not <em>the particle being in a particular place.</em></p>
+<p>But what does the integral over squared moduli have to do with
+anything?&#xA0; On a straight reading of the data, you would
+always find yourself in both blobs, every time.&#xA0; How can you find yourself in one blob with greater probability?&#xA0; What are the Born probabilities, probabilities <em>of</em>?&#xA0; Here's the map - where's the territory?</p>
+<p>I don't know.&#xA0; It's an open problem.&#xA0; Try not to <a href="/lw/pt/where_experience_confuses_physicists/">go funny in the head</a> about it.</p>
+<p>This problem is even worse than it looks, because the squared-modulus business is <em>the only non-linear rule in all of quantum mechanics.</em>&#xA0; Everything else - <em>everything</em> else - obeys the <a href="/lw/pq/the_socalled_heisenberg_uncertainty_principle/">linear</a> rule that the evolution of amplitude distribution A, plus the evolution of the amplitude distribution B, equals the evolution of the amplitude distribution A + B.</p>
+<p>When you think about the weather in terms of clouds and flapping butterflies, it may not <em>look</em> linear on that higher level.&#xA0; But the amplitude distribution for weather (plus the rest of the universe) is linear on <a href="/lw/on/reductionism/">the only level that's fundamentally real</a>.</p>
+<p>Does this mean that the squared-modulus business <em>must</em> require additional physics beyond the linear laws we know - that it's <em>necessarily</em> futile to try to derive it on any higher level of organization?</p>
+<p>But even this doesn't follow.</p>
+<p>Let's say I have a computer program which computes a sequence of positive integers that encode the successive states of a sentient being.&#xA0; For example, the positive integers might describe a Conway's-Game-of-Life universe containing sentient beings (Life is Turing-complete) or some other cellular automaton.</p>
+<p>Regardless, this sequence of positive integers represents the time series of a discrete universe containing conscious entities.&#xA0; Call this sequence Sentient(n).</p>
+<p>Now consider another computer program, which computes the negative of the first sequence:&#xA0; -Sentient(n).&#xA0; If the computer running Sentient(n) instantiates conscious entities, then so too should a program that computes Sentient(n) and then negates the output.</p>
+<p>Now I write a computer program that computes the sequence {0, 0, 0...} in the obvious fashion.</p>
+<p>This sequence happens to be equal to the sequence Sentient(n) + -Sentient(n).</p>
+<p>So does a program that computes {0, 0, 0...} necessarily instantiate as many conscious beings as both Sentient programs put together?</p>
+<p dragover="true">Admittedly, this isn't an exact analogy for "two universes add linearly and cancel out".&#xA0; For that, you would have to talk about a universe with linear physics, which excludes Conway's Life.&#xA0; And then in this linear universe, two states of the world both containing conscious observers - world-states equal but for their opposite sign - would have to cancel out.</p>
+<p dragover="true">It doesn't work in Conway's Life, but it works in our own universe!&#xA0; Two quantum amplitude distributions can contain components that <em>cancel each other out,</em> and this demonstrates that the number of conscious observers in <em>the sum of two distributions</em>, need not equal the sum of conscious observers <em>in each distribution separately.</em></p>
+<p>So it actually <em>is</em> possible that we could pawn off <em>the only non-linear phenomenon in all of quantum physics</em> onto a better understanding of consciousness.&#xA0; The question "How many conscious observers are contained in an evolving amplitude distribution?" has obvious reasons to be non-linear.</p>
+<p>(!)</p>
+<p>Robin Hanson has made <a href="http://hanson.gmu.edu/mangledworlds.html">a suggestion along these lines</a>.</p>
+<p>(!!)</p>
+<p>Decoherence is a physically continuous process, and the interaction between LEFT and RIGHT blobs may never actually become <em>zero.</em></p>
+<p>So, Robin suggests, any blob of amplitude which gets small enough, becomes dominated by stray flows of amplitude from many larger worlds.</p>
+<p>A blob which gets too small, cannot sustain coherent inner interactions - an internally driven chain of cause and effect - because the amplitude flows are dominated from outside.&#xA0; Too-small worlds fail to support computation and consciousness, or are ground up into chaos, or merge into larger worlds.</p>
+<p>Hence Robin's cheery phrase, "mangled worlds".</p>
+<p>The cutoff point will be a function of the squared modulus, because unitary physics preserves the squared modulus under evolution; if a blob has a certain total squared modulus, future evolution will preserve that integrated squared modulus so long as the blob doesn't split further.&#xA0; You can think of the squared modulus as the amount of amplitude available to internal flows of causality, as opposed to outside impositions.</p>
+<p>The seductive aspect of Robin's theory is that quantum physics wouldn't need <em>interpreting.</em>&#xA0; You wouldn't have to stand off beside the mathematical structure of the universe, and say, "Okay, now that you're finished computing all the mere numbers, I'm furthermore telling you that the squared modulus is the 'degree of existence'."&#xA0; Instead, when you run any program that computes the <em>mere numbers,</em> the program <em>automatically</em> contains people who experience the same physics we do, with the same probabilities.</p>
+<p>A major problem with Robin's theory is that it seems to predict things like, "We should find ourselves in a universe in which <del>lots of</del> very few decoherence events have already taken place," which tendency does not seem especially apparent.</p>
+<p>The main thing that would support Robin's theory would be if you could show from first principles that mangling does happen; and that the cutoff point is somewhere around the median amplitude density (the point where half the total amplitude density is in worlds above the point, and half beneath it), which is apparently what it takes to reproduce the Born probabilities in any particular experiment.</p>
+<p>What's the probability that Hanson's suggestion is right?&#xA0; I'd put it under fifty percent, which I don't think Hanson would disagree with.&#xA0; It would be much lower if I knew of a single alternative that seemed equally... <a href="/lw/on/reductionism/">reductionist</a>.</p>
+<p>But <em>even if</em> Hanson is wrong about what causes the Born probabilities, I would guess that the final answer still comes out <em>equally non-mysterious</em>.&#xA0; Which would make me <a href="/lw/iy/my_wild_and_reckless_youth/">feel very silly</a>, if I'd embraced a more <a href="/lw/iu/mysterious_answers_to_mysterious_questions/">mysterious-seeming "answer"</a> up until then.&#xA0; As a general rule, it is questions that are mysterious, not answers.</p>
+<p>When I began reading Hanson's paper, my initial thought was:&#xA0; <em>The math isn't beautiful enough to be true.</em></p>
+<p>By the time I finished processing the paper, I was thinking:&#xA0; <em>I don't know if this is the real answer, but the real answer has got to be at least this normal.</em></p>
+<p>This is still my position today.</p></div></div></div>

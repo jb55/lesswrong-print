@@ -30,6 +30,20 @@ Includes the 'Zombies' and 'Joy in the Merely Real' subsequences
 [pdf](http://jb55.com/lesswrong/sequences/reductionism/Reductionism.pdf) |
 [markdown](http://jb55.com/lesswrong/sequences/reductionism/Reductionism.md)
 
+### Quantum Physics
+
+> A non-mysterious introduction to quantum mechanics, intended to be accessible
+> to anyone who can grok algebra and complex numbers. Cleaning up the old
+> confusion about QM is used to introduce basic issues in rationality (such as
+> the technical version of Occam's Razor), epistemology, reductionism,
+> naturalism, and philosophy of science. Not dispensable reading, even though
+> the exact reasons for the digression are hard to explain in advance of
+> reading.
+
+[epub](http://jb55.com/lesswrong/sequences/quantum_physics/Quantum%20Physics.epub) |
+pdf |
+[markdown](http://jb55.com/lesswrong/sequences/quantum_physics/quantum_physics.md)
+
 ### Fun Theory
 
 > A concrete theory of transhuman values. How much fun is there in the universe;

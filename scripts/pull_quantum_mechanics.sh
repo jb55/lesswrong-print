@@ -1,0 +1,56 @@
+#!/bin/bash
+
+python scrape.py "http://lesswrong.com/lw/qy/why_quantum/" \
+  "http://lesswrong.com/lw/pd/configurations_and_amplitude/" \
+  "http://lesswrong.com/lw/pe/joint_configurations/" \
+  "http://lesswrong.com/lw/pf/distinct_configurations/" \
+  "http://lesswrong.com/lw/pg/where_philosophy_meets_science/" \
+  "http://lesswrong.com/lw/ph/can_you_prove_two_particles_are_identical/" \
+  "http://lesswrong.com/lw/pi/classical_configuration_spaces/" \
+  "http://lesswrong.com/lw/pj/the_quantum_arena/" \
+  "http://lesswrong.com/lw/pk/feynman_paths/" \
+  "http://lesswrong.com/lw/pl/no_individual_particles/" \
+  "http://lesswrong.com/lw/pm/identity_isnt_in_specific_atoms/" \
+  "http://lesswrong.com/lw/pp/decoherence/" \
+  "http://lesswrong.com/lw/pq/the_socalled_heisenberg_uncertainty_principle/" \
+  "http://lesswrong.com/lw/pr/which_basis_is_more_fundamental/" \
+  "http://lesswrong.com/lw/ps/where_physics_meets_experience/" \
+  "http://lesswrong.com/lw/pt/where_experience_confuses_physicists/" \
+  "http://lesswrong.com/lw/pu/on_being_decoherent/" \
+  "http://lesswrong.com/lw/pv/the_conscious_sorites_paradox/" \
+  "http://lesswrong.com/lw/pw/decoherence_is_pointless/" \
+  "http://lesswrong.com/lw/px/decoherent_essences/" \
+  "http://lesswrong.com/lw/py/the_born_probabilities/" \
+  "http://lesswrong.com/lw/pz/decoherence_as_projection/" \
+  "http://lesswrong.com/lw/q0/entangled_photons/" \
+  "http://lesswrong.com/lw/q1/bells_theorem_no_epr_reality/" \
+  "http://lesswrong.com/lw/q2/spooky_action_at_a_distance_the_nocommunication/" \
+  "http://lesswrong.com/lw/q3/decoherence_is_simple/" \
+  "http://lesswrong.com/lw/q5/quantum_nonrealism/" \
+  "http://lesswrong.com/lw/q6/collapse_postulates/" \
+  "http://lesswrong.com/lw/q7/if_manyworlds_had_come_first/" \
+  "http://lesswrong.com/lw/q8/many_worlds_one_best_guess/" \
+  "http://lesswrong.com/lw/qz/living_in_many_worlds/" \
+  "http://lesswrong.com/lw/qm/machs_principle_antiepiphenomenal_physics/" \
+  "http://lesswrong.com/lw/qo/relative_configuration_space/" \
+  "http://lesswrong.com/lw/qp/timeless_physics/" \
+  "http://lesswrong.com/lw/qq/timeless_beauty/" \
+  "http://lesswrong.com/lw/qr/timeless_causality/" \
+  "http://lesswrong.com/lw/qx/timeless_identity/" \
+  "http://lesswrong.com/lw/r0/thou_art_physics/" \
+  "http://lesswrong.com/lw/r1/timeless_control/" \
+  "http://lesswrong.com/lw/q9/the_failures_of_eld_science/" \
+  "http://lesswrong.com/lw/qa/the_dilemma_science_or_bayes/" \
+  "http://lesswrong.com/lw/qb/science_doesnt_trust_your_rationality/" \
+  "http://lesswrong.com/lw/qc/when_science_cant_help/" \
+  "http://lesswrong.com/lw/qd/science_isnt_strict_enough/" \
+  "http://lesswrong.com/lw/qe/do_scientists_already_know_this_stuff/" \
+  "http://lesswrong.com/lw/qf/no_safe_defense_not_even_science/" \
+  "http://lesswrong.com/lw/qg/changing_the_definition_of_science/" \
+  "http://lesswrong.com/lw/qi/faster_than_science/" \
+  "http://lesswrong.com/lw/qj/einsteins_speed/" \
+  "http://lesswrong.com/lw/qk/that_alien_message/" \
+  "http://lesswrong.com/lw/ql/my_childhood_role_model/" \
+  "http://lesswrong.com/lw/qs/einsteins_superpowers/" \
+  "http://lesswrong.com/lw/qt/class_project/" \
+  "http://lesswrong.com/lw/qy/why_quantum/"

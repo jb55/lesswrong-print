@@ -1,0 +1,129 @@
+<!-- .meta --><!--<div><i><h0>Part 1 of 13 in the sequence &nbsp;<a href="http://wiki.lesswrong.com/wiki/Mysterious_Answers_to_Mysterious_Questions">Mysterious Answers to Mysterious Questions</a></h0></i><br/><br/></div>--><div id="entry_t3_q0" class="content clear"><div class="md">
+        
+  <div><p><em>This post is part of the </em><em><a href="http://www.overcomingbias.com/2008/06/the-quantum-phy.html">Quantum Physics Sequence</a>.<br>
+</em><strong>Previously in series</strong>:&#xA0; <a href="http://www.overcomingbias.com/2008/05/projection.html">Decoherence as Projection</a></p>
+<p>Today we shall analyze the phenomenon of "entangled particles".&#xA0; We're going to make heavy use of polarized photons here, so you'd better have read <a href="http://www.overcomingbias.com/2008/05/projection.html">yesterday's post</a>.</p><a id="more"></a><p>If a particle at rest decays into two other particles, their <em>net</em> momentum must add up to 0.&#xA0; The two new particles may have amplitudes to head off in all directions, but in each <em>joint</em> configuration, the directions will be opposite.</p>
+<p>By a similar method you can produce two entangled photons which head
+off in opposite directions, and are guaranteed to be polarized
+oppositely (at right angles to each other), but with a 50% prior
+probability of going through any given polarized filter.</p>
+<p>You might think that this would involve amplitudes over a continuous
+spectrum of opposite configurations - an amplitude for photon A to be
+polarized at 0&#xB0; and for photon B to be polarized at 90&#xB0;, an amplitude
+for A to be 1&#xB0; polarized and for B to be 91&#xB0; polarized, etc.&#xA0; But in
+fact it's possible to describe the quantum state "unknown but opposite
+polarizations" much more compactly.</p>
+<p>First, note that the two photons are heading off in opposite
+directions.&#xA0; This justifies calling one photon A and one photon B; they
+aren't likely to get their <a href="http://www.overcomingbias.com/2008/04/identical-parti.html">identities</a> mixed up.</p>
+<p>As with yesterday, the polarization state (1 ; 0) is what passes a
+90&#xB0; filter.&#xA0; The polarization state (0 ; 1) is what passes a 0&#xB0;
+filter.&#xA0; (1 ; 0) is polarized up-down, (0 ; 1) is polarized left-right.
+</p>
+<p>If A is in
+the polarization state (1 ; 0), we'll write that as A=(1 ; 0).</p>
+<p>If A=(1
+; 0) and B=(0 ; 1), we'll write that as</p><blockquote><p> [ A=(1 ; 0) &#x2227; B=(0 ; 1) ]</p></blockquote><p>The state for "unknown opposite polarization" can be written as:</p>
+<blockquote><p>&#x221A;(1/2) * ( [ A=(1 ; 0) &#x2227; B=(0 ; 1) ] - [ A=(0 ; 1) &#x2227; B=(1; 0) ] )</p></blockquote>
+<p>Note that both terms are being multiplied by the square root of
+1/2.&#xA0; This ensures that the squared modulus of both terms sums to 1. 
+Also, don't overlook the minus sign in the center, we'll need it.</p>
+<p>If you measure the A photon's polarization in the up-down/left-right
+basis, the result is pretty straightforward.&#xA0; Your measurement decoheres the entanglement, creating one evolution out of the
+A=(1 ; 0) &#x2227; B=(0 ; 1) configuration, and a second, noninteracting evolution out of the A=(0 ;
+1) &#x2227; B=(1; 0) configuration.</p>
+<p>If you find that the A photon is polarized up-down, i.e., (1 ; 0),
+then you know you're in the A=(1 ; 0) &#x2227; B=(0 ; 1) blob of amplitude. 
+So you know that if you or anyone else measures B, they'll report to
+you that they found B in the (0 ; 1) or left-right polarization.&#xA0; The
+version of you that finds A=(1 ; 0), and the version of your friend
+that finds B=(0 ; 1), always turn out to live in the same blob of
+amplitude.</p>
+<p>On the other side of <a href="http://www.overcomingbias.com/2008/04/quantum-arena.html">configuration space</a>,
+another version of you finds themselves in the A=(0 ;
+1) &#x2227; B=(1; 0) blob.&#xA0; If a friend measures B, the other you will expect
+to hear that B was polarized up-down, just as you expect to meet the
+version of your friend that measured B left-right.</p>
+<p>But what if you measure the system in a slanted basis - test a
+photon with a 30&#xB0; polarized filter?&#xA0; Given the specified starting
+state, in the up-down / left-right basis, what happens if we measure in
+the 30&#xB0; basis instead?&#xA0; Will we still find the photons having opposite
+polarizations?&#xA0; Can this be demonstrated?</p>
+<p>Yes, but the math gets a little more interesting.</p>
+<p>Let's review, from yesterday, the case where a photon previously
+polarized in the up-down/left-right basis encounters a 30&#xB0; filter.</p>
+<p><a href="http://lesswrong.com/static/imported/2008/05/02/polar3060.png"><img src="http://lesswrong.com/static/imported/2008/05/02/polar3060.png" style="margin: 0px 0px 5px 5px; float: right;" title="Polar3060" height="235" width="250" alt="Polar3060" border="0"></a>
+A 30-60-90 triangle has a hypotenuse of 1, a small side of 1/2, and
+a longer side of (&#x221A;3)/2, in accordance with the Pythagorean Theorem.</p>
+<p dragover="true">If a photon passes a 0&#xB0; filter, coming out with polarization (0 ;
+1), and then encounters another filter at 30&#xB0;, the vector that would be
+<em>transmitted </em>through the 30&#xB0; filter is</p><blockquote><p>(&#x221A;3)/2 * (1/2 ; (&#x221A;3)/2) = (.433 ; .75)</p></blockquote><p>and the polarization vector that would be <em>absorbed</em> is</p><blockquote><p>1/2 * (-(&#x221A;3)/2 ; 1/2) = (-.433 ; .25)</p></blockquote><p>Note
+that the polarization states (1/2 ; (&#x221A;3)/2) and (-(&#x221A;3)/2 ; 1/2) form an <em>orthonormal basis:</em>&#xA0; The <a href="http://plato.stanford.edu/entries/qm/#VecVecSpa">inner product</a> of each vector with itself is 1, and the inner product of the two vectors with each other is
+0.</p>
+<p>Then we had (&#x221A;3)/2 of one basis vector plus 1/2 of the other,
+guaranteeing the squared moduli would sum to 1.&#xA0; ((&#x221A;3)/2)<sup>2</sup>&#xA0; + (1/2)<sup>2</sup>&#xA0; = 3/4 + 1/4 = 1.</p>
+<p>So we can say that in the 30&#xB0; basis, the incoming (0 ; 1) photon had a (&#x221A;3)/2 amplitude to be
+transmitted, and a 1/2 amplitude to be absorbed.</p>
+<p>Symmetrically, suppose a photon had passed a 90&#xB0; filter, coming out
+with polarization (1 ; 0), and then encountered the same 30&#xB0; filter.&#xA0; 
+Then the transmitted vector would be</p><blockquote><p>1/2 * (1/2 ; (&#x221A;3)/2) = (.25 ; .433)</p></blockquote><p>and the absorbed vector would be</p><blockquote><p>-(&#x221A;3)/2 * (-(&#x221A;3)/2 ; 1/2) = (.75 ; -.433)</p></blockquote><p>Now let's consider again with the entangled pair of photons</p><blockquote><p>&#x221A;(1/2) * ( [ A=(1 ; 0) &#x2227; B=(0 ; 1) ] - [ A=(0 ; 1) &#x2227; B=(1; 0) ] )</p></blockquote><p>and measure photon A with a 30&#xB0; filter.</p>
+<p>Suppose we find that we see photon A absorbed.</p>
+<p>Then we know that there
+was a -(&#x221A;3)/2 amplitude for this event to occur if the original state
+had A=(1 ; 0), and a 1/2 amplitude for this event to occur if the
+original state had A=(0 ; 1).</p>
+<p>So, if we see that photon A is absorbed, we learn that <em>we</em> are in the now-decoherent blob of amplitude:</p><blockquote><p>( -(&#x221A;3)/2 * &#x221A;(1/2) * [ A=(-(&#x221A;3)/2 ; 1/2) &#x2227; B=(0 ; 1) ] )<br>- ( 1/2 * &#x221A;(1/2) * [ A=(-(&#x221A;3)/2 ; 1/2) &#x2227; B=(1; 0) ] )</p></blockquote><p>You might be tempted to add the two amplitudes for A being absorbed
+- the -(&#x221A;3)/2 * &#x221A;(1/2) and the -1/2 * &#x221A;(1/2) - and get a total
+amplitude of -.966, which, squared, comes out as .933.</p>
+<p>But if this were
+true, there would be a 93% prior probability of A being absorbed by the
+filter - a huge prior expectation to see it absorbed.&#xA0; There should be a 50% prior chance of seeing A absorbed.</p>
+<p>What went wrong is that, even though we haven't yet measured B, the configurations with B=(0 ; 1) and B=(1 ; 0) are <a href="http://www.overcomingbias.com/2008/04/distinct-config.html">distinct</a>. 
+B could be light-years away, and unknown to us; the configurations
+would still be distinct.&#xA0; So we don't add the amplitudes for the two
+terms; we keep them
+separate.</p>
+<p>When the amplitudes for the terms are <em>separately</em> squared,
+and the squares added together, we get a prior absorption probability
+of 1/2 - which is exactly what we should expect.</p>
+<p>Okay, so we're in the decoherent blob where A is absorbed by a
+30&#xB0; filter.&#xA0; Now consider what happens over at B, within our blob, if a friend measures B
+with another 30&#xB0; filter.</p>
+<p>The new starting amplitude distribution is:</p><blockquote><p>( -(&#x221A;3)/2 * &#x221A;(1/2) * [ A=(-(&#x221A;3)/2 ; 1/2) &#x2227; B=(0 ; 1) ] )<br>- ( 1/2 * &#x221A;(1/2) * [ A=(-(&#x221A;3)/2 ; 1/2) &#x2227; B=(1; 0) ] )</p></blockquote><p>In
+the case where B=(0 ; 1), it has an amplitude of (&#x221A;3)/2 to be
+transmitted through a 30&#xB0; filter; being transmitted through a 30&#xB0;
+filter corresponds to the polarization state (1/2 ; (&#x221A;3)/2).&#xA0; Likewise,
+a 1/2 amplitude to be absorbed (polarization state (-(&#x221A;3)/2 ; 1/2).)</p>
+<p>In the case where B=(1 ; 0) it has an amplitude of 1/2 to be
+transmitted with state (1/2 ; (&#x221A;3)/2).&#xA0; And an amplitude of -(&#x221A;3)/2 to
+occupy the state (-(&#x221A;3)/2 ; 1/2) and be absorbed.</p>
+<p>So add up four terms:</p><blockquote><p>( -(&#x221A;3)/2 * &#x221A;(1/2) ) * [ A=(-(&#x221A;3)/2 ; 1/2) &#x2227; B=(0 ; 1) ] <br><em>&#xA0; breaks down into</em><br>&#xA0; &#xA0; ( -(&#x221A;3)/2 * &#x221A;(1/2) ) * (&#x221A;3)/2 * [ A=(-(&#x221A;3)/2 ; 1/2) &#x2227; B=(1/2 ; (&#x221A;3)/2) ] +<br>&#xA0; &#xA0; ( -(&#x221A;3)/2 * &#x221A;(1/2) ) * 1/2&#xA0; &#xA0;&#xA0; * [ A=(-(&#x221A;3)/2 ; 1/2) &#x2227; B=(-(&#x221A;3)/2 ; 1/2) ]<br><em>and</em><br>- ( 1/2 * &#x221A;(1/2) ) * [ A=(-(&#x221A;3)/2 ; 1/2) &#x2227; B=(1; 0) ] )<br><em>&#xA0; &#xA0;breaks down into</em><br>&#xA0; &#xA0; - ( 1/2 * &#x221A;(1/2) ) *&#xA0; 1/2&#xA0; &#xA0;&#xA0; &#xA0;* [ A=(-(&#x221A;3)/2 ; 1/2) &#x2227; B=(1/2 ; (&#x221A;3)/2) ] +<br>&#xA0; &#xA0; - ( 1/2 * &#x221A;(1/2) ) * -(&#x221A;3)/2 * [ A=(-(&#x221A;3)/2 ; 1/2) &#x2227; B=(-(&#x221A;3)/2 ; 1/2) ]</p></blockquote>
+<p>These four terms occupy only two distinct configurations.</p>
+<p>Adding the amplitudes, the
+configuration [ A=(-(&#x221A;3)/2 ; 1/2) &#x2227; B=(-(&#x221A;3)/2 ; 1/2) ] ends up with
+zero amplitude, while [ A=(-(&#x221A;3)/2 ; 1/2) &#x2227; B=(1/2 ; (&#x221A;3)/2) ] ends up
+with a final amplitude of &#x221A;(1/2).</p>
+<p>So, within the blob in which you've found yourself, the probability of your friend seeing that a 30&#xB0; filter blocks both A
+and B, is 0.&#xA0; The probability of seeing that a 30&#xB0; filter
+blocks A and transmits B, is 50%.</p>
+<p>Symmetrically, there's another blob of amplitude where your other
+self sees A transmitted and B blocked, with probability 50%.&#xA0; And A
+transmitted and B transmitted, with probability 0%.</p>
+<p>So you and your friend, when you compare results in some particular
+blob of decohered amplitude, always find that the two photons have
+opposite polarization.</p>
+<p>And in general, if you use two equally oriented
+polarization filters to measure a pair of photons in the inital state:</p><blockquote><p>&#x221A;(1/2) * ( [ A=(1 ; 0) &#x2227; B=(0 ; 1) ] - [ A=(0 ; 1) &#x2227; B=(1; 0) ] )</p></blockquote><p>then
+you are guaranteed that one filter will transmit, and the other filter
+absorb - regardless of how you set the filters, so long as you use the same setting.&#xA0; The photons <em>always</em> have opposite polarizations, even though the prior probability of any <em>particular</em> photon having a <em>particular</em> polarization is 50%.</p>
+<p>What if I measure one photon with a 0&#xB0; filter, and find that it is
+transmitted (= state (0 ; 1)), and then I measure the other photon with
+a 30&#xB0; filter?</p>
+<p>The probability works out to just the same as if I knew
+the other photon had state (1 ; 0) - in effect, it now does.</p>
+<p>Over on my side, I've decohered the amplitude over the <em>joint</em>
+distribution, into blobs in which A has been transmitted, and A
+absorbed.&#xA0; I am in the decoherent blob with A transmitted:&#xA0; A=(0 ; 1). 
+Ergo, the amplitude vector / polarization state of B, <em>in my blob,</em> behaves as if it starts out as (1 ; 0).&#xA0; This is just as true whether I measure it with another 0&#xB0; filter, or a 30&#xB0; filter.</p>
+<p>With symmetrically entangled particles, each particle <em>seems</em> to know the state the other particle has been measured in.&#xA0; But "seems" is the operative word here.&#xA0; Actually we're just dealing with decoherence that happens to take place in a very symmetrical way.</p>
+<p>Tomorrow (if all goes according to plan) we'll look at Bell's Theorem, which rules out the possibility that each photon already has a fixed, non-quantum state that locally determines the result of any possible polarization measurement.</p></div></div></div>

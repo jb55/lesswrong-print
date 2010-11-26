@@ -1,0 +1,273 @@
+<!-- .meta --><!--<div><i><h0>Part 1 of 13 in the sequence &nbsp;<a href="http://wiki.lesswrong.com/wiki/Mysterious_Answers_to_Mysterious_Questions">Mysterious Answers to Mysterious Questions</a></h0></i><br/><br/></div>--><div id="entry_t3_q3" class="content clear"><div class="md">
+        
+  <div><p><em>This post is part of the </em><em><a href="http://www.overcomingbias.com/2008/06/the-quantum-phy.html">Quantum Physics Sequence</a>.<br>
+</em></p>
+<p>An epistle to the physicists:</p>
+<p>When I was but a little lad, my father, a Ph.D. physicist, warned me
+sternly against meddling in the affairs of physicists; he said that it
+was hopeless to try to comprehend physics without the formal math. 
+Period.&#xA0; No escape clauses.&#xA0; But I had read in Feynman's popular books
+that if you really understood physics, you ought to be able to explain
+it to a nonphysicist.&#xA0; I believed Feynman instead of my father, because
+Feynman had won the Nobel Prize and my father had not.</p>
+<p>It was not until later - when I was reading the <em>Feynman Lectures,</em> in fact - that I realized that my father had given me the simple and honest truth.&#xA0; No math = no physics.</p>
+<p>By vocation I am a Bayesian, not a physicist.&#xA0; Yet although I was
+raised not to meddle in the affairs of physicists, my hand has been
+forced by the occasional gross misuse of three terms:&#xA0; <em>Simple, falsifiable,</em> and <em>testable</em>.</p>
+<p>The foregoing introduction is so that you don't laugh, and say, "Of course I know what those words mean!"&#xA0; There is math here.</p><a id="more"></a><p>Let's begin with the remark that started me down this whole avenue, of which I have seen several versions; paraphrased, it runs:</p><blockquote><p>"The
+Many-Worlds interpretation of quantum mechanics postulates that there
+are vast numbers of other worlds, existing alongside our own.&#xA0; Occam's
+Razor says we should not multiply entities unnecessarily."</p></blockquote>
+<p>Now it must be said, in all fairness, that those who say this will usually also confess:</p><blockquote><p>"But
+this is not a universally accepted application of Occam's Razor; some
+say that Occam's Razor should apply to the laws governing the model,
+not the number of objects inside the model."</p></blockquote><p>So it is good that we are all acknowledging the contrary arguments, and telling both sides of the story -</p>
+<p>But suppose you had to <em>calculate</em> the simplicity of a theory.</p>
+<p>The original formulation of William of Ockham stated:</p><blockquote><p><em>Lex parsimoniae:&#xA0; Entia non sunt multiplicanda praeter necessitatem.</em></p></blockquote>
+<p>"The law of parsimony:&#xA0; Entities should not be multiplied beyond necessity."</p>
+<p>But this is qualitative advice.&#xA0; It is not enough to say whether one theory seems more simple, or seems
+more complex, than another - you have to assign a number; and the
+number has to be meaningful, you can't just make it up.&#xA0; Crossing this
+gap is like the difference between being able to eyeball which things
+are moving "fast" or "slow", and starting to measure and calculate
+velocities.</p>
+<p>Suppose you tried saying:&#xA0; "Count the words - that's how complicated a theory is."</p>
+<p>Robert Heinlein once claimed (tongue-in-cheek, I hope) that the
+"simplest explanation" is always:&#xA0; "The woman down the street is a
+witch; she did it."&#xA0; Eleven words - not many physics papers can beat
+that.</p>
+<p>Faced with this challenge, there are two different roads you can take.</p>
+<p>First, you can ask:&#xA0; "The woman down the street is a <em>what?</em>" 
+Just because English has one word to indicate a concept, doesn't mean
+that the concept itself is simple.&#xA0; Suppose you were talking to aliens
+who didn't know about witches, women, or streets - how long would it
+take you to explain your theory to them?&#xA0; Better yet, suppose you had
+to write a computer program that embodied your hypothesis, and output
+what you say are your hypothesis's predictions - how big would that
+computer program have to be?&#xA0; Let's say that your task is to predict a
+time series of measured positions for a rock rolling down a hill.&#xA0; If
+you write a subroutine that simulates witches, this doesn't seem to
+help narrow down where the rock rolls - the extra subroutine just
+inflates your code.&#xA0; You might find, however, that your code
+necessarily includes a subroutine that squares numbers.</p>
+<p>Second, you can ask:&#xA0; "The woman down the street is a witch; she did <em>what?</em>" 
+Suppose you want to describe some event, as precisely as you possibly
+can given the evidence available to you - again, say, the distance/time
+series of a rock rolling down a hill.&#xA0; You can preface your explanation
+by saying, "The woman down the street is a witch," but your friend then
+says, "What did she <em>do</em>?", and you reply, "She made the rock
+roll one meter after the first second, nine meters after the third
+second..."&#xA0; Prefacing your message with "The woman down the street is a
+witch," doesn't help to <em>compress</em> the rest of your description. 
+On the whole, you just end up sending a longer message than necessary -
+it makes more sense to just leave off the "witch" prefix.&#xA0; On the other
+hand, if you take a moment to talk about Galileo, you may be able to
+greatly compress the next five thousand detailed time series for rocks
+rolling down hills.</p>
+<p>If you follow the first road, you end up with what's known as
+Kolmogorov complexity and Solomonoff induction.&#xA0; If you follow the
+second road, you end up with what's known as Minimum Message Length.</p>
+<blockquote><p>"Ah, so I can pick and choose among definitions of simplicity?"</p></blockquote>
+<p>No, actually the two formalisms in their most highly developed forms were proven equivalent.</p>
+<blockquote><p>"And I suppose now you're going to tell me that both
+formalisms come down on the side of 'Occam means counting laws, not
+counting objects'."</p></blockquote>
+<p dragover="true">More or less.&#xA0; In Minimum Message Length, so long as
+you can tell your friend an exact recipe they can mentally follow to
+get the rolling rock's time series, we don't care how much mental work
+it takes to follow the recipe.&#xA0; In Solomonoff induction, we count bits
+in the program code, not bits
+of RAM used by the program as it runs.&#xA0; "Entities" are lines of code,
+not simulated objects.&#xA0; And as said, these two formalisms are
+ultimately equivalent.</p>
+<p>Now before I go into any further detail on formal simplicity, let me digress to consider the objection:</p>
+<blockquote><p dragover="true">"So what?&#xA0; Why can't I just invent my <em>own</em>
+formalism that does things differently?&#xA0; Why should I pay any attention
+to the way you happened to decide to do things, over in your field? 
+Got any <em>experimental</em> evidence that shows I should do things this way?"</p></blockquote>
+<p dragover="true">Yes, actually, believe it or not.&#xA0; But let me start at the beginning.</p>
+<p dragover="true">The conjunction rule of probability theory states:</p>
+<p dragover="true">P(X&#x2227;Y) &#x2264; P(X)</p>
+<p dragover="true">For any propositions X and Y, the probability that "X is true, and Y is true", is <em>less than or equal to</em>
+the probability that "X is true (whether or not Y is true)".&#xA0; (If this
+statement sounds not terribly profound, then let me assure you that it
+is easy to find cases where human probability assessors <a href="http://www.overcomingbias.com/2007/09/conjunction-fal.html">violate this rule</a>.)</p>
+<p dragover="true">You usually can't apply the conjunction rule P(X&#x2227;Y)
+&#x2264; P(X) directly to a conflict between mutually exclusive hypotheses. 
+The conjunction rule only applies directly to cases where the
+left-hand-side strictly implies the right-hand-side.&#xA0; Furthermore, the
+conjunction is just an inequality; it doesn't give us the kind of
+quantitative calculation we want.</p>
+<p dragover="true">But the conjunction rule does give us a rule of
+monotonic decrease in probability: as you tack more details onto a
+story, and each additional detail can potentially be true or false, the
+story's probability goes down monotonically.&#xA0; Think of probability as a
+conserved quantity: there's only so much to go around.&#xA0; As the number
+of details in a story goes up, the number of possible stories increases
+exponentially, but the sum over their probabilities can never be
+greater than 1.&#xA0; For every story "X&#x2227;Y", there is a story "X&#x2227;~Y".&#xA0; When
+you <em>just</em> tell the story "X", you get to <em>sum over</em> the possibilities Y and ~Y.</p>
+<p dragover="true">If you add ten details to X, each detail one that could potentially be true or false, then that story must compete with (2<sup>10</sup> - 1) other equally detailed stories for precious probability.&#xA0; If on the other hand it suffices to <em>just</em> say X, you can sum your probability over 2<sup>10</sup> stories ( (X&#x2227;Y&#x2227;Z&#x2227;...) &#x2228; (X&#x2227;~Y&#x2227;Z&#x2227;...) &#x2228; ...)</p>
+<p dragover="true">The "entities" counted by Occam's Razor should be
+individually costly in probability; this is why we prefer theories with
+fewer of them.</p>
+<p dragover="true">Imagine a lottery which sells up to a million
+tickets, where each possible ticket is sold only once, and the lottery
+has sold every ticket at the time of the drawing.&#xA0; A friend of yours
+has bought one ticket for $1 - which seems to you like a poor investment,
+because the payoff is only $500,000.&#xA0; Yet your friend says, "Ah, but
+consider the alternative hypotheses, 'Tomorrow, someone will win the
+lottery' and 'Tomorrow, I will win the lottery.'&#xA0; Clearly, the latter
+hypothesis is simpler by Occam's Razor; it only makes mention of one
+person and one ticket, while the former hypothesis is more complicated:
+it mentions a million people and a million tickets!"</p>
+<p dragover="true">To say that Occam's Razor only counts laws, and not
+objects, is not quite correct: what counts against a theory are the
+entities it must mention<em> explicitly</em>, because these are the entities that cannot be <em>summed over</em>. 
+Suppose that you and a friend are puzzling over an amazing billiards
+shot, in which you are told the starting state of a billiards table,
+and which balls were sunk, but not how the shot was made.&#xA0; You propose
+a theory which involves ten specific collisions between ten specific
+balls; your friend counters with a theory that involves five specific
+collisions between five specific balls.&#xA0; What counts against your
+theories is not <em>just</em> the laws that you claim to govern billiard balls, but any <em>specific</em> billiard balls that had to be in some <em>particular</em> state for your model's prediction to be successful.</p>
+<p dragover="true">
+If you measure the temperature of your living room as 22&#xB0; Celsius, it
+does not make sense to say:&#xA0; "Your thermometer is probably in error;
+the room is much more likely to be 20&#xB0; C.&#xA0; Because, when you consider
+all the particles in the room, there are exponentially vastly more
+states they can occupy if the temperature is really 22&#xB0; C - which makes
+any <em>particular</em>
+state all the more improbable."&#xA0; But no matter which exact 22&#xB0; C state
+your room occupies, you can make the same prediction (for the supervast
+majority of these states) that your thermometer will end up showing 22&#xB0;
+C, and so you are not sensitive to the <em>exact</em> initial
+conditions.&#xA0; You do not need to specify an exact position of all the
+air molecules in the room, so that is not counted against the
+probability of your explanation.</p>
+<p>On the other hand - returning to the case of the lottery - suppose
+your friend won ten lotteries in a row.&#xA0; At this point you should
+suspect the fix is in.&#xA0; The hypothesis "My friend wins the lottery
+every time" is more complicated than the hypothesis "Someone wins the
+lottery every time".&#xA0; But the former hypothesis is predicting the data
+much more precisely.</p>
+<p>In the Minimum Message Length formalism, saying "There is a single
+person who wins the lottery every time" at the beginning of your
+message, compresses your description of who won the next ten lotteries;
+you can just say "And that person is Fred Smith" to finish your
+message.&#xA0; Compare to, "The first lottery was won by Fred Smith, the
+second lottery was won by Fred Smith, the third lottery was ..."</p>
+<p>In the Solomonoff induction formalism, the prior probability of "My
+friend wins the lottery every time" is low, because the program that
+describes the lottery now needs explicit code that singles out your
+friend; but because that program can produce a <em>tighter probability distribution</em> over potential lottery winners than "Someone wins the lottery every time", it can, by <a href="http://yudkowsky.net/bayes/technical.html">Bayes's Rule</a>, overcome its prior improbability and win out as a hypothesis.</p>
+<p>Any formal theory of Occam's Razor should quantitatively define, not
+only "entities" and "simplicity", but also the "necessity" part.</p>
+<p>Minimum Message Length defines necessity as "that which compresses the message".</p>
+<p>Solomonoff induction assigns a prior probability to each possible
+computer program, with the entire distribution, over every possible
+computer program, summing to no more than 1.&#xA0; This can be accomplished
+using a binary code where no valid computer program is a prefix of any
+other valid computer program ("prefix-free code"), i.e. because it
+contains a stop code.&#xA0; Then the prior probability of any program P is
+simply 2<sup>-L(P)</sup> where L(P) is the length of P in bits.</p>
+<p>P itself can be a program that takes in a (possibly zero-length)
+string of bits and outputs the conditional probability that the <em>next</em>
+bit will be 1; this makes P a probability distribution over all binary
+sequences.&#xA0; This version of Solomonoff induction, for any string, gives
+us a mixture of posterior probabilities dominated by the shortest
+programs that most precisely predict the string.&#xA0; Summing over this
+mixture gives us a prediction for the next bit.</p>
+<p>The upshot is that it takes more Bayesian evidence - more successful
+predictions, or more precise predictions - to justify more complex
+hypotheses.&#xA0; But it can be done; the burden of prior improbability is
+not infinite.&#xA0; If you flip a coin four times, and it comes up heads
+every time, you don't conclude right away that the coin produces only
+heads; but if the coin comes up heads twenty times in a row, you should
+be considering it very seriously.&#xA0; What about the hypothesis that a
+coin is fixed to produce "HTTHTT..." in a repeating cycle?&#xA0; That's more
+bizarre - but after a hundred coinflips you'd be a fool to deny it.</p>
+<p>Standard chemistry says that in a gram of hydrogen gas there are six
+hundred billion trillion hydrogen atoms.&#xA0; This is a startling
+statement, but there was some amount of evidence that sufficed to
+convince physicists in general, and you particularly, that this
+statement was true.</p>
+<p>Now ask yourself how much evidence it would take to convince you of
+a theory with six hundred billion trillion separately
+specified physical laws.</p>
+<p>Why doesn't the prior probability of a program, in the Solomonoff
+formalism, include a measure of how much RAM the program uses, or the
+total running time?</p>
+<p>The simple answer is, "Because space and time resources used by
+a program aren't mutually exclusive possibilities."&#xA0; It's not like the program specification, that can only have a 1 or a 0 in any
+particular place.</p>
+<p>But the even simpler answer is, "Because, historically speaking, that heuristic doesn't work."</p>
+<p>Occam's Razor was raised as an objection to the suggestion that
+nebulae were actually distant galaxies - it seemed to vastly multiply
+the number of entities in the universe.&#xA0; <em>All those stars!</em></p>
+<p>Over and over, in human history, the universe has gotten bigger.&#xA0; A variant of Occam's Razor which, on each such occasion, would label the vaster universe as <em>more unlikely</em>, would fare less well under humanity's historical experience.</p>
+<p>This is part of the "experimental evidence" I was alluding to
+earlier.&#xA0; While you can justify theories of simplicity on mathy sorts
+of grounds, it is also desirable that they actually work in practice. 
+(The other part of the "experimental evidence" comes from statisticians
+/ computer scientists / Artificial Intelligence researchers, testing
+which definitions of "simplicity" let them construct computer programs
+that do empirically well at predicting future data from past data.&#xA0; 
+Probably the Minimum Message Length paradigm has proven most productive
+here, because it is a very adaptable way to think about real-world
+problems.)</p>
+<p>Imagine a spaceship whose launch you witness with great fanfare; it accelerates away from you, and is soon traveling at .9 <em>c</em>. 
+If the expansion of the universe continues, as current cosmology
+holds it should, there will come some future point where - according to
+your model of reality - you don't expect to be able to interact with
+the spaceship even in principle; it has gone over the cosmological
+horizon relative to you, and photons leaving it will not be able to
+outrace the expansion of the universe.</p>
+<p>Should you believe that <a href="http://www.overcomingbias.com/2008/04/implied-invisib.html">the spaceship literally, physically disappears from the universe</a> at the point where it goes over the cosmological horizon relative to you?</p>
+<p>If you believe that Occam's Razor counts the objects in a model,
+then yes, you should.&#xA0; Once the spaceship goes over your cosmological
+horizon, the model in which the spaceship instantly disappears, and the
+model in which the spaceship continues onward, give indistinguishable
+predictions; they have no Bayesian evidential advantage over one
+another.&#xA0; But one model contains many fewer "entities"; it need not
+speak of all the quarks and electrons and fields composing the
+spaceship.&#xA0; So it is simpler to suppose that the spaceship vanishes.</p>
+<p>Alternatively, you could say:&#xA0; "Over numerous experiments, I
+have generalized certain laws that govern observed particles.&#xA0; The spaceship is
+made up of such particles.&#xA0; Applying these laws, I deduce that the
+spaceship should continue on after it crosses the cosmological horizon,
+with the same momentum and the same energy as before, on pain of
+violating the conservation laws that I have seen holding in every
+examinable instance.&#xA0; To suppose that the spaceship vanishes, I would
+have to add a new law, 'Things vanish as soon as they cross my
+cosmological horizon'."</p>
+<p>The decoherence (aka Many-Worlds) version of quantum mechanics
+states that measurements obey the same quantum-mechanical rules as all
+other physical processes.&#xA0; Applying these rules to macroscopic
+objects in exactly the same way as microscopic ones, we end up with
+observers in states of superposition.&#xA0; Now there are many questions
+that can be asked here, such as "But then why don't all binary quantum
+measurements appear to have 50/50 probability, since different versions
+of us see both outcomes?"</p>
+<p>However, the objection that decoherence violates Occam's Razor on account of multiplying objects in the model is simply wrong.</p>
+<p dragover="true">Decoherence does not require the wavefunction to take
+on some complicated exact initial state.&#xA0; Many-worlds is not specifying all its worlds by hand,
+but generating them via the compact laws of quantum mechanics.&#xA0; A
+computer program that directly simulates QM to make experimental
+predictions, would require a great deal of RAM to run - but simulating the wavefunction is exponentially expensive in <em>any </em>flavor of QM!&#xA0; Decoherence is simply more so.&#xA0; <em>Many </em>physical
+discoveries in human history, from stars to galaxies, from atoms to
+quantum mechanics, have vastly increased the apparent CPU load of what
+we believe to be the universe.</p>
+<p dragover="true">Many-Worlds is not a zillion worlds worth of
+complicated, any more than the atomic hypothesis is a zillion atoms
+worth of complicated.&#xA0; For anyone with a quantitative grasp of Occam's
+Razor that is simply not what the term "complicated" means.</p>
+<p dragover="true">As with the historical case of galaxies, it may be that people have mistaken their <em>shock</em> at
+the notion of a universe that large, for a probability penalty, and invoked Occam's Razor in justification.&#xA0; But if there are probability penalties for decoherence, the <em>largeness of the implied universe</em>, per se, is definitely not their source!</p>
+<p dragover="true">The notion that decoherent worlds are additional
+entities penalized by Occam's Razor, is just plain mistaken.&#xA0; It is not
+sort-of-right.&#xA0; It is not an argument that is weak but still valid.&#xA0; It
+is not a defensible position that could be shored up with further
+arguments.&#xA0; It is entirely defective as probability theory.&#xA0; It is not
+fixable.&#xA0; It is bad math.&#xA0; 2 + 2 = 3.</p>
+<p dragover="true"><strong>Continued in</strong>:&#xA0; <a href="http://www.overcomingbias.com/2008/05/mwi-is-falsifia.html">Decoherence is Falsifiable and Testable</a>.</p></div></div></div>

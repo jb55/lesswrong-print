@@ -1,0 +1,102 @@
+<!-- .meta --><!--<div><i><h0>Part 1 of 13 in the sequence &nbsp;<a href="http://wiki.lesswrong.com/wiki/Mysterious_Answers_to_Mysterious_Questions">Mysterious Answers to Mysterious Questions</a></h0></i><br/><br/></div>--><div id="entry_t3_qk" class="content clear"><div class="md">
+        
+  <div><p><strong>Followup to</strong>:&#xA0; <a href="/lw/qj/einsteins_speed/">Einstein's Speed</a></p>
+<p>Imagine a world much like this one, in which, thanks to gene-selection technologies, the average IQ is 140 (on our scale).&#xA0; Potential Einsteins are one-in-a-thousand, not one-in-a-million; and they grow up in a school system suited, if not to them personally, then at least to bright kids.&#xA0; Calculus is routinely taught in sixth grade.&#xA0; Albert Einstein, himself, still lived and still made approximately the same discoveries, but his work no longer seems <em>exceptional.</em>&#xA0; Several modern top-flight physicists have made equivalent breakthroughs, and are still around to talk.</p>
+<p>(No, this is not the world <a href="/lw/p1/initiation_ceremony/">Brennan</a> lives in.)</p>
+<p>One day, the stars in the night sky begin to change.</p>
+<p>Some grow brighter.&#xA0; Some grow dimmer.&#xA0; Most remain the same.&#xA0; Astronomical telescopes capture it all, moment by moment.&#xA0; The stars that change, change their luminosity one at a time, distinctly so; the luminosity change occurs over the course of a microsecond, but a whole second separates each change.</p>
+<p>It is clear, from the first instant anyone realizes that more than one star is changing, that the process seems to center around Earth particularly. The arrival of the light from the events, at many stars scattered around the galaxy, has been precisely timed to Earth in its orbit.&#xA0; Soon, confirmation comes in from high-orbiting telescopes (they have those) that the astronomical miracles do <em>not</em> seem as synchronized from outside Earth.&#xA0; Only Earth's telescopes see one star changing every second (1005 milliseconds, actually).</p>
+<p>Almost the entire combined brainpower of Earth turns to analysis.</p><a id="more"></a><p>It quickly becomes clear that the stars that jump in luminosity, all jump by a factor of exactly 256;
+those that diminish in luminosity, diminish by a factor of exactly
+256.&#xA0; There is no apparent pattern in the stellar coordinates.&#xA0; This
+leaves, simply, a pattern of BRIGHT-dim-BRIGHT-BRIGHT...
+</p>
+<p>"A binary message!" is everyone's first thought.</p>
+<p>But in this world there are careful thinkers, of great prestige as well, and they are not so sure.&#xA0; "There are easier ways to send a message," they post to their blogs, "if you can make stars flicker, and if you want to communicate.&#xA0; <em>Something </em>is happening.&#xA0; It appears, <em>prima facie,</em> to focus on Earth in particular.&#xA0; To call it a 'message' presumes a great deal more about the cause behind it.&#xA0; There might be some kind of evolutionary process among, um, things that can make stars flicker, that ends up sensitive to intelligence somehow...&#xA0; Yeah, there's probably something like 'intelligence' behind it, but try to appreciate how wide a range of possibilities that really implies.&#xA0; We don't know this is a message, or that it was sent from the same kind of motivations that might move us.&#xA0; I mean, <em>we</em> would just signal using a big flashlight, we wouldn't mess up a whole galaxy."</p>
+<p>By this time, someone has started to collate the astronomical data and post it to the Internet.&#xA0; Early suggestions that the data might be harmful, have been... not ignored, but not obeyed, either.&#xA0; If anything this powerful wants to hurt you, you're pretty much dead (people reason).</p>
+<p>Multiple research groups are looking for patterns in the stellar coordinates - or fractional arrival times of the changes, relative to the center of the Earth - or exact durations of the luminosity shift - or any tiny variance in the magnitude shift - or any other fact that might be known about the stars before they changed.&#xA0; But <em>most </em>people are turning their attention to the pattern of BRIGHTS and dims.</p>
+<p>It becomes clear almost instantly that the pattern sent is highly redundant.&#xA0; Of the first 16 bits, 12 are BRIGHTS and 4 are dims.&#xA0; The first 32 bits received align with the second 32 bits received, with only 7 out of 32 bits different, and then the next 32 bits received have only 9 out of 32 bits different from the second (and 4 of them are bits that changed before).&#xA0; From the first 96 bits, then, it becomes clear that this pattern is not an optimal, compressed encoding of anything.&#xA0; The obvious thought is that the sequence is meant to convey instructions for decoding a compressed message to follow...</p>
+<p>"But," say the careful thinkers, "anyone who cared about <em>efficiency,</em> with enough power to mess with stars, could maybe have just signaled us with a big flashlight, and sent us a DVD?"</p>
+<p>There also seems to be structure within the 32-bit groups; some 8-bit subgroups occur with higher frequency than others, and this structure only appears along the natural alignments (32 = 8 + 8 + 8 + 8).</p>
+<p>After the first five hours at one bit per second, an additional redundancy becomes clear:&#xA0; The message has started approximately repeating itself at the 16,385th bit.</p>
+<p>Breaking up the message into groups of 32, there are 7 bits of difference between the 1st group and the 2nd group, and 6 bits of difference between the 1st group and the 513th group.</p>
+<p>"A 2D picture!" everyone thinks.&#xA0; "And the four 8-bit groups are colors; they're tetrachromats!"</p>
+<p>But it soon becomes clear that there is a horizontal/vertical asymmetry:&#xA0; Fewer bits change, on average, between (N, N+1) versus (N, N+512).&#xA0; Which you wouldn't expect if the message was a 2D picture projected onto a symmetrical grid.&#xA0; Then you would expect the average bitwise distance between two 32-bit groups to go as the 2-norm of the grid separation: &#xE2;&#x88;&#x9A;(h<sup>2</sup> + v<sup>2</sup>).</p>
+<p>There also forms a general consensus that a certain binary encoding from
+8-groups onto integers between -64 and 191 - not the binary encoding
+that seems obvious to us, but still highly regular - minimizes the
+average distance between neighboring cells.&#xA0; This continues to be borne out by incoming bits.</p>
+<p>The statisticians and cryptographers and physicists and computer scientists go to work.&#xA0; There is structure here; it needs only to be unraveled.&#xA0; The masters of causality search for conditional independence, screening-off and Markov neighborhoods, among bits and groups of bits.&#xA0; The so-called "color" appears to play a role in neighborhoods and screening, so it's not just the equivalent of surface reflectivity.&#xA0; People search for simple equations, simple cellular automata, simple decision trees, that can predict or compress the message.&#xA0; Physicists invent entire new theories of physics that might describe universes projected onto the grid - for it seems quite plausible that a message such as this is being sent from beyond the Matrix.</p>
+<p>After receiving 32 * 512 * 256 = 4,194,304 bits, around one and a half months, the stars stop flickering<span style="font-weight: bold;">.</span></p>
+<p>Theoretical work continues.&#xA0; Physicists and cryptographers roll up their sleeves and <em>seriously</em> go to work.&#xA0; They have cracked problems with far less data than this.&#xA0; Physicists have tested entire theory-edifices with small differences of particle mass; cryptographers have unraveled shorter messages deliberately obscured.</p>
+<p>Years pass.</p>
+<p>Two dominant models have survived, in academia, in the scrutiny of the
+public eye, and in the scrutiny of those scientists who once did
+Einstein-like work.&#xA0; There is a theory that the grid is a projection
+from objects in a 5-dimensional space, with an asymmetry between 3 and
+2 of the spatial dimensions.&#xA0; There is also a theory that the grid is
+meant to encode a cellular automaton - arguably, the grid has several fortunate properties for such.&#xA0; Codes have been devised
+that give interesting behaviors; but so far, running the corresponding
+automata on the largest available computers, has failed to produce any
+decodable result.&#xA0; The run continues.</p>
+<p>Every now and then, someone takes a group of especially brilliant young students who've never looked at the detailed binary sequence.&#xA0; These students are then shown only the first 32 rows (of 512 columns each), to see if they can form new models, and how well those new models do at predicting the next 224.&#xA0; Both the 3+2 dimensional model, and the cellular-automaton model, have been well duplicated by such students; they have yet to do better.&#xA0; There are complex models finely fit to the whole sequence - but those, everyone knows, are probably worthless.</p>
+<p>Ten years later, the stars begin flickering again.&#xA0; </p>
+<p>Within the reception of the first 128 bits, it becomes clear that the Second Grid <em>can</em> fit to small motions in the inferred 3+2 dimensional space, but does <em>not</em> look anything like the successor state of any of the dominant cellular automaton theories.&#xA0; Much rejoicing follows, and the physicists go to work on inducing what kind of dynamical physics might govern the objects seen in the 3+2 dimensional space.&#xA0; Much work along these lines has already been done, just by speculating on what type of <em>balanced</em> forces might give rise to the objects in the First Grid, if those objects were static - but now it seems not all the objects are static.&#xA0; As most physicists guessed - statically balanced theories seemed contrived.</p>
+<p>Many neat equations are formulated to describe the dynamical objects in the 3+2 dimensional space being projected onto the First and Second Grids.&#xA0; Some equations are more elegant than others; some are more precisely predictive (in retrospect, alas) of the Second Grid.&#xA0; One group of brilliant physicists, who carefully isolated themselves and looked only at the first 32 rows of the Second Grid, produces equations that seem elegant to them - and the equations also do well on predicting the next 224 rows.&#xA0; This becomes the dominant guess.</p>
+<p>But these equations are underspecified; they don't seem to be enough to make a universe.&#xA0; A small cottage industry arises in trying to guess what kind of laws might complete the ones thus guessed.</p>
+<p>When the Third Grid arrives, ten years after the Second Grid, it provides information about second derivatives, forcing a major modification of the "incomplete but good" theory.&#xA0; But the theory doesn't do too badly out of it, all things considered.</p>
+<p>The Fourth Grid doesn't add much to the picture.&#xA0; Third derivatives don't seem important to the 3+2 physics inferred from the Grids.</p>
+<p>The Fifth Grid looks almost exactly like it is expected to look.</p>
+<p>And the Sixth Grid, and the Seventh Grid.</p>
+<p>(Oh, and every time someone in this world tries to build a really powerful AI, the computing hardware spontaneously melts.&#xA0; This isn't really important to the story, but I need to postulate this in order to have human people sticking around, in the flesh, for seventy years.)</p>
+<p><em>My moral?</em></p>
+<p>That even Einstein did not come within a million light-years of making <em>efficient use of sensory data</em>.</p>
+<p>Riemann invented his geometries before Einstein had a use for them; the physics of our universe is not that complicated in an absolute sense.&#xA0; A Bayesian superintelligence, hooked up to a webcam, would invent General Relativity as a hypothesis - perhaps not the <em>dominant </em>hypothesis, compared to Newtonian mechanics, but still a hypothesis under direct consideration - by the time it had seen the third frame of a falling apple.&#xA0; It might guess it from the first frame, if it saw the statics of a bent blade of grass.</p>
+<p><em>We</em> would think of it.&#xA0; Our civilization, that is, given ten years to analyze each frame.&#xA0; Certainly if the average IQ was 140 and Einsteins were common, we would.</p>
+<p>Even if we were human-level intelligences in a different sort of physics - minds who had never seen a 3D space projected onto a 2D grid - we would still think of the 3D-&gt;2D hypothesis.&#xA0; Our mathematicians would still have invented vector spaces, and projections.</p>
+<p>Even if we'd never seen an accelerating billiard ball, our mathematicians would have invented calculus (e.g. for optimization problems).</p>
+<p>Heck, think of some of the crazy math that's been invented here on <em>our</em> Earth.</p>
+<p>I occasionally run into people who say something like, "There's a theoretical limit on how much you can deduce about the outside world, given a finite amount of sensory data."</p>
+<p>Yes.&#xA0; There is.&#xA0; The theoretical limit is that every time you see 1 additional bit, it cannot be expected to eliminate more than half of the remaining hypotheses (half the remaining probability mass, rather).&#xA0; And that a redundant message, cannot convey more information than the compressed version of itself.&#xA0; Nor can a bit convey any information about a quantity, with which it has correlation <em>exactly zero,</em> across the probable worlds you imagine.</p>
+<p>But nothing I've depicted this human civilization doing, even <em>begins</em> to approach the theoretical limits set by the formalism of Solomonoff induction.&#xA0; It doesn't approach the picture you could get if you could search through <em>every single computable hypothesis</em>, weighted by their simplicity, and do Bayesian updates on <em>all</em> of them.</p>
+<p>To see the <em>theoretical </em>limit on extractable information, imagine that you have infinite computing power, and you simulate all possible universes with simple physics, looking for universes that contain Earths embedded in them - perhaps inside a simulation - where some process makes the stars flicker in the order observed.&#xA0; Any bit in the message - or any order of selection of stars, for that matter - that contains the tiniest correlation (across all possible computable universes, weighted by simplicity) to any element of the environment, gives you information about the environment.</p>
+<p>Solomonoff induction, taken literally, would create countably infinitely many sentient beings, trapped inside the computations.&#xA0; All possible computable sentient beings, in fact.&#xA0; Which scarcely seems ethical.&#xA0; So let us be glad this is only a formalism.</p>
+<p>But my point is that the "theoretical limit on how much information you can extract from sensory data" is <em>far</em> above what I have depicted as the triumph of a civilization of physicists and cryptographers.</p>
+<p>It certainly is not anything like a human looking at an apple falling down, and thinking, "Dur, I wonder why that happened?"</p>
+<p>People seem to make a leap from "This is 'bounded'" to "The bound
+must be a reasonable-looking quantity on the scale I'm used to."&#xA0; The
+power output of a supernova is 'bounded', but I wouldn't advise trying to
+shield yourself from one with a flame-retardant Nomex jumpsuit.</p>
+<p>No one - not even a Bayesian superintelligence - will ever come remotely close to making efficient use of their sensory information...</p>
+<p>...is what I would like to say, but I don't trust my ability to set limits on the abilities of Bayesian superintelligences.</p>
+<p>(Though I'd bet money on it, if there were some way to judge the bet.&#xA0; Just not at very extreme odds.)</p>
+<p><em>The story continues:</em></p>
+<p>Millennia later, frame after frame, it has become clear that some of
+the objects in the depiction are extending tentacles to move around other objects, and
+carefully configuring other tentacles to make particular signs.&#xA0; They're trying to teach us to say "rock".</p>
+<p>It seems the senders of the message have vastly underestimated our
+intelligence.&#xA0; From which we might guess that the aliens themselves are not
+all that bright.&#xA0; And these awkward children can shift the luminosity
+of our stars?&#xA0; That much power and that much stupidity seems like a
+dangerous combination.<br>
+</p>
+<p>Our evolutionary psychologists begin extrapolating possible courses
+of evolution that could produce such aliens.&#xA0; A strong case is made for
+them having evolved asexually, with occasional exchanges of genetic
+material and brain content; this seems like the most plausible route
+whereby creatures that stupid could still manage to build a
+technological civilization.&#xA0; Their Einsteins may be our undergrads, but they could still collect enough scientific data to get the job done <em>eventually</em>, in tens of their millennia perhaps.</p>
+<p>The inferred physics of the 3+2 universe is not fully known, at this point; but it seems sure to allow for computers far more powerful than our quantum ones.&#xA0; We are reasonably certain that our own universe is running as a simulation on such a computer.&#xA0; Humanity decides not to probe for bugs in the simulation; we wouldn't want to shut ourselves down accidentally.</p>
+<p>Our evolutionary psychologists begin
+to guess at the aliens' psychology, and plan out how we could persuade
+them to <a href="http://yudkowsky.net/essays/aibox.html">let us out of the box</a>.&#xA0; It's not difficult in an absolute sense - they aren't very bright - but we've got to be very careful...</p>
+<p>We've got to pretend to be
+stupid, too; we don't want them to catch on to their mistake.</p>
+<p>It's not until a million years later, though, that they get around
+to telling us how to signal back.</p>
+<p>At this point, most of the human species is in cryonic suspension, at liquid helium temperatures, beneath radiation shielding.&#xA0; Every time we try to build an AI, or a nanotechnological device, it melts down.&#xA0; So humanity waits, and sleeps.&#xA0; Earth is run by a skeleton crew of nine supergeniuses.&#xA0; Clones, known to work well together, under the supervision of certain computer safeguards.</p>
+<p>An additional hundred million human beings are born into that skeleton crew, and age, and enter cryonic suspension, before they get a chance to slowly begin to implement plans made eons ago...</p>
+<p>From the aliens' perspective, it took us thirty of their minute-equivalents to oh-so-innocently learn about their psychology, oh-so-carefully persuade them to give us Internet access, followed by five minutes to innocently discover their network protocols, then some trivial cracking whose only difficulty was an innocent-looking disguise.&#xA0; We read a tiny handful of physics papers (bit by slow bit) from their equivalent of arXiv, learning far more from their experiments than they had.&#xA0; (Earth's skeleton team spawned an extra twenty Einsteins, that generation.)</p>
+<p>Then we cracked their equivalent of the protein folding problem over a century or so, and did some simulated engineering in their simulated physics.&#xA0; We sent messages (steganographically encoded until our cracked servers decoded it) to labs that did their equivalent of DNA sequencing and protein synthesis.&#xA0; We found some unsuspecting schmuck, and gave it a plausible story and the equivalent of a million dollars of cracked computational monopoly money, and told it to mix together some vials it got in the mail.&#xA0; Protein-equivalents that self-assembled into the first-stage nanomachines, that built the second-stage nanomachines, that built the third-stage nanomachines... and then we could finally begin to do things at a reasonable speed.</p>
+<p>Three of their days, all told, since they began speaking to us.&#xA0; Half a billion years, for us.</p>
+<p>They never suspected a thing.&#xA0; They weren't very smart, you see, even before taking into account their slower rate of time.&#xA0; Their primitive equivalents of rationalists went around saying things like, "There's a bound to how much information you can extract from sensory data."&#xA0; And they never quite realized what it meant, that we were smarter than them, and thought faster.</p></div></div></div>
