@@ -8,14 +8,26 @@ html, body {
 
 #lesswrong-sequences, #TOC {
   padding: 0px 20px 0px 20px;
-  margin: auto;
-  width: 920px;
+  margin: 10px;
+  float: left;
+  width: 800px;
   border: 1px solid #aaa;
   background-color: #fff;
 }
 
 #TOC {
-  margin: 20px auto 20px auto;
+  font-size: 90%;
+  padding: 10px;
+  margin-right: 0px;
+  width: 200px;
+}
+
+#TOC ul {
+  margin-left: 14px;
+  padding-left: 0;
+}
+
+#TOC ul li {
 }
 
 blockquote p {
