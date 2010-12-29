@@ -41,7 +41,7 @@ Includes the 'Zombies' and 'Joy in the Merely Real' subsequences
 > reading.
 
 [epub](http://jb55.com/lesswrong/sequences/quantum_physics/Quantum%20Physics.epub) |
-pdf |
+[pdf](http://jb55.com/lesswrong/sequences/quantum_physics/Quantum%20Physics.pdf) |
 [markdown](http://jb55.com/lesswrong/sequences/quantum_physics/quantum_physics.md)
 
 ### Fun Theory
