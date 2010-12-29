@@ -11900,7 +11900,7 @@ People hear:  "The universe runs like clockwork; physics is
 deterministic; the future is fixed."  And their minds form an
 causal network that looks like this:
 
-[![Fwmevsphysics](/static/imported/2008/06/05/fwmevsphysics.png "Fwmevsphysics")](/static/imported/2008/06/05/fwmevsphysics.png)
+[![Fwmevsphysics](http://lesswrong.com/static/imported/2008/06/05/fwmevsphysics.png "Fwmevsphysics")](http://lesswrong.com/static/imported/2008/06/05/fwmevsphysics.png)
 
 Here we see the causes "Me" and "Physics", competing to determine
 the state of the "Future" effect.  If the "Future" is fully
@@ -11927,11 +11927,11 @@ around."
 
 Of course the actual diagram should be:
 
-[![Fwmeinphysics](/static/imported/2008/06/05/fwmeinphysics.png "Fwmeinphysics")](/static/imported/2008/06/05/fwmeinphysics.png)
+[![Fwmeinphysics](http://lesswrong.com/static/imported/2008/06/05/fwmeinphysics.png "Fwmeinphysics")](http://lesswrong.com/static/imported/2008/06/05/fwmeinphysics.png)
 
 Or better yet:
 
-[![Fwallphysics](/static/imported/2008/06/05/fwallphysics.png "Fwallphysics")](/static/imported/2008/06/05/fwallphysics.png)
+[![Fwallphysics](http://lesswrong.com/static/imported/2008/06/05/fwallphysics.png "Fwallphysics")](http://lesswrong.com/static/imported/2008/06/05/fwallphysics.png)
 
 Why is this not obvious?  Because there are many
 [levels of organization](http://lesswrong.com/lw/on/reductionism/) that separate our
@@ -12087,7 +12087,7 @@ and separately, writes the outcome at 7:02am.  In which case,
 indeed, the future would be determined *before* you made your
 decision...
 
-[![Fwdeterminism\_2](/static/imported/2008/06/06/fwdeterminism_2.png "Fwdeterminism_2")](/static/imported/2008/06/06/fwdeterminism_2.png)
+[![Fwdeterminism\_2](http://lesswrong.com/static/imported/2008/06/06/fwdeterminism_2.png "Fwdeterminism_2")](http://lesswrong.com/static/imported/2008/06/06/fwdeterminism_2.png)
 In this model, the Determinator writes the script for the Block
 Universe at 6:00am.  And *then* time - the global time of the
 universe - continues, running through the Block Universe and
@@ -12123,7 +12123,7 @@ shared "past".  This is how we can experimentally observe the
 orientation of the Block Universe, the direction of the river that
 never flows.
 
-[![Fwcausality](/static/imported/2008/06/06/fwcausality.png "Fwcausality")](/static/imported/2008/06/06/fwcausality.png)
+[![Fwcausality](http://lesswrong.com/static/imported/2008/06/06/fwcausality.png "Fwcausality")](http://lesswrong.com/static/imported/2008/06/06/fwcausality.png)
 If you are going to talk about causality at all - and personally, I
 think we should, because the universe doesn't make much sense
 without it - then causality applies to relations *within* the Block
@@ -12173,9 +12173,9 @@ And then there's the idea that, if you can predict the whole course
 of the universe by looking at the state at the beginning of time,
 the present must have no influence on the future...
 
-[](/static/imported/2008/06/06/fwmarkov.png)
+[](http://lesswrong.com/static/imported/2008/06/06/fwmarkov.png)
 
-[![Fwmarkov\_2](/static/imported/2008/06/06/fwmarkov_2.png "Fwmarkov_2")](/static/imported/2008/06/06/fwmarkov_2.png)
+[![Fwmarkov\_2](http://lesswrong.com/static/imported/2008/06/06/fwmarkov_2.png "Fwmarkov_2")](http://lesswrong.com/static/imported/2008/06/06/fwmarkov_2.png)
 
 Surely, if you can determine the Future just by looking at the
 Past, there's no need to look at the Present?
