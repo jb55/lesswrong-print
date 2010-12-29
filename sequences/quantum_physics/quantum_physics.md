@@ -240,6 +240,7 @@ stuff that stuff is made of?
 [qubit.org](http://cam.qubit.org/articles/intros/comp.php) and
 edited for my purposes.)
 
+[![Fig1\_4](http://lesswrong.com/static/imported/2008/04/07/fig1_4.gif "Fig1_4")](http://lesswrong.com/static/imported/2008/04/07/fig1_4.gif)
 In Figure 1, we see, at **A**, a half-silvered mirror, and two
 photon detectors, **1** and **2**.
 
@@ -291,6 +292,8 @@ confusing them with probabilities.  "A photon heading toward **A**"
 has complex value -1, which is hard to see as a degree of belief. 
 The complex numbers are values within the program, again out there
 in the territory.  We'll call the complex numbers *amplitudes.*
+
+[![Fig1\_4](http://lesswrong.com/static/imported/2008/04/07/fig1_4.gif "Fig1_4")](http://lesswrong.com/static/imported/2008/04/07/fig1_4.gif)
 
 There are two other configurations, which we'll call "A photon
 going from **A** to Detector **1**" and "A photon going from **A**
@@ -408,7 +411,7 @@ stable.
 But if you insist on seeing a more complicated situation that
 billiard-ball ways of thinking can't handle, here's a more
 complicated
-experiment:
+experiment:[![Fig2](http://lesswrong.com/static/imported/2008/04/08/fig2.gif "Fig2")](http://lesswrong.com/static/imported/2008/04/08/fig2.gif)
 
 In Figure 2, **B** and **C** are full mirrors, and **A** and **D**
 are half-mirrors.  The line from **D** to **E** is dashed for
@@ -486,7 +489,8 @@ Therefore:
 -   The total amplitude flowing to configuration "A photon going
     from **D** to **F**" is (1 + 0*i*) + (1 + 0*i*) = (2 + 0*i*).
 
-You may want to try working this out yourself on pen and paper if you
+[![Fig2](http://lesswrong.com/static/imported/2008/04/08/fig2.gif "Fig2")](http://lesswrong.com/static/imported/2008/04/08/fig2.gif)(You
+may want to try working this out yourself on pen and paper if you
 lost track at any point.)
 
 But the upshot, from that super-high-level "experimental"
@@ -519,6 +523,7 @@ flows between configurations.
 But if you want *another* experiment that disproves your *new*
 alternative hypothesis, it's this one:
 
+[![Fig3](http://lesswrong.com/static/imported/2008/04/07/fig3.gif "Fig3")](http://lesswrong.com/static/imported/2008/04/07/fig3.gif)
 Here, we've left the whole experimental setup the same, and just
 put a little blocking object between **B** and **D**.  This ensures
 that the amplitude of "A photon going from **B** to **D**" is 0.
@@ -572,7 +577,8 @@ and*possible** *do not apply to them; they are not beliefs or
 sentences or possible worlds.  They are not *true* or *false* but
 simply *real.*
 
-In the experiment of Figure 2, at right, do not be tempted to think
+[![Fig2](http://lesswrong.com/static/imported/2008/04/08/fig2.gif "Fig2")](http://lesswrong.com/static/imported/2008/04/08/fig2.gif)In
+the experiment of Figure 2, at right, do not be tempted to think
 anything like:  "The photon goes to either **B** or **C**, but it
 *could* have gone the other way, and this possibility interferes
 with its ability to go to **E**..."
@@ -642,6 +648,7 @@ The key to understanding configurations, and hence the key to
 understanding quantum mechanics, is realizing on a truly gut level
 that configurations are about more than one particle.
 
+[![Fig4\_2](http://lesswrong.com/static/imported/2008/04/10/fig4_2.gif "Fig4_2")](http://lesswrong.com/static/imported/2008/04/10/fig4_2.gif)
 Continuing from [yesterday](http://lesswrong.com/lw/pd/configurations_and_amplitude/),
 here's an altered version of the experiment where we send in *two*
 photons toward **D** at the same time, from the sources **B** and
@@ -857,6 +864,7 @@ configurations distinct, is particles occupying different positions
 
 To take one important demonstration...
 
+[![Fig5\_2](http://lesswrong.com/static/imported/2008/04/11/fig5_2.gif "Fig5_2")](http://lesswrong.com/static/imported/2008/04/11/fig5_2.gif)
 This is the same experiment as
 [Figure 2](http://lesswrong.com/lw/pd/configurations_and_amplitude/),  with one
 important change:  Between **A** and **C** has been placed a
@@ -966,6 +974,8 @@ demonstrable.
 Why am I emphasizing this?  Because back in the dark ages when no
 one understood quantum physics...
 
+[![Fig2\_2](http://lesswrong.com/static/imported/2008/04/11/fig2_2.gif "Fig2_2")](http://lesswrong.com/static/imported/2008/04/11/fig2_2.gif)
+
 Okay, so imagine that you've got no clue what's really going on,
 and you try the experiment in Figure 2, and no photons show up at
 Detector 1.  Cool.
@@ -986,6 +996,7 @@ ways.  Even though the photon only shows up in one detector or the
 other, which shows, *you would think,* that the photon is only in
 one place at a time.
 
+[![Fig3\_2](http://lesswrong.com/static/imported/2008/04/11/fig3_2.gif "Fig3_2")](http://lesswrong.com/static/imported/2008/04/11/fig3_2.gif)
 Which makes the whole pattern of the experiments seem pretty
 bizarre!   After all, the photon either goes from **A** to **C**,
 or from **A** to **B**; one or the other.  (Or so you would think,
@@ -1007,6 +1018,7 @@ But it's a bit early to jump to conclusions like *that*, when you
 don't have a complete picture of what goes on inside the
 experiment.
 
+[![Fig5\_4](http://lesswrong.com/static/imported/2008/04/11/fig5_4.gif "Fig5_4")](http://lesswrong.com/static/imported/2008/04/11/fig5_4.gif)
 So it occurs to you to put a sensor between **A** and **C**, so you
 can tell which way the photon *really* goes on each occasion.
 
@@ -10541,6 +10553,8 @@ And this is *indeed* the way that you would visualize
 *standard*physics.
 
 Behold the standard Schrödinger Equation:
+
+[![Schrodinger](http://lesswrong.com/static/imported/2008/05/26/schrodinger.gif "Schrodinger")](http://lesswrong.com/static/imported/2008/05/26/schrodinger.gif)
 
 Here *ψ*(**r**, *t*) is the amplitude distribution over
 configuration space (**r**) and time (*t*).  The left-hand side of
