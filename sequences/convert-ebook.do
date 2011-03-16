@@ -1,4 +1,4 @@
-exec 2>&1
+exec >&2
 CONV=`locate ebook-convert | grep "ebook-convert$"`
 
 if [ -z "$CONV" ]; then
